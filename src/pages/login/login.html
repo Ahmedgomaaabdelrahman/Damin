@@ -1,0 +1,38 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>
+      <div class="titlediv">
+        <p>تسجيل الدخول</p>
+        <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
+      </div>
+     </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="s"></div>
+
+  <div class="daminimg">
+    <img src="assets/imgs/Asset 3.png">
+  </div>
+
+  <form class="formdiv">
+    <ion-input class="emailinput" placeholder="البريد الالكترونى" type="email"></ion-input>
+    <ion-input class="passinput"  placeholder="الرقم السرى" type="password"></ion-input>
+  </form>
+
+  <div class="signupdiv">
+  
+    <button ion-button block class="signup">دخول</button>
+    <p (click)=forgetPass()>هل نسيت كلمة المرور</p>
+  </div>
+</ion-content>

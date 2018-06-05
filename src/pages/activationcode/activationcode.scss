@@ -1,0 +1,67 @@
+page-activationcode {
+    .back-button.show-back-button{display: none;}
+    .titlediv {
+        display: flex;  
+          color: #71706e;
+       
+        p{
+            margin: 10px 0 0;
+            -webkit-box-flex: 10;
+            -webkit-flex: 10;
+            -ms-flex: 10;
+            flex: 10;
+            text-align: center;
+            font-size: 28px;
+        }
+        ion-icon {
+            flex: 0;
+            font-size: 40px;
+        }
+    
+    }
+    .toolbar-background-md {
+        background: #ffc928;
+    
+    }
+
+    .s{ 
+        margin-top: 5px;
+        border: 3px solid gray;
+        background-color: white !important;
+    }
+
+    .contdiv {
+        width: 90%;
+        margin: auto;
+        p {
+            font-size: 20px;
+            color: gray;
+            text-align: center;
+        }
+    }
+
+    .inputsdiv {
+        display: flex;
+        width: 60%;
+        margin: 0 20%;
+        ion-input {
+            flex: 1;
+            border-bottom: 1px solid #ffc928;
+            margin: 0 5px;
+        }
+    }
+    .resenddiv {
+        display: flex;
+        width: 90%;
+        margin: 20px 5%;
+        height: 50px;
+        padding: 13px 0;
+        border-bottom: 1px solid gray;
+        border-top: 1px solid gray;
+        p {
+            flex: 1;
+            margin: 0;
+        
+        }
+    }
+}

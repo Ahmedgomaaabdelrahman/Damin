@@ -14,3 +14,22 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+yellowheader {
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.contentdiv {
+    margin-top: 90px;
+}
+
+@font-face{
+    font-family: Basefont;
+    src: url('../assets/fonts/Crimson-Roman.ttf') ;
+}
+
+* {
+    direction: rtl;
+    font-family: Basefont;
+}

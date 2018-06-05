@@ -1,0 +1,73 @@
+page-forgetpass {
+ .t {
+    
+     box-shadow:-2px -2px 15px 11px #d8d8d8;
+    
+ } 
+ 
+ .s{ 
+    margin-top: 5px;
+    border: 3px solid gray;
+    background-color: white !important;
+}
+.topdiv {
+    display: flex;
+    div {
+        flex: 10;
+        text-align: center; 
+        margin-top: 35px;
+        img {
+            height: 130px
+        }
+    } 
+    ion-icon {
+        flex: 1;
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+
+    
+}
+.textdiv {
+    text-align: center;
+    font-size: 20px;
+    line-height: 35px;
+    height: 72%;
+    background: #ffc928;
+    padding-top: 20px;
+    p{
+        margin: 0;
+        font-weight: bold;
+    }
+    ion-input {
+        border-bottom: 1px solid gray;
+        width: 75%;
+        margin: 30px auto;
+        .text-input {
+            text-align: center;
+            &::placeholder{
+                color: black;
+            }
+        }
+    }
+}
+
+.send {
+    width: 54%;
+    margin: 50px auto;
+    background: white;
+    border-radius: 20px;
+    height: 45px;
+    font-size: 25px;
+    color: black;
+    border: 2px solid black;
+}
+
+.scroll-content {
+    padding-bottom:0 !important;
+}
+.input-cover {
+    position: static;
+}
+}
