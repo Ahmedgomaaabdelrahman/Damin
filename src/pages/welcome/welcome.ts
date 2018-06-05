@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from './../login/login';
 import { SignupPage } from '../signup/signup';
 import { MyoperationsPage } from './../myoperations/myoperations';
+import { ProfilePage } from './../profile/profile';
 
 /**
  * Generated class for the WelcomePage page.
@@ -32,7 +33,7 @@ export class WelcomePage {
     this.navCtrl.push(SignupPage); 
   } 
   openOper (){
-    this.navCtrl.push(MyoperationsPage);
+    this.navCtrl.push(ProfilePage);
   }
 }
  

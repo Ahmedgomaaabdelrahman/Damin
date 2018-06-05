@@ -1,3 +1,43 @@
 page-profile {
+ .editimg{
+    height: 35px;
+    text-align: end;
+    margin: 80px 15px 0;
+    img {
+        height: 100%;
+    }
+ }
 
+ 
+ .profilediv {
+    margin: auto;
+    width: 35%;
+    border-radius: 50%;
+     text-align: center;
+ }
+ .itemdiv {
+     .itemTitle{
+        margin: 15px 13px 5px;
+        font-size: 20px;
+     }
+    .shadowdiv {
+        display: flex;
+        height: 55px;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+        width: 95%;
+        margin: auto;
+        border-radius: 20px;
+        padding-top: 12px;
+       img{
+            height: 20px;
+            margin: 3px 10px;
+            width: 20px;
+        }
+        p{
+            margin: -5px 5px;
+            font-size: 30px;
+        }
+    }
+ }
+ 
 }

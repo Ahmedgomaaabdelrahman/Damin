@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { NavController } from 'ionic-angular';
 
 /**
  * Generated class for the YellowheaderComponent component.
@@ -14,9 +15,12 @@ export class YellowheaderComponent {
   @Input() name: string;
   text: string;
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
     console.log('Hello YellowheaderComponent Component');
     this.text = 'Hello World';
   }
-
+ 
+ back(){
+   this.navCtrl.pop();
+ }
 }

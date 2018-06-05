@@ -1,3 +1,62 @@
 page-editprofile {
+.editimg{
+    height: 35px;
+    text-align: end;
+    margin: 80px 15px 0;
+    img {
+        height: 100%;
+    }
+    }
 
+    
+    .profilediv {
+        margin: auto;
+        width: 35%;
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    .inputitem {
+        height: 50px;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+        width: 95%;
+        margin:10px auto;
+        border-radius: 20px;
+        padding-top: 5px;
+        background: #fbfbfb;
+        background-position: 95%;
+        background-repeat: no-repeat;
+        background-size: 6%;
+        ::placeholder{
+            color: black;
+            padding: 0 5px;
+        }
+    }
+
+    .text-input {
+        color: black;
+        font-size: 22px;
+        margin: 8px 50px;
+        padding: 0 5px;
+        width: calc(100% - 8px - 100px);
+      
+    }
+    .nameinput {
+        background-image: url('../assets/imgs/123.png');
+    }
+    .telinput {
+        background-image: url('../assets/imgs/23123_1.png');
+    }
+
+    .emailinput {
+        background-image: url('../assets/imgs/123123.png');
+    }
+
+    .passinput {
+        background-image: url('../assets/imgs/123123231.png');
+    }
+
+    .repass {
+        background-image: url('../assets/imgs/nvbnv.png');
+    }
 }
