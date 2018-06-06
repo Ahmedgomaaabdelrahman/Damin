@@ -25,16 +25,18 @@
     <img src="assets/imgs/Asset 3.png">
   </div>
 
-  <form class="formdiv">
-    <ion-input class="nameinput"  placeholder="الاسم" type="text"></ion-input>
-    <ion-input class="telinput"   placeholder="رقم الهاتف مصاحب رقم الكود" type="number"></ion-input>
-    <ion-input class="emailinput" placeholder="البريد الالكترونى" type="email"></ion-input>
-    <ion-input class="passinput"  placeholder="الرقم السرى" type="password"></ion-input>
-  </form>
-
+  <form #loginForm="ngForm" class="formdiv" (ngSubmit)="signUp()">
+    <ion-input class="nameinput"  placeholder="الاسم" type="text" name="customers_name" [(ngModel)]="formData.customers_name" required></ion-input>
+    <ion-input class="telinput"   placeholder="رقم الهاتف مصاحب رقم الكود" type="number"  name="customers_telephone" [(ngModel)]="formData.customers_telephone" required></ion-input>
+    <ion-input class="emailinput" placeholder="البريد الالكترونى" type="email" name="customers_email_address" [(ngModel)]="formData.customers_email_address" required></ion-input>
+    <ion-input class="passinput"  placeholder="الرقم السرى" type="password" name="customers_password" [(ngModel)]="formData.customers_password" required></ion-input>
+    <label class="error" *ngIf="errorMessage!=''">
+      <span>{{errorMessage}}</span>
+    </label>
   <div class="signupdiv">
     <p>اذا قمت بالتسجيل , فانك توافق على <span>المصطلح والشروط</span></p>
-    <button ion-button block class="signup"(click)=" acivation()">التسجيل الان</button>
-    <p>لديك حساب بالفعل , <span (click)="login ()">تسجيل الدخول</span></p>
+    <button ion-button block class="signup" type="submit" [disabled]="!loginForm.form.valid">التسجيل الان</button>
   </div>
+  </form>
+  <p text-center>لديك حساب بالفعل , <span (click)="login ()">تسجيل الدخول</span></p>
 </ion-content>

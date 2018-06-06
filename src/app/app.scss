@@ -33,3 +33,9 @@ yellowheader {
     direction: rtl;
     font-family: Basefont;
 }
+.error {
+  color: color($colors, danger);
+  text-align: center;
+  display: block;
+  margin: 5px auto;
+}
