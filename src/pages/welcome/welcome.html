@@ -12,51 +12,57 @@
         <p>ضامن</p>
         <ion-icon style="margin-top: 7px" (click)="openOper()" name='menu'></ion-icon>
       </div>
-     </ion-title>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-<div class="s"></div>
+  <div class="s"></div>
 
-<div class="daminimg">
-  <img src="assets/imgs/Asset 3.png">
-  <button id="yellowbtn" ion-button block (click)="newAccount()">انشاء حساب جديد</button>
-  <button id="whitebtn" ion-button block (click)="myaccont()" >حسابى</button>
-</div>
-<div class="delvery">
+  <div class="daminimg">
+    <img src="assets/imgs/Asset 3.png">
+    <button *ngIf="shared.customerData.customers_id==null" id="yellowbtn" ion-button block (click)="newAccount()">انشاء حساب جديد</button>
+    <button *ngIf="shared.customerData.customers_id==null" id="whitebtn" ion-button block (click)="myaccont()">حسابى</button>
+  </div>
+  <div class="daminimg">
+    <p class="customer-name">{{shared.customerData.customers_name}}</p>
+
+    <button  style="background-color: white" ion-button block *ngIf="shared.customerData.customers_id!=null"  (click)="logOut()">خروج</button>
+
+  </div>
+  <div class="delvery">
     <div class="subdiv">
-    <div class="operdivimg"> <img src="assets/imgs/ddddd.png"> </div>
+      <div class="operdivimg"><img src="assets/imgs/ddddd.png"></div>
 
       <p>توصيل طلبات</p>
     </div>
   </div>
-<div class="totaldivs">
-  <div class="subdiv">
-      <div class="operdivimg"> <img src="assets/imgs/ffffffff.png"> </div>
+  <div class="totaldivs">
+    <div class="subdiv">
+      <div class="operdivimg"><img src="assets/imgs/ffffffff.png"></div>
 
       <p>سلع ومشتريات</p>
-  </div>
-  <div class="subdiv" style="border: none"></div>
-  <div  class="subdiv">
-      <div class="operdivimg">   <img src="assets/imgs/asds.png"></div>
+    </div>
+    <div class="subdiv" style="border: none"></div>
+    <div class="subdiv">
+      <div class="operdivimg"><img src="assets/imgs/asds.png"></div>
 
       <p>تعقيب وتنازل</p>
+    </div>
   </div>
-</div>
 
-<div class="totaldivs1">
+  <div class="totaldivs1">
     <div class="subdiv">
-        <div class="operdivimg">  <img src="assets/imgs/sdasd.png"></div>
+      <div class="operdivimg"><img src="assets/imgs/sdasd.png"></div>
 
-        <p>طرف اول طرف ثانى</p>
+      <p>طرف اول طرف ثانى</p>
     </div>
     <div class="subdiv">
-        <div class="operdivimg">   <img src="assets/imgs/wqew.png"></div>
+      <div class="operdivimg"><img src="assets/imgs/wqew.png"></div>
 
-        <p>عمليات نقل كفالة</p>
+      <p>عمليات نقل كفالة</p>
     </div>
-</div>
+  </div>
 </ion-content>

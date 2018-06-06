@@ -25,13 +25,21 @@ export class SharedDataProvider {
               public alertCtrl: AlertController,
               private storage: Storage) {
     console.log('Hello SharedDataProvider Provider');
+    //get data from local
+    storage.get('customerData').then((val) => {
+      if (val != null || val != undefined) this.customerData = val;
+    });
   }
 
   login(data) {
     this.customerData = data;
     this.storage.set('customerData', this.customerData);
   }
-
+  logOut() {
+    this.autoHide(500);
+    this.customerData = {};
+    this.storage.set('customerData', this.customerData);
+  }
   autoHide(time) {
     this.loading = this.loadingCtrl.create({
       duration: time
