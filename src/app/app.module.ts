@@ -24,6 +24,10 @@ import { OperationstatusPage } from '../pages/operationstatus/operationstatus';
 import { OperationdetailsPage } from '../pages/operationdetails/operationdetails';
 import { YellowheaderComponent } from '../components/yellowheader/yellowheader';
 import { ChatPage } from '../pages/chat/chat';
+import { ConfigProvider } from '../providers/config/config';
+import { SharedDataProvider } from '../providers/shared-data/shared-data';
+import {HttpModule} from "@angular/http";
+import {IonicStorageModule} from "@ionic/storage";
 
 @NgModule({
   declarations: [
@@ -49,7 +53,9 @@ import { ChatPage } from '../pages/chat/chat';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    HttpModule,
+    IonicStorageModule.forRoot(),
+    IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -76,7 +82,9 @@ import { ChatPage } from '../pages/chat/chat';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ConfigProvider,
+    SharedDataProvider
   ]
 })
 export class AppModule {}

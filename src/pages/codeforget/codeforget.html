@@ -7,31 +7,38 @@
 <ion-header>
 
   <ion-navbar>
-      <ion-title>
-        <div class="titlediv">
-          <p>ضامن</p>
-          <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
-        </div>
-        </ion-title>
-    </ion-navbar>
+    <ion-title>
+      <div class="titlediv">
+        <p>ضامن</p>
+        <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
+      </div>
+    </ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-    <div class="s"></div> 
-    <div class="contdiv">
-        <p>لقد ارسلنا لك رسالة نصية قصيرة مع الكود الى رقم تليفونك</p>
-        <div class="inputsdiv">
-          <ion-input type='number'></ion-input>
-          <ion-input type='number'></ion-input>
-          <ion-input type='number'></ion-input>
-          <ion-input type='number'></ion-input>
-          <ion-input type='number'></ion-input>
-          <ion-input type='number'></ion-input>
-        </div>
-        <p>اعادة ارسال</p>
-        <p (click)="gopass()">OK</p>
-    </div>
+  <div class="s"></div>
+  <div class="contdiv">
+    <form #loginForm="ngForm" class="form" (ngSubmit)="verfyCode()">
+
+      <p>لقد ارسلنا لك رسالة نصية قصيرة مع الكود الى رقم تليفونك</p>
+      <div class="inputsdiv">
+        <ion-input type='text' maxlength="1" name="customers_verfy_code6" [(ngModel)]="formData.key6"></ion-input>
+        <ion-input type='text' maxlength="1" name="customers_verfy_code5" [(ngModel)]="formData.key5"></ion-input>
+        <ion-input type='text' maxlength="1" name="customers_verfy_code4" [(ngModel)]="formData.key4"></ion-input>
+        <ion-input type='text' maxlength="1" name="customers_verfy_code3" [(ngModel)]="formData.key3"></ion-input>
+        <ion-input type='text' maxlength="1" name="customers_verfy_code2" [(ngModel)]="formData.key2"></ion-input>
+        <ion-input type='text' maxlength="1" name="customers_verfy_code1" [(ngModel)]="formData.key1"></ion-input>
+      </div>
+      <label class="error" *ngIf="errorMessage!=''">
+        <span>{{errorMessage}}</span>
+      </label>
+
+      <button type="submit" [disabled]="!loginForm.form.valid">OK</button>
+    </form>
+    <button (click)="reSendCode()">اعادة ارسال</button>
+  </div>
 
 </ion-content>

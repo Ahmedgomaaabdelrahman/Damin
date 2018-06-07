@@ -16,16 +16,21 @@
 <ion-content>
   <div class="t"></div>
   <div class="topdiv">
-   <div><img src="assets/imgs/Asset 3.png"></div> 
+    <div><img src="assets/imgs/Asset 3.png"></div>
     <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
   </div>
   <div class="s"></div>
   <div class="textdiv">
-    <p>نحن بحاجه فقط الى البريد الاكترونى المسجل<br>
-    لكى نرسل لك تعليمات اعاده تعيين كلمة المرور
+    <p style="font-size: 0.8em;">نحن بحاجه فقط الى البريد الاكترونى المسجل<br>
+      لكى نرسل لك تعليمات اعاده تعيين كلمة المرور
     </p>
-    <ion-input placeholder="البريد الالكترونى" type="email"></ion-input>
-    <button ion-button block class="send" (click)="forget()">ارسال</button>
+    <form #loginForm="ngForm" (ngSubmit)="forgetPassword()">
+      <ion-input placeholder="البريد الالكترونى" type="email" name="customers_email_address" [(ngModel)]="formData.customers_email_address" required></ion-input>
+      <label class="error" *ngIf="errorMessage!=''">
+        <span>{{errorMessage}}</span>
+      </label>
+      <button ion-button block class="send" [disabled]="!loginForm.form.valid">ارسال</button>
+    </form>
   </div>
-  
+
 </ion-content>

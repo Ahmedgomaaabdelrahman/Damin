@@ -12,7 +12,7 @@
         <p>تسجيل الدخول</p>
         <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
       </div>
-     </ion-title>
+    </ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -25,14 +25,19 @@
     <img src="assets/imgs/Asset 3.png">
   </div>
 
-  <form class="formdiv">
-    <ion-input class="emailinput" placeholder="البريد الالكترونى" type="email"></ion-input>
-    <ion-input class="passinput"  placeholder="الرقم السرى" type="password"></ion-input>
+  <form #loginForm="ngForm" (ngSubmit)="login()" class="formdiv">
+    <ion-input class="emailinput" placeholder="البريد الالكترونى" type="email" name="email" [(ngModel)]="formData.customers_email_address"
+               required></ion-input>
+    <ion-input class="passinput" placeholder="الرقم السرى" type="password" name="password" [(ngModel)]="formData.customers_password"
+               required></ion-input>
+    <label class="error" *ngIf="errorMessage!=''">
+      <span>{{errorMessage}}</span>
+    </label>
+    <div class="signupdiv">
+
+      <button ion-button block class="signup" [disabled]="!loginForm.form.valid">دخول</button>
+      <p (click)=forgetPass()>هل نسيت كلمة المرور</p>
+    </div>
   </form>
 
-  <div class="signupdiv">
-  
-    <button ion-button block class="signup">دخول</button>
-    <p (click)=forgetPass()>هل نسيت كلمة المرور</p>
-  </div>
 </ion-content>

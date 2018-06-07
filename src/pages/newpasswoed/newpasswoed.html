@@ -6,31 +6,33 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-      <ion-title>
-        <div class="titlediv">
-          <p>كلمة مرور جديدة</p>
-          <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
-        </div>
-        </ion-title>
-    </ion-navbar>
+  <ion-navbar>
+    <ion-title>
+      <div class="titlediv">
+        <p>كلمة مرور جديدة</p>
+        <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
+      </div>
+    </ion-title>
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content>
-<div class="contdiv">
-  <img src="assets/imgs/Asset 3.png">
-</div>
-
-<form class="formdiv">
-    <ion-input class="emailinput" placeholder="كلمة المرور الجديدة" type="password"></ion-input>
-    <ion-input class="passinput"  placeholder=" تاكيد كلمة المرور" type="password"></ion-input>
-  </form>
-
-  <div class="signupdiv">
-  
-    <button ion-button block class="signup">تاكيد</button>
-  
+  <div class="contdiv">
+    <img src="assets/imgs/Asset 3.png">
   </div>
+
+  <form class="formdiv" #loginForm="ngForm" (ngSubmit)="rePassword()">
+    <ion-input class="emailinput" placeholder="كلمة المرور الجديدة" type="password" name="password"
+               [(ngModel)]="formData.password" required></ion-input>
+    <ion-input class="passinput" placeholder=" تاكيد كلمة المرور" type="password" name="rePassword"
+               [(ngModel)]="formData.rePassword" required></ion-input>
+    <label class="error" *ngIf="errorMessage!=''">
+      <span>{{errorMessage}}</span>
+    </label>
+    <div class="signupdiv">
+      <button ion-button block class="signup"  type="submit" [disabled]="!loginForm.form.valid">تاكيد</button>
+    </div>
+  </form>
 </ion-content>

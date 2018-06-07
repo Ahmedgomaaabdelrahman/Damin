@@ -2,9 +2,9 @@ page-login {
     .back-button.show-back-button{display: none;}
 
     .titlediv {
-        display: flex;  
+        display: flex;
           color: #71706e;
-       
+
         p{
             margin: 10px 0 0;
             -webkit-box-flex: 10;
@@ -18,14 +18,14 @@ page-login {
             flex: 0;
             font-size: 40px;
         }
-    
+
     }
     .toolbar-background-md {
         background: #ffc928;
-    
+
     }
 
-    .s{ 
+    .s{
         margin-top: 5px;
         border: 3px solid gray;
         background-color: white !important;
@@ -68,7 +68,7 @@ page-login {
     }
 
     .signupdiv {
-        margin: 70px auto 0;
+        margin: 50px auto 0;
         width: 90%;
         p {
             text-align: center;
