@@ -1,5 +1,4 @@
 page-welcome {
-<<<<<<< HEAD
 .titlediv {
     display: flex;  
       color: #71706e;
@@ -8,28 +7,13 @@ page-welcome {
     p{
         margin: 0;
         flex: 10;
-        text-align: center
-=======
+        text-align: center}
+    }
   .customer-name{
     font-size: 1.4em;
     margin: 0;
   }
-  .titlediv {
-    display: flex;
-    color: #71706e;
-    font-size: 30px;
-    p {
-      margin: 0;
-      flex: 10;
-      text-align: center
->>>>>>> b48b36ce98bd24090d1c6b6f1e28609808f532ee
-    }
-    ion-icon {
-      flex: 1;
 
-    }
-
-  }
   .toolbar-background-md {
     background: #ffc928;
 
