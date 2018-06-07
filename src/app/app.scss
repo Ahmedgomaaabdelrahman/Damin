@@ -33,3 +33,45 @@ yellowheader {
     direction: rtl;
     font-family: Basefont;
 }
+
+.menutop {
+    ion-icon {
+        font-size: 45px;
+        margin: 15px;
+        color: orange
+    }
+}
+.menuitem {
+    display: flex;
+    width: 90%;
+    margin: 15px auto;
+    img {
+        height: 25px;
+        flex: 0;
+    }
+    p{
+        margin: 0px 15px;
+        font-size: 23px;
+        flex: 3;
+    }
+}
+
+.toolbar-background-md , .toolbar-background-ios {
+    background: #ffc928;
+
+}
+.toolbar-ios ion-title {
+    padding: 0 10px 1px !important;
+
+}
+
+.toolbar-ios {
+    min-height: 60px !important;
+}
+
+.ios .s {
+    margin-top: 5px;
+}
+.button-ios.activated {
+    background-color: white;
+}

@@ -1,8 +1,62 @@
-<ion-menu [content]="mycontent">
+<ion-menu side="right" [content]="mycontent">
     <ion-content>
-      <ion-list>
-        <p>some menu content, could be list items</p>
-      </ion-list>
+      <div class="menutop" >
+        <ion-icon name="menu" menuClose></ion-icon>
+      </div>
+      <div style="margin-top: 80px;">
+
+        <div class="menuitem" menuClose (click)="openEdit()">
+          <img src="assets/imgs/gfdgvc.png">
+          <p>تعديل الحساب</p>
+        </div>
+
+        <div class="menuitem" menuClose   (click)="openmyData()">
+          <img src="assets/imgs/gfdgvc.png">
+          <p>بياناتى</p>
+        </div>
+
+        <div class="menuitem" menuClose (click)="openOperations()">
+          <img src="assets/imgs/vcvcvvc.png">
+          <p>عملياتى</p>
+        </div>
+
+        <div class="menuitem" menuClose>
+          <img src="assets/imgs/vdsdsf.png">
+          <p>تقييماتى</p>
+        </div>
+
+        <div class="menuitem" menuClose>
+          <img src="assets/imgs/cvcvcvc.png">
+          <p>الرسائل</p>
+        </div>
+
+        <div class="menuitem" menuClose>
+          <img src="assets/imgs/fbqbqb.png">
+          <p>الاشعارات</p>
+        </div>
+
+        <div class="menuitem" menuClose>
+          <img src="assets/imgs/bggfgb.png">
+          <p>اسال عن شخص</p>
+        </div>
+
+        <div class="menuitem" menuClose>
+          <img src="assets/imgs/cvcvbbb.png">
+          <p>اشحن رصيدك</p>
+        </div>
+
+        <div class="menuitem" menuClose>
+          <img src="assets/imgs/sdfsdfdf.png">
+          <p>الاعدادات</p>
+        </div>
+
+        <div class="menuitem" menuClose>
+          <img src="assets/imgs/gfdgdfgfdg.png">
+          <p>تسجيل الخروج</p>
+        </div>
+
+      
+      </div>
     </ion-content>
   </ion-menu>
 <ion-nav #mycontent  [root]="rootPage"></ion-nav>

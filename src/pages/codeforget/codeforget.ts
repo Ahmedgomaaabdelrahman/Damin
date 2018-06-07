@@ -26,5 +26,8 @@ export class CodeforgetPage {
   gopass(){
     this.navCtrl.push(NewpasswoedPage);
   }
+  back(){
+    this.navCtrl.pop();
+  }
 }
  
