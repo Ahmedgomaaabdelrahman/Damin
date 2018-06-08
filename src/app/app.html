@@ -4,18 +4,19 @@
         <ion-icon name="menu" menuClose></ion-icon>
       </div>
       <div style="margin-top: 80px;">
-<!-- 
+<!--
         <div class="menuitem" menuClose (click)="openEdit()">
           <img src="assets/imgs/gfdgvc.png">
           <p>تعديل الحساب</p>
         </div> -->
 
-        <div class="menuitem" menuClose   (click)="openmyData()">
+        <div class="menuitem" menuClose *ngIf="shared.customerData.customers_id!=null" (click)="openmyData()">
           <img src="assets/imgs/gfdgvc.png">
           <p>بياناتى</p>
         </div>
 
-        <div class="menuitem" menuClose (click)="openOperations()">
+        <div class="menuitem" menuClose >
+        <!--<div class="menuitem" menuClose (click)="openOperations()">-->
           <img src="assets/imgs/vcvcvvc.png">
           <p>عملياتى</p>
         </div>
@@ -50,12 +51,12 @@
           <p>الاعدادات</p>
         </div>
 
-        <div class="menuitem" menuClose>
+        <div class="menuitem" menuClose *ngIf="shared.customerData.customers_id!=null"  (click)="logOut()">
           <img src="assets/imgs/gfdgdfgfdg.png">
           <p>تسجيل الخروج</p>
         </div>
 
-      
+
       </div>
     </ion-content>
   </ion-menu>

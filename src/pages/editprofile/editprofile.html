@@ -15,20 +15,28 @@
 
 <ion-content>
   <yellowheader name='تعديل بياناتى '></yellowheader>
-  <div class="editimg">
-    <img src="assets/imgs/23123.png">
-  </div>
+
   <div class="profilediv">
     <img src="assets/imgs/asdxzcx.png">
   </div>
 
   <div>
-    <form>
-      <ion-input class="inputitem nameinput" placeholder="الاسم" type="email"></ion-input>
-      <ion-input class="inputitem emailinput" placeholder="البريد الالكترونى" type="email"></ion-input>
-      <ion-input class="inputitem telinput" placeholder="رقم الجوال" type="email"></ion-input>
-      <ion-input class="inputitem passinput" placeholder="كلمة السر" type="email"></ion-input>
-      <ion-input class="inputitem repass" placeholder="تاكيد كلمة السر" type="email"></ion-input>
+    <form #userForm="ngForm" (ngSubmit)="updateInfo()">
+      <ion-input class="inputitem nameinput" placeholder="الاسم" type="text" [(ngModel)]="myAccountData.customers_name" name="customers_name" required></ion-input>
+
+      <ion-input class="inputitem emailinput" placeholder="{{shared.customerData.customers_email_address}}" disabled=""></ion-input>
+
+      <ion-input class="inputitem telinput" placeholder="رقم الجوال" type="number" [(ngModel)]="myAccountData.customers_telephone" name="customers_telephone" required></ion-input>
+
+      <ion-input class="inputitem passinput" placeholder="كلمة السر" type="password" [(ngModel)]="myAccountData.oldPassword" name="oldPassword" required></ion-input>
+
+      <ion-input class="inputitem repass" placeholder="كلمة السر الجديدة" type="password" [(ngModel)]="myAccountData.newPassword" name="newPassword" ></ion-input>
+      <label class="error" *ngIf="errorMessage!=''">
+        <span>{{errorMessage}}</span>
+      </label>
+      <button class="editimg"  ion-button clear type="submit" [disabled]="!userForm.form.valid">
+        <ion-icon name="md-checkmark"></ion-icon>
+      </button>
     </form>
   </div>
 </ion-content>

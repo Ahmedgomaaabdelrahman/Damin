@@ -34,8 +34,12 @@ export class LoginPage {
     this.errorMessage = '';
     this.http.post(this.config.url + 'processLogin', this.formData).map(res => res.json()).subscribe(data => {
       if (data.success == 1) {
-        console.log(data.data[0])
+        console.log(data)
+        console.log(data.data[0]);
         this.shared.login(data.data[0]);
+
+        this.shared.customerData.customers_password = this.formData.customers_password;
+
         this.navCtrl.setRoot(WelcomePage)
       }
       if (data.success == 0) {

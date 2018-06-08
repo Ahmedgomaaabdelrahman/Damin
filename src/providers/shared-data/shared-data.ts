@@ -33,13 +33,16 @@ export class SharedDataProvider {
 
   login(data) {
     this.customerData = data;
+    console.log('login', this.customerData)
     this.storage.set('customerData', this.customerData);
   }
+
   logOut() {
     this.autoHide(500);
     this.customerData = {};
     this.storage.set('customerData', this.customerData);
   }
+
   autoHide(time) {
     this.loading = this.loadingCtrl.create({
       duration: time
@@ -53,6 +56,7 @@ export class SharedDataProvider {
     });
     this.loading.present();
   }
+
   showAlert(text) {
     let alert = this.alertCtrl.create({
       title: this.alertText,
@@ -61,6 +65,7 @@ export class SharedDataProvider {
     });
     alert.present();
   }
+
   hide() {
     try {
       this.loading.dismiss();
