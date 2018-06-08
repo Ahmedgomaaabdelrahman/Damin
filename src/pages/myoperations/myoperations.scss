@@ -59,14 +59,86 @@ page-myoperations {
     width: 13%;
     margin: auto;
     text-align: center;
-    height: 45px;
+    height: 50px;
     background-color: #ffc928;
-    font-size: 25px;
+    font-size: 35px;
     color: white;
     border-radius: 50%;
-    line-height: 49px;
+    line-height: 63px;
     position: fixed;
     bottom: 10px;
     right: 44%;
+
+    img {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        margin-top: 7px;
+    }
+}
+
+.choses{
+    position: fixed;
+    width: 76%;
+    margin: 0 12%;
+    bottom: 50px;
+    background: #f1f1f1;
+    border-radius: 20px;
+    .item {
+        background: transparent;
+        padding: 0;
+        font-size: 25px;
+    }
+}
+
+.item-radio-checked.item-ios ion-label  ,  .item-radio-checked.item-md ion-label {
+    color:black;
+}
+
+.list-ios {
+    margin: 0;
+}
+
+.radio-ios .radio-icon , .radio-md .radio-icon {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 21px;
+    border: 1px solid orange;
+    padding: 9px;
+    border-radius: 50%;
+}
+
+.radio-icon .radio-checked  , .radio-icon .radio-checked {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 21px;
+    border: 1px solid orange; 
+    padding: 9px;
+    border-radius: 50%;
+}
+.radio-ios .radio-checked .radio-inner {
+    border-color: orange;
+}
+
+.item-ios.item-block .item-inner {
+    border: none;
+}
+
+.item-md .radio-md {
+    position: static;
+    display: block;
+    margin: 9px 10px 9px 15px;
+}
+
+.radio-md .radio-inner {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    position: absolute;
+    width: 14px;
+    height: 15px;
+    background-color: orange;
 }
 }

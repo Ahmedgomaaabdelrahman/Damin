@@ -25,7 +25,7 @@ export class MyApp {
     });
   }
 
-  openEdit(){
+  openEdit(){ 
     this.nav.push(EditprofilePage);
   }
 

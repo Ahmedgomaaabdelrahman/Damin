@@ -110,9 +110,33 @@
     </div>
 
     <div>
-      <div></div>
+      <div class="choses" *ngIf="chosFlag">
+          <ion-list radio-group [(ngModel)]="type">
+              <ion-item>
+                <ion-label>سلع ومشتريات</ion-label>
+                <ion-radio value="a"  (ionSelect)="changeImg()"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>توصيل طلبات</ion-label>
+                <ion-radio value="b" (ionSelect)="changeImg()"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>تعقيب وتنازل</ion-label>
+                <ion-radio value="c" (ionSelect)="changeImg()"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>عمليات نقل كفالة</ion-label>
+                <ion-radio value="d" (ionSelect)="changeImg()"></ion-radio>
+              </ion-item>
+              <ion-item>
+                  <ion-label>طرف اول طرف تانى</ion-label>
+                  <ion-radio value="e" (ionSelect)="changeImg()"></ion-radio>
+                </ion-item>
+            </ion-list>
+      </div>
       <div class="addnew">
-        <ion-icon name="add"></ion-icon>
+        <ion-icon *ngIf="!addFlag" name="add" (click)="openChos()"></ion-icon>
+        <img *ngIf="addFlag" src="assets/imgs/23123.png" (click)="opennew()">
       </div>
     </div>
 </div>

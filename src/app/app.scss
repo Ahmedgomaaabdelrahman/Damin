@@ -18,6 +18,7 @@ yellowheader {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
 }
 
 .contentdiv {
@@ -74,4 +75,65 @@ yellowheader {
 }
 .button-ios.activated {
     background-color: white;
+}
+.error {
+  color: color($colors, danger);
+  text-align: center;
+  display: block;
+  margin: 5px auto;
+}
+
+
+.list-ios > .item-block:first-child  ,.list-ios > .item-block:last-child, .list-ios {
+    border: none;
+}
+.item-radio-checked.item-ios ion-label  ,  .item-radio-checked.item-md ion-label {
+    color:black;
+}
+
+.list-ios {
+    margin: 0;
+}
+
+.radio-ios .radio-icon , .radio-md .radio-icon {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 21px;
+    border: 1px solid orange;
+    padding: 9px;
+    border-radius: 50%;
+}
+
+.radio-icon .radio-checked  , .radio-icon .radio-checked {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 21px;
+    border: 1px solid orange; 
+    padding: 9px;
+    border-radius: 50%;
+}
+.radio-ios .radio-checked .radio-inner {
+    border-color: orange;
+}
+
+.item-ios.item-block .item-inner {
+    border: none;
+}
+
+.item-md .radio-md {
+    position: static;
+    display: block;
+    margin: 9px 10px 9px 15px;
+}
+
+.radio-md .radio-inner {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    position: absolute;
+    width: 14px;
+    height: 15px;
+    background-color: orange;
 }
