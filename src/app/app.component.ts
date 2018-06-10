@@ -31,7 +31,10 @@ export class MyApp {
       splashScreen.hide();
       this.storage.get('customerData').then((val) => {
         console.log(val);
-        if (val && (Object.keys(val).length === 0)) {
+        if (val && (Object.keys(val).length === 0) ){
+          this.menuCtrl.enable(false, 'myMenu');
+          console.log('false')
+        }else if (val === null) {
           this.menuCtrl.enable(false, 'myMenu');
           console.log('false')
         } else if (val && (Object.keys(val).length !== 0)) {

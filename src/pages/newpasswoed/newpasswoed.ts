@@ -38,7 +38,7 @@ export class NewpasswoedPage {
     this.errorMessage = '';
     console.log(this.formData);
     this.formData.customers_email_address = this.navParams.get('email');
-    this.http.post(this.config.url + 'change_password', this.formData).map(res => res.json()).subscribe(data => {
+    this.http.post(this.config.url + 'api/change_password', this.formData).map(res => res.json()).subscribe(data => {
       this.shared.hide();
       console.log(data)
       if (data.success == 1) {
