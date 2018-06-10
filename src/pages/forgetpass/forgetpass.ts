@@ -41,7 +41,7 @@ export class ForgetpassPage {
     this.shared.show();
     this.errorMessage = '';
     console.log(this.formData)
-    this.http.post(this.config.url + 'processForgotPassword', this.formData).map(res => res.json()).subscribe(data => {
+    this.http.post(this.config.url + 'api/processForgotPassword', this.formData).map(res => res.json()).subscribe(data => {
       this.shared.hide();
       if (data.success == 1) {
         console.log(data)

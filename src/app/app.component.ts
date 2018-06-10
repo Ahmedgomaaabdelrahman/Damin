@@ -1,27 +1,44 @@
 import {Component, ViewChild} from '@angular/core';
-import {Platform} from 'ionic-angular';
+import {MenuController, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-import {WelcomePage} from './../pages/welcome/welcome';
 import {MyoperationsPage} from './../pages/myoperations/myoperations';
 import {Nav} from 'ionic-angular';
 import {EditprofilePage} from './../pages/editprofile/editprofile';
 import {ProfilePage} from '../pages/profile/profile';
 import {SharedDataProvider} from "../providers/shared-data/shared-data";
+import {Storage} from "@ionic/storage";
+import {HomePage} from "../pages/home/home";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = WelcomePage;
+  rootPage: any = HomePage;
   @ViewChild(Nav) nav: Nav;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public shared: SharedDataProvider) {
+  constructor(
+    platform: Platform,
+    statusBar: StatusBar,
+    splashScreen: SplashScreen,
+    public shared: SharedDataProvider,
+    private storage: Storage,
+    public menuCtrl: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      this.storage.get('customerData').then((val) => {
+        console.log(val);
+        if (val && (Object.keys(val).length === 0)) {
+          this.menuCtrl.enable(false, 'myMenu');
+          console.log('false')
+        } else if (val && (Object.keys(val).length !== 0)) {
+          this.menuCtrl.enable(true, 'myMenu');
+          console.log('true')
+        }
+      });
     });
   }
 
@@ -36,10 +53,12 @@ export class MyApp {
   openOperations() {
     this.nav.push(MyoperationsPage);
   }
+
   //Log Out
   logOut() {
+    this.menuCtrl.enable(false, 'myMenu');
     this.shared.logOut();
-    this.nav.setRoot(WelcomePage)
+    this.nav.setRoot(HomePage)
   }
 }
 

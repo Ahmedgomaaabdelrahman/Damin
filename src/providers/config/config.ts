@@ -10,7 +10,7 @@ import {Http} from "@angular/http";
 */
 @Injectable()
 export class ConfigProvider {
-  public url: string = 'http://hefny.me/test/damin/api/';
+  public url: string = 'http://hefny.me/test/damin/';
 
   constructor(public http: Http) {
     console.log('Hello ConfigProvider Provider');

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
-import { NewpasswoedPage } from '../newpasswoed/newpasswoed';
+import {NewpasswoedPage} from '../newpasswoed/newpasswoed';
 import {Http} from "@angular/http";
 import {ConfigProvider} from "../../providers/config/config";
 import {SharedDataProvider} from "../../providers/shared-data/shared-data";
@@ -18,20 +18,23 @@ import {SharedDataProvider} from "../../providers/shared-data/shared-data";
   templateUrl: 'codeforget.html',
 })
 export class CodeforgetPage {
+  @ViewChild('passcode1') passcode1;
+  @ViewChild('passcode2') passcode2;
+  @ViewChild('passcode3') passcode3;
+  @ViewChild('passcode4') passcode4;
+  @ViewChild('passcode5') passcode5;
+  @ViewChild('passcode6') passcode6;
+  values: any = [];
+
   formData = {
     customers_email_address: '',
-    key: '',
-    key1: '',
-    key2: '',
-    key3: '',
-    key4: '',
-    key5: '',
-    key6: ''
+    key: ''
   };
   formDataRepeat = {
     customers_email_address: ''
   };
   errorMessage = '';
+
   constructor(public navCtrl: NavController,
               public shared: SharedDataProvider,
               public http: Http,
@@ -40,13 +43,70 @@ export class CodeforgetPage {
     this.formData.customers_email_address = this.navParams.get('email');
 
   }
+  onKeyUp(event, index) {
+    console.log(event);
+    if (event.target.value.length != 1) {
+      this.setFocus(index - 2);
+      this.values.pop();
+
+    }else if(this.values.length == 5){
+      this.values.push(event.target.value);
+      this.setFocus(index);
+      this.formData.key = this.values.toString().replace(/,/g, '');
+      console.log('Form Key = ',this.formData.key);
+      this.submit(event);
+    }
+    else {
+      this.values.push(event.target.value);
+      this.setFocus(index);
+    }
+    event.stopPropagation();
+    console.log(this.values)
+  }
+  submit(e:Event){
+    console.log('Form submit = ',this.formData.key)
+
+    this.verfyCode();
+    this.values=[];
+    this.passcode1.value="";
+    this.passcode2.value="";
+    this.passcode3.value="";
+    this.passcode4.value="";
+    this.passcode5.value="";
+    this.passcode6.value="";
+    e.stopPropagation();
+
+  }
+  setFocus(index) {
+
+    switch (index) {
+      case 0:
+        this.passcode1.setFocus();
+        break;
+      case 1:
+        this.passcode2.setFocus();
+        break;
+      case 2:
+        this.passcode3.setFocus();
+        break;
+      case 3:
+        this.passcode4.setFocus();
+        break;
+      case 4:
+        this.passcode5.setFocus();
+        break;
+      case 5:
+        this.passcode6.setFocus();
+        break;
+    }
+  }
+
   verfyCode() {
     this.shared.show();
     this.errorMessage = '';
-    console.log(this.formData);
-    this.formData.key = this.formData.key1 + this.formData.key2 + this.formData.key3 + this.formData.key4 + this.formData.key5 + this.formData.key6
+    console.log('formData = ',this.formData);
     this.formData.customers_email_address = this.navParams.get('email');
-    this.http.post(this.config.url + 'check_verification', this.formData).map(res => res.json()).subscribe(data => {
+    this.http.post(this.config.url + 'api/check_verification', this.formData).map(res => res.json()).subscribe(data => {
       this.shared.hide();
       console.log(data)
       if (data.success == 1) {
@@ -57,12 +117,13 @@ export class CodeforgetPage {
       }
     });
   }
+
   reSendCode() {
     this.shared.show();
     this.errorMessage = '';
     this.formDataRepeat.customers_email_address = this.formData.customers_email_address;
     console.log(this.formDataRepeat.customers_email_address);
-    this.http.post(this.config.url + 'processForgotPassword', this.formDataRepeat).map(res => res.json()).subscribe(data => {
+    this.http.post(this.config.url + 'api/processForgotPassword', this.formDataRepeat).map(res => res.json()).subscribe(data => {
       if (data.success == 1) {
         console.log(data)
         this.shared.hide();
@@ -73,14 +134,15 @@ export class CodeforgetPage {
       }
     });
   }
-  ionViewDidLoad() {
+
+  ionViewWillEnter() {
     console.log('ionViewDidLoad CodeforgetPage');
   }
 
   // gopass(){
   //   this.navCtrl.push(NewpasswoedPage);
   // }
-  back(){
+  back() {
     this.navCtrl.pop();
   }
 

@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
 import {ConfigProvider} from "../config/config";
 import {Http} from "@angular/http";
-import {AlertController, LoadingController} from "ionic-angular";
+import {AlertController, LoadingController, MenuController} from "ionic-angular";
 import {Storage} from "@ionic/storage";
 
 /*
@@ -23,6 +23,7 @@ export class SharedDataProvider {
               public loadingCtrl: LoadingController,
               public http: Http,
               public alertCtrl: AlertController,
+              public menuCtrl: MenuController,
               private storage: Storage) {
     console.log('Hello SharedDataProvider Provider');
     //get data from local
@@ -35,9 +36,11 @@ export class SharedDataProvider {
     this.customerData = data;
     console.log('login', this.customerData)
     this.storage.set('customerData', this.customerData);
+    this.menuCtrl.enable(true, 'myMenu');
   }
 
   logOut() {
+    this.menuCtrl.enable(false, 'myMenu');
     this.autoHide(500);
     this.customerData = {};
     this.storage.set('customerData', this.customerData);

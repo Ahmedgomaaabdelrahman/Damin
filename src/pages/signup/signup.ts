@@ -6,6 +6,7 @@ import {SharedDataProvider} from "../../providers/shared-data/shared-data";
 import {ConfigProvider} from "../../providers/config/config";
 import {Http} from "@angular/http";
 import {WelcomePage} from "../welcome/welcome";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the SignupPage page.
@@ -42,12 +43,12 @@ export class SignupPage {
     this.shared.show();
     this.errorMessage = '';
     console.log(this.formData)
-    this.http.post(this.config.url + 'processRegistration', this.formData).map(res => res.json()).subscribe(data => {
+    this.http.post(this.config.url + 'api/processRegistration', this.formData).map(res => res.json()).subscribe(data => {
       this.shared.hide();
       if (data.success == 1) {
         this.shared.login(data.data[0]);
         //this.config.customerData = data.data[0];
-          this.navCtrl.setRoot(WelcomePage);
+          this.navCtrl.setRoot(HomePage);
           console.log(data)
       }
       if (data.success == 0) {

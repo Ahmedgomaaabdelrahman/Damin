@@ -1,16 +1,38 @@
 page-editprofile {
+  .scroll-content{
+    margin-top: 80px;
+  }
   .editimg {
     height: 35px;
     text-align: end;
     position: absolute;
-    top: 15%;
+    top: 0%;
     left: 0%;
     color: transparent;
     img {
       height: 100%;
     }
   }
-
+  .avatar{
+    width: 45%;
+    height: 45%;
+    margin: auto;
+    display: block;
+  }
+  .upload{
+    position: absolute;
+    right: 21%;
+    bottom: 8%;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border: 3px solid #716f70;
+    border-radius: 100px;
+    ion-icon{
+      font-size: 1.6em;
+      color: #716f70
+    }
+  }
   .profilediv {
     margin: 90px auto 0;
     width: 35%;
@@ -71,5 +93,12 @@ page-editprofile {
     background-repeat: no-repeat;
     background-size: contain;
 
+  }
+  .input-wrapper{
+    padding: 0 3px;
+  }
+  .list-ios .item-block .item-inner ,
+  .list-md .item-block .item-inner {
+     border-bottom: 0 !important;
   }
 }

@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import {ActionSheetController, NavController, NavParams, Platform} from 'ionic-angular';
 import {ConfigProvider} from "../../providers/config/config";
 import {Http} from "@angular/http";
 import {SharedDataProvider} from "../../providers/shared-data/shared-data";
+import {Camera, CameraOptions} from '@ionic-native/camera';
 
 /**
  * Generated class for the EditprofilePage page.
@@ -19,17 +20,20 @@ import {SharedDataProvider} from "../../providers/shared-data/shared-data";
 export class EditprofilePage {
   myAccountData = {
     customers_name: '',
-    customers_telephone: '',
-    customers_email_address: '',
     oldPassword: '',
-    newPassword: ''
-
+    newPassword: '',
+    customers_old_picture: ''
   };
   errorMessage = '';
+  profilePicture = '';
+
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public http: Http,
               public config: ConfigProvider,
+              public platform: Platform,
+              public actionSheetCtrl: ActionSheetController,
+              private camera: Camera,
               public shared: SharedDataProvider) {
   }
 
@@ -39,12 +43,12 @@ export class EditprofilePage {
 
   ionViewWillEnter() {
     this.myAccountData.customers_name = this.shared.customerData.customers_name;
-    this.myAccountData.customers_telephone = this.shared.customerData.customers_telephone;
+    this.profilePicture = this.config.url + this.shared.customerData.customers_picture;
+    this.myAccountData.customers_old_picture = this.shared.customerData.customers_picture;
   }
 
   //function updating user information
   updateInfo = function () {
-    this.myAccountData.customers_email_address = this.shared.customerData.customers_email_address
     let currenrtPassword = this.myAccountData.oldPassword;
     let newPassword = this.myAccountData.newPassword;
     console.log(currenrtPassword + "  " + newPassword);
@@ -63,14 +67,25 @@ export class EditprofilePage {
       this.shared.show()
       this.myAccountData.customers_id = this.shared.customerData.customers_id;
 
+      if (this.profilePicture == this.config.url + this.shared.customerData.customers_picture) { //console.log("old picture");
+        // this.myAccountData.customers_picture=$rootScope.customerData.customers_picture;
+        this.myAccountData.customers_old_picture = this.shared.customerData.customers_picture;
+      }
+      else if (this.profilePicture == '')
+        this.myAccountData.customers_picture = null;
+      else
+        this.myAccountData.customers_picture = this.profilePicture;
+
       var data = this.myAccountData;
-       console.log("post data  "+JSON.stringify(data));
-      this.http.post(this.config.url + 'updateCustomersInfo', data).map(res => res.json()).subscribe(data => {
+      console.log("post data  " + JSON.stringify(data));
+      this.http.post(this.config.url + 'api/updateCustomersInfo', data).map(res => res.json()).subscribe(data => {
           this.shared.hide();
           if (data.success == 1) {
+            console.log('Data = ',data)
             this.shared.showAlert(data.message);
             this.shared.customerData.customers_name = this.myAccountData.customers_name;
-            this.shared.customerData.customers_telephone = this.myAccountData.customers_telephone;
+            this.shared.customerData.customers_picture = data.data[0].customers_picture;
+            // this.shared.customerData.customers_telephone = this.myAccountData.customers_telephone;
 
             this.shared.login(this.shared.customerData);
 
@@ -89,5 +104,62 @@ export class EditprofilePage {
         });
     }
   }
+  public presentActionSheet() {
+    let actionSheet = this.actionSheetCtrl.create({
+      title: 'قم باختيار الصوره',
+      buttons: [
+        {
+          text: 'اختيار صوره من المحمول',
+          handler: () => {
+            this.accessGallery();
+          }
+        },
+        {
+          text: 'استخدام الكاميرا',
+          handler: () => {
+            this.openCamera();
+          }
+        },
+        {
+          text: 'الغاء',
+          role: 'cancel',
+          handler: () => {
+            console.log("Cancel upload")
+          }
+        }
+      ]
+    });
+    actionSheet.present();
+  }
 
+  openCamera() {
+    this.shared.autoHide(1000);
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      allowEdit: true,
+      targetWidth: 1000,
+      targetHeight: 1000,
+      saveToPhotoAlbum: false,
+      correctOrientation: true
+    }
+    this.platform.ready().then(() => {
+      this.camera.getPicture(options).then((imageData) => {
+        this.profilePicture = 'data:image/jpeg;base64,' + imageData;
+      }, (err) => {
+      });
+    });
+  }
+  accessGallery(){
+    this.camera.getPicture({
+      sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+      destinationType: this.camera.DestinationType.DATA_URL
+    }).then((imageData) => {
+      this.profilePicture = 'data:image/jpeg;base64,'+imageData;
+    }, (err) => {
+      console.log(err);
+    });
+  }
 }

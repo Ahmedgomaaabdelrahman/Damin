@@ -1,31 +1,40 @@
-<!--
-  Generated template for the ForgetpassPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<!-- <ion-header>
-
-  <ion-navbar>
-    <ion-title>forgetpass</ion-title>
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-buttons right>
+      <button ion-button icon-only (click)=" back()">
+        <ion-icon name="ios-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>
+      ضامن
+    </ion-title>
   </ion-navbar>
-
-</ion-header> -->
+</ion-header>
 
 
 <ion-content>
-  <div class="t"></div>
-  <div class="topdiv">
-    <div><img src="assets/imgs/Asset 3.png"></div>
-    <ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>
-  </div>
+  <!--<div class="t"></div>-->
+  <!--<div class="topdiv">-->
   <div class="s"></div>
+
+  <div class="logo"><img src="assets/imgs/Asset 3.png"></div>
+  <!--<ion-icon name="ios-arrow-back" (click)="back()"></ion-icon>-->
+  <!--</div>-->
   <div class="textdiv">
     <p style="font-size: 0.8em;">نحن بحاجه فقط الى البريد الاكترونى المسجل<br>
       لكى نرسل لك تعليمات اعاده تعيين كلمة المرور
     </p>
     <form #loginForm="ngForm" (ngSubmit)="forgetPassword()">
-      <ion-input placeholder="البريد الالكترونى" type="email" name="customers_email_address" [(ngModel)]="formData.customers_email_address" required></ion-input>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              <ion-input placeholder="البريد الالكترونى" type="email" name="customers_email_address"
+                         [(ngModel)]="formData.customers_email_address" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
       <label class="error" *ngIf="errorMessage!=''">
         <span>{{errorMessage}}</span>
       </label>

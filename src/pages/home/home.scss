@@ -1,3 +1,115 @@
 page-home {
-
+  .bar-button-default-ios, .bar-button-default.bar-button-ios-default, .bar-button-clear-ios-default{
+    color:#706E6F;
+  }
+  .bar-button-menutoggle-ios ion-icon{
+    font-weight: bold;
+  }
+  .header-md::after {
+    left: 0;
+    bottom: -8px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #706E6F;
+    background-image: none;
+    background-repeat: repeat-x;
+    content: "";
+  }
+  .header-ios::after {
+    left: 0;
+    bottom: -8px;
+    background-position: left 0 top -2px;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #706E6F;
+    background-image: none;
+    background-repeat: repeat-x;
+    content: "";
+  }
+  .header-ios .toolbar-ios:last-child .toolbar-background-ios {
+    border-width: 0
+  }
+  .logo {
+    max-width: 50%;
+    margin: auto;
+  }
+  .sales.ion-ios-briefcase:before {
+    content: "";
+    background-image: url('../assets/imgs/ffffffff.png');
+    background-size: contain;
+    width: 55px;
+    height: 85px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .delivery.ion-ios-briefcase:before {
+    content: "";
+    background-image: url('../assets/imgs/ddddd.png');
+    background-size: contain;
+    width: 55px;
+    height: 85px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .comment.ion-ios-briefcase:before {
+    content: "";
+    background-image: url('../assets/imgs/asds.png');
+    background-size: contain;
+    width: 55px;
+    height: 85px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .party.ion-ios-briefcase:before {
+    content: "";
+    background-image: url('../assets/imgs/asds.png');
+    background-size: contain;
+    width: 55px;
+    height: 85px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sponsorship.ion-ios-briefcase:before {
+    content: "";
+    background-image: url('../assets/imgs/wqew.png');
+    background-size: contain;
+    width: 55px;
+    height: 85px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .button-ios {
+    border-radius: 100px;
+    height: auto;
+    color: #000;
+    background-color: transparent;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+    border: 4px solid #FFC563;
+  }
+  .button-large-md {
+    height: 2em;
+    margin-bottom: 18px;
+    margin-top: 15px;
+  }
+  .button-md-primary {
+    color: #706E6F;
+  }
+  .button-md-light {
+    color: #706E6F;
+  }
+  span{
+    display: block;
+  }
+  .signUp{
+    border-radius: 10px;
+  }
+  .myAccount{
+    background: transparent;
+    border: 2px solid #706E6f;
+    border-radius: 10px;
+  }
 }

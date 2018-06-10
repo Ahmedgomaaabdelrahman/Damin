@@ -1,101 +1,103 @@
 page-signup {
-    .back-button.show-back-button{display: none;}
+  .back-button.show-back-button {
+    display: none;
+  }
 
-    .titlediv {
-        display: flex;
-          color: #71706e;
-
-        p{
-            margin: 10px 0 0;
-            -webkit-box-flex: 10;
-            -webkit-flex: 10;
-            -ms-flex: 10;
-            flex: 10;
-            text-align: center;
-            font-size: 28px;
-        }
-        ion-icon {
-            flex: 0;
-            font-size: 40px;
-        }
-
+  .titlediv {
+    display: flex;
+    color: #71706e;
+    p {
+      margin: 10px 0 0;
+      -webkit-box-flex: 10;
+      -webkit-flex: 10;
+      -ms-flex: 10;
+      flex: 10;
+      text-align: center;
+      font-size: 28px;
     }
-    .toolbar-background-md {
-        background: #ffc928;
-
+    ion-icon {
+      flex: 0;
+      font-size: 40px;
+      margin-top: 9px;
     }
 
-    .s{
-        margin-top: 5px;
-        border: 3px solid gray;
-        background-color: white !important;
+  }
+  .toolbar-background-md {
+    background: #ffc928;
+
+  }
+
+  .s {
+    margin-top: 5px;
+    border: 3px solid gray;
+    background-color: white !important;
+  }
+
+  .daminimg {
+    text-align: center;
+    img {
+      height: 100px;
+    }
+  }
+
+  .formdiv {
+    // border: 1px solid gray;
+    width: 90%;
+    margin: auto;
+    ion-input {
+      border: 2px solid gray;
+      margin: 5px 0;
+      background-position: 10px;
+      background-repeat: no-repeat;
+      background-size: 10%;
+      .text-input {
+        margin: 10px 5px 10px 20px;
+        width: calc(100% - 8px - 55px);
+        font-size: 20px;
+      }
+    }
+  }
+
+  .nameinput {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-image: url('../assets/imgs/dasdasd.png');
+
+  }
+
+  .telinput {
+    background-image: url('../assets/imgs/dsfsdfd.png');
+  }
+
+  .emailinput {
+    background-image: url('../assets/imgs/sdfsdfsfs.png');
+  }
+
+  .passinput {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: url('../assets/imgs/sdfsfdsfs.png');
+  }
+
+  .signupdiv {
+    margin: 30px auto 0;
+    width: 90%;
+    p {
+      text-align: center;
+      margin: 0;
+      span {
+        color: #ffc928;
+      }
     }
 
-    .daminimg {
-        text-align: center;
-        img {
-            height: 100px;
-        }
+    .button {
+      background: #ffc928;
+      color: #71706e;
+      margin: 10px auto;
+      width: 90%;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 15px;
     }
-
-    .formdiv {
-        // border: 1px solid gray;
-        width: 80%;
-        margin: auto;
-        ion-input {
-            border: 2px solid gray;
-            margin: 5px 0 ;
-            background-position: 10px;
-            background-repeat: no-repeat;
-            background-size: 10%;
-            .text-input {
-                margin: 10px 5px 10px 20px;
-                width: calc(100% - 8px - 55px);
-                font-size: 20px;
-            }
-        }
-    }
-
-    .nameinput {
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        background-image: url('../assets/imgs/dasdasd.png');
-
-    }
-
-    .telinput {
-        background-image: url('../assets/imgs/dsfsdfd.png');
-    }
-
-    .emailinput {
-        background-image: url('../assets/imgs/sdfsdfsfs.png');
-    }
-
-    .passinput {
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        background-image: url('../assets/imgs/sdfsfdsfs.png');
-    }
-
-    .signupdiv {
-        margin: 30px auto 0;
-        width: 90%;
-        p {
-            text-align: center;
-            margin: 0;
-            span{
-                color:#ffc928;
-            }
-        }
-
-        .button {
-            background: #ffc928;
-            color: #71706e;
-            margin: 10px auto;
-            width: 90%;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 15px;
-        }
-    }
+  }
 }

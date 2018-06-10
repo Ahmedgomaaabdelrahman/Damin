@@ -5,6 +5,7 @@ import {Http} from '@angular/http';
 import {WelcomePage} from "../welcome/welcome";
 import {ConfigProvider} from "../../providers/config/config";
 import {SharedDataProvider} from "../../providers/shared-data/shared-data";
+import {HomePage} from "../home/home";
 
 /**
  * Generated class for the LoginPage page.
@@ -32,7 +33,7 @@ export class LoginPage {
   login() {
     this.shared.autoHide(500)
     this.errorMessage = '';
-    this.http.post(this.config.url + 'processLogin', this.formData).map(res => res.json()).subscribe(data => {
+    this.http.post(this.config.url + 'api/processLogin', this.formData).map(res => res.json()).subscribe(data => {
       if (data.success == 1) {
         console.log(data)
         console.log(data.data[0]);
@@ -40,7 +41,7 @@ export class LoginPage {
 
         this.shared.customerData.customers_password = this.formData.customers_password;
 
-        this.navCtrl.setRoot(WelcomePage)
+        this.navCtrl.setRoot(HomePage)
       }
       if (data.success == 0) {
         this.errorMessage = data.message;

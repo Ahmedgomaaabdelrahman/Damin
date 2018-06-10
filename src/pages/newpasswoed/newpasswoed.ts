@@ -54,5 +54,8 @@ export class NewpasswoedPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewpasswoedPage');
   }
+  back() {
+    this.navCtrl.pop();
+  }
 
 }

@@ -28,6 +28,10 @@ import { ConfigProvider } from '../providers/config/config';
 import { SharedDataProvider } from '../providers/shared-data/shared-data';
 import {HttpModule} from "@angular/http";
 import {IonicStorageModule} from "@ionic/storage";
+import {Camera} from "@ionic-native/camera";
+import {Transfer} from "@ionic-native/transfer";
+import {FilePath} from "@ionic-native/file-path";
+import {File} from "@ionic-native/file";
 
 @NgModule({
   declarations: [
@@ -55,7 +59,10 @@ import {IonicStorageModule} from "@ionic/storage";
     BrowserModule,
     HttpModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{
+      scrollPadding: false,
+      scrollAssist: false
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -84,7 +91,11 @@ import {IonicStorageModule} from "@ionic/storage";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ConfigProvider,
-    SharedDataProvider
+    SharedDataProvider,
+    Camera,
+    File,
+    Transfer,
+    FilePath,
   ]
 })
 export class AppModule {}

@@ -24,15 +24,26 @@
   </div>
 
   <form class="formdiv" #loginForm="ngForm" (ngSubmit)="rePassword()">
-    <ion-input class="emailinput" placeholder="كلمة المرور الجديدة" type="password" name="password"
-               [(ngModel)]="formData.password" required></ion-input>
-    <ion-input class="passinput" placeholder=" تاكيد كلمة المرور" type="password" name="rePassword"
-               [(ngModel)]="formData.rePassword" required></ion-input>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-input class="emailinput" placeholder="كلمة المرور الجديدة" type="password" name="password"
+                       [(ngModel)]="formData.password" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input class="passinput" placeholder=" تاكيد كلمة المرور" type="password" name="rePassword"
+                       [(ngModel)]="formData.rePassword" required></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
     <label class="error" *ngIf="errorMessage!=''">
       <span>{{errorMessage}}</span>
     </label>
     <div class="signupdiv">
-      <button ion-button block class="signup"  type="submit" [disabled]="!loginForm.form.valid">تاكيد</button>
+      <button ion-button block class="signup" type="submit" [disabled]="!loginForm.form.valid">تاكيد</button>
     </div>
   </form>
 </ion-content>

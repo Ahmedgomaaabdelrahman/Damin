@@ -26,15 +26,28 @@
   </div>
 
   <form #loginForm="ngForm" (ngSubmit)="login()" class="formdiv">
-    <ion-input class="emailinput" placeholder="البريد الالكترونى" type="email" name="email" [(ngModel)]="formData.customers_email_address"
-               required></ion-input>
-    <ion-input class="passinput" placeholder="الرقم السرى" type="password" name="password" [(ngModel)]="formData.customers_password"
-               required></ion-input>
-    <label class="error" *ngIf="errorMessage!=''">
-      <span>{{errorMessage}}</span>
-    </label>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <ion-input class="emailinput" placeholder="البريد الالكترونى" type="email" name="email"
+                       [(ngModel)]="formData.customers_email_address"
+                       required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input class="passinput" placeholder="الرقم السرى" type="password" name="password"
+                       [(ngModel)]="formData.customers_password"
+                       required></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col col-12>
+        <label class="error" *ngIf="errorMessage!=''">
+          <span>{{errorMessage}}</span>
+        </label>
+      </ion-col>
+    </ion-row>
     <div class="signupdiv">
-
       <button ion-button block class="signup" [disabled]="!loginForm.form.valid">دخول</button>
       <p (click)=forgetPass()>هل نسيت كلمة المرور</p>
     </div>
