@@ -1,8 +1,16 @@
-import { Component, ViewChild } from '@angular/core';
-import { Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component, ViewChild} from '@angular/core';
+import {MenuController, Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
+import {MyoperationsPage} from './../pages/myoperations/myoperations';
+import {Nav} from 'ionic-angular';
+import {EditprofilePage} from './../pages/editprofile/editprofile';
+import {ProfilePage} from '../pages/profile/profile';
+import {SharedDataProvider} from "../providers/shared-data/shared-data";
+import {Storage} from "@ionic/storage";
+import {HomePage} from "../pages/home/home";
 
+<<<<<<< HEAD
 import { HomePage } from '../pages/home/home';
 import { WelcomePage } from './../pages/welcome/welcome';
 import { MyoperationsPage } from './../pages/myoperations/myoperations';
@@ -13,33 +21,56 @@ import { ProfilePage } from '../pages/profile/profile';
 import { MyratingsPage } from '../pages/myratings/myratings';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { AsksomebodyPage } from './../pages/asksomebody/asksomebody';
+=======
+>>>>>>> db9d8735787756df8c2675a568ef66b76e8419b7
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = WelcomePage;
+  rootPage: any = HomePage;
   @ViewChild(Nav) nav: Nav;
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+
+  constructor(
+    platform: Platform,
+    statusBar: StatusBar,
+    splashScreen: SplashScreen,
+    public shared: SharedDataProvider,
+    private storage: Storage,
+    public menuCtrl: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
+      this.storage.get('customerData').then((val) => {
+        console.log(val);
+        if (val && (Object.keys(val).length === 0) ){
+          this.menuCtrl.enable(false, 'myMenu');
+          console.log('false')
+        }else if (val === null) {
+          this.menuCtrl.enable(false, 'myMenu');
+          console.log('false')
+        } else if (val && (Object.keys(val).length !== 0)) {
+          this.menuCtrl.enable(true, 'myMenu');
+          console.log('true')
+        }
+      });
     });
   }
 
-  openEdit(){ 
+  openEdit() {
     this.nav.push(EditprofilePage);
   }
 
-  openmyData(){
+  openmyData() {
     this.nav.push(ProfilePage);
   }
 
-  openOperations(){
+  openOperations() {
     this.nav.push(MyoperationsPage);
   }
 
+<<<<<<< HEAD
   openRating(){
     this.nav.push(MyratingsPage);
   }
@@ -48,6 +79,13 @@ export class MyApp {
   }
   askForSomeone(){
     this.nav.push(AsksomebodyPage);
+=======
+  //Log Out
+  logOut() {
+    this.menuCtrl.enable(false, 'myMenu');
+    this.shared.logOut();
+    this.nav.setRoot(HomePage)
+>>>>>>> db9d8735787756df8c2675a568ef66b76e8419b7
   }
 }
 
