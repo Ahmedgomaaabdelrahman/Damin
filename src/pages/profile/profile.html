@@ -19,14 +19,14 @@
     <img  (click)="editProfile()"src="assets/imgs/rwerrwree.png">
   </div>
   <div class="profilediv">
-    <img src="assets/imgs/asdxzcx.png">
+    <img src="{{config.url+shared.customerData.customers_picture}}">
   </div>
 
   <div class="itemdiv">
     <p class="itemTitle">الاسم</p>
     <div class="shadowdiv">
       <img src="assets/imgs/123.png">
-      <p>محمد سمير</p>
+      <p>{{shared.customerData.customers_name}}</p>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
     <p  class="itemTitle">البريد الالكترونى</p>
     <div class="shadowdiv">
       <img src="assets/imgs/123123.png">
-      <p>mail@mail.com</p>
+      <p>{{shared.customerData.customers_email_address}}</p>
     </div>
   </div>
 
@@ -42,7 +42,7 @@
     <p  class="itemTitle">رقم الجوال</p>
     <div class="shadowdiv">
       <img src="assets/imgs/23123_1.png">
-      <p>012312434</p>
+      <p>{{shared.customerData.customers_telephone}}</p>
     </div>
   </div>
 </ion-content>

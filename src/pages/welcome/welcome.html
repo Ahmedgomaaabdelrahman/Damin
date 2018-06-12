@@ -10,8 +10,7 @@
     <ion-title>
       <div class="titlediv">
         <p>ضامن</p>
-        <ion-icon  menuToggle style="margin-top: 7px" name='menu'></ion-icon>
-        
+        <ion-icon menuToggle style="margin-top: 7px" name='menu'></ion-icon>
       </div>
     </ion-title>
   </ion-navbar>
@@ -24,14 +23,11 @@
 
   <div class="daminimg">
     <img src="assets/imgs/Asset 3.png">
-    <button *ngIf="shared.customerData.customers_id==null" id="yellowbtn" ion-button block (click)="newAccount()">انشاء حساب جديد</button>
-    <button *ngIf="shared.customerData.customers_id==null" id="whitebtn" ion-button block (click)="myaccont()">حسابى</button>
-  </div>
-  <div class="daminimg">
-    <p class="customer-name">{{shared.customerData.customers_name}}</p>
-
-    <button  style="background-color: white" ion-button block *ngIf="shared.customerData.customers_id!=null"  (click)="logOut()">خروج</button>
-
+    <button *ngIf="shared.customerData.customers_id==null" id="yellowbtn" ion-button block (click)="newAccount()">انشاء
+      حساب جديد
+    </button>
+    <button *ngIf="shared.customerData.customers_id==null" id="whitebtn" ion-button block (click)="myaccont()">حسابى
+    </button>
   </div>
   <div class="delvery">
     <div class="subdiv">

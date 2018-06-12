@@ -1,14 +1,66 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title text-center>
+      ضامن
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only menuToggle disabled>
+        <ion-icon hidden name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content no-padding>
+  <ion-grid>
+
+    <ion-row >
+      <ion-col>
+        <div class="logo">
+          <img class="image" src="assets/imgs/Asset 3.png"/>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row >
+      <ion-col col-4 text-center style="margin-top: 40px;">
+        <button mode="ios"  round ion-button>
+          <ion-icon class="sales" name="ios-briefcase"></ion-icon>
+        </button>
+        <span>سلع ومشتريات</span>
+      </ion-col>
+      <ion-col col-4 text-center style="margin-top: 0px;">
+        <button mode="ios"  round ion-button>
+          <ion-icon class="delivery" name="ios-briefcase"></ion-icon>
+        </button>
+        <span>توصيل طلبات</span>
+      </ion-col>
+      <ion-col col-4 text-center style="margin-top: 40px;margin-right: -1px;">
+        <button mode="ios"  round ion-button>
+          <ion-icon class="comment" name="ios-briefcase"></ion-icon>
+        </button>
+        <span>تعقيب وتنازل</span>
+      </ion-col>
+      <ion-col col-6 text-center style="margin-top: 5px;margin-left: 15px">
+        <button mode="ios"  round ion-button>
+          <ion-icon class="party" name="ios-briefcase"></ion-icon>
+        </button>
+        <span>طرف اول طرف ثانى</span>
+      </ion-col>
+      <ion-col col-4 text-center style="margin-top: 5px">
+        <button mode="ios"  round ion-button>
+          <ion-icon class="sponsorship" name="ios-briefcase"></ion-icon>
+        </button>
+        <span>عمليات نقل كفالة</span>
+      </ion-col>
+      <ion-col col-12 text-center>
+        <button *ngIf="shared.customerData.customers_id==null" (click)="newAccount()" class="signUp" color="primary" mode="md"  block ion-button large>إنشاء حساب جديد</button>
+        <button *ngIf="shared.customerData.customers_id==null" (click)="myaccont()" class="myAccount" color="light" mode="md"  block ion-button large>حسابي</button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
 </ion-content>

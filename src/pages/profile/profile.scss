@@ -8,7 +8,7 @@ page-profile {
     }
  }
 
- 
+
  .profilediv {
     margin: auto;
     width: 35%;
@@ -22,7 +22,7 @@ page-profile {
      }
     .shadowdiv {
         display: flex;
-        height: 55px;
+        height: 50px;
         box-shadow: 1px 1px 1px 1px lightgrey;
         width: 95%;
         margin: auto;
@@ -34,10 +34,10 @@ page-profile {
             width: 20px;
         }
         p{
-            margin: -5px 5px;
-            font-size: 30px;
+          font-size: 20px;
+          margin: -4px;
         }
     }
  }
- 
+
 }

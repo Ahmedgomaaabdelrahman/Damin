@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,67 +14,83 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 yellowheader {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
 }
 
 .contentdiv {
-    margin-top: 90px;
+  margin-top: 90px;
 }
 
-@font-face{
-    font-family: Basefont;
-    src: url('../assets/fonts/Crimson-Roman.ttf') ;
+@font-face {
+  font-family: Basefont;
+  src: url('../assets/fonts/Crimson-Roman.ttf') ;
+}
+
+.toolbar-title-ios {
+  font-family: Basefont !important;
+  font-size: 2em;
+  color: #706E6F;
+}
+
+.toolbar-title-md {
+  font-family: Basefont !important;
+  font-size: 2em;
+  color: #706E6F;
 }
 
 * {
-    direction: rtl;
-    font-family: Basefont;
+  direction: rtl;
+  font-family: Basefont;
 }
 
 .menutop {
-    ion-icon {
-        font-size: 45px;
-        margin: 15px;
-        color: orange
-    }
+  ion-icon {
+    font-size: 45px;
+    margin: 15px;
+    color: orange
+  }
 }
+
 .menuitem {
-    display: flex;
-    width: 90%;
-    margin: 15px auto;
-    img {
-        height: 25px;
-        flex: 0;
-    }
-    p{
-        margin: 0px 15px;
-        font-size: 23px;
-        flex: 3;
-    }
+  display: flex;
+  width: 90%;
+  margin: 15px auto;
+  img {
+    height: 25px;
+    flex: 0;
+  }
+  p {
+    margin: 0px 15px;
+    font-size: 23px;
+    flex: 3;
+  }
 }
 
-.toolbar-background-md , .toolbar-background-ios {
-    background: #ffc928;
+.toolbar-background-md, .toolbar-background-ios {
+  background: #ffc928;
 
 }
+
 .toolbar-ios ion-title {
-    padding: 0 10px 1px !important;
+  padding: 0 10px 1px !important;
 
 }
 
 .toolbar-ios {
-    min-height: 60px !important;
+  min-height: 60px !important;
 }
 
 .ios .s {
-    margin-top: 5px;
+  margin-top: 5px;
 }
+
 .button-ios.activated {
-    background-color: white;
+  background-color: white;
 }
+
 .error {
   color: color($colors, danger);
   text-align: center;
@@ -83,57 +98,58 @@ yellowheader {
   margin: 5px auto;
 }
 
-
-.list-ios > .item-block:first-child  ,.list-ios > .item-block:last-child, .list-ios {
-    border: none;
+.list-ios > .item-block:first-child, .list-ios > .item-block:last-child, .list-ios {
+  border: none;
 }
-.item-radio-checked.item-ios ion-label  ,  .item-radio-checked.item-md ion-label {
-    color:black;
+
+.item-radio-checked.item-ios ion-label, .item-radio-checked.item-md ion-label {
+  color: black;
 }
 
 .list-ios {
-    margin: 0;
+  margin: 0;
 }
 
-.radio-ios .radio-icon , .radio-md .radio-icon {
-    position: relative;
-    display: block;
-    width: 16px;
-    height: 21px;
-    border: 1px solid orange;
-    padding: 9px;
-    border-radius: 50%;
+.radio-ios .radio-icon, .radio-md .radio-icon {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 21px;
+  border: 1px solid orange;
+  padding: 9px;
+  border-radius: 50%;
 }
 
-.radio-icon .radio-checked  , .radio-icon .radio-checked {
-    position: relative;
-    display: block;
-    width: 16px;
-    height: 21px;
-    border: 1px solid orange; 
-    padding: 9px;
-    border-radius: 50%;
+.radio-icon .radio-checked, .radio-icon .radio-checked {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 21px;
+  border: 1px solid orange;
+  padding: 9px;
+  border-radius: 50%;
 }
+
 .radio-ios .radio-checked .radio-inner {
-    border-color: orange;
+  border-color: orange;
 }
 
 .item-ios.item-block .item-inner {
-    border: none;
+  border: none;
 }
 
 .item-md .radio-md {
-    position: static;
-    display: block;
-    margin: 9px 10px 9px 15px;
+  position: static;
+  display: block;
+  margin: 9px 10px 9px 15px;
 }
 
 .radio-md .radio-inner {
-    left: 2px;
-    top: 2px;
-    border-radius: 50%;
-    position: absolute;
-    width: 14px;
-    height: 15px;
-    background-color: orange;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  position: absolute;
+  width: 14px;
+  height: 15px;
+  background-color: orange;
 }
