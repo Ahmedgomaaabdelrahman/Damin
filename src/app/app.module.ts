@@ -28,6 +28,9 @@ import { ConfigProvider } from '../providers/config/config';
 import { SharedDataProvider } from '../providers/shared-data/shared-data';
 import {HttpModule} from "@angular/http";
 import {IonicStorageModule} from "@ionic/storage";
+import { MyratingsPage } from '../pages/myratings/myratings';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { AsksomebodyPage } from '../pages/asksomebody/asksomebody';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,10 @@ import {IonicStorageModule} from "@ionic/storage";
     OperationstatusPage,
     OperationdetailsPage,
     YellowheaderComponent,
-    ChatPage
+    ChatPage,
+    MyratingsPage,
+    NotificationsPage,
+    AsksomebodyPage
   ],
   imports: [
     BrowserModule,
@@ -72,12 +78,15 @@ import {IonicStorageModule} from "@ionic/storage";
     CreateoperationPage,
     EditprofilePage,
     MessagesPage,
-    NewchatPage,
+    NewchatPage, 
     ProfilePage,
     OperationstatusPage,
     OperationdetailsPage,
     YellowheaderComponent,
-    ChatPage
+    ChatPage,
+    MyratingsPage,
+    NotificationsPage,
+    AsksomebodyPage
   ],
   providers: [
     StatusBar,

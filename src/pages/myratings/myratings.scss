@@ -1,0 +1,41 @@
+page-myratings {
+.containerdiv {
+    border-bottom: 2px solid lightgray;
+    padding: 15px 20px;
+    margin: 10px 0;
+    .ratediv {
+        display: flex;
+        .imgdiv {
+            img{
+                height: 40px;
+                margin: -15px 5px;
+            }
+        }
+        .namediv {
+            p{
+                margin: 0;
+                font-size: 20px;
+            }
+           
+            .starsdiv {
+                display: flex;
+                ion-icon[name="star"]{
+                    color: orange;
+                    font-size: 10px;
+                }
+
+                p{
+                    margin: 0 5px !important;
+                    font-size: 14px !important;
+                }
+            }
+        }
+
+        
+    }
+    .ratetext {
+        margin: 10px 45px 10px 0px;
+        font-size: 15px;
+    }
+}
+}

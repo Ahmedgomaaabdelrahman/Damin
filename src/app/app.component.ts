@@ -10,6 +10,9 @@ import { ChatPage } from '../pages/chat/chat';
 import { NavController, Nav, MenuController} from 'ionic-angular';
 import { EditprofilePage } from './../pages/editprofile/editprofile';
 import { ProfilePage } from '../pages/profile/profile';
+import { MyratingsPage } from '../pages/myratings/myratings';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { AsksomebodyPage } from './../pages/asksomebody/asksomebody';
 @Component({
   templateUrl: 'app.html'
 })
@@ -35,6 +38,16 @@ export class MyApp {
 
   openOperations(){
     this.nav.push(MyoperationsPage);
+  }
+
+  openRating(){
+    this.nav.push(MyratingsPage);
+  }
+  openNotification(){
+    this.nav.push(NotificationsPage);
+  }
+  askForSomeone(){
+    this.nav.push(AsksomebodyPage);
   }
 }
 
