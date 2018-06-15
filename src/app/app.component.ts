@@ -9,20 +9,10 @@ import {ProfilePage} from '../pages/profile/profile';
 import {SharedDataProvider} from "../providers/shared-data/shared-data";
 import {Storage} from "@ionic/storage";
 import {HomePage} from "../pages/home/home";
-
-<<<<<<< HEAD
-import { HomePage } from '../pages/home/home';
-import { WelcomePage } from './../pages/welcome/welcome';
-import { MyoperationsPage } from './../pages/myoperations/myoperations';
-import { ChatPage } from '../pages/chat/chat';
-import { NavController, Nav, MenuController} from 'ionic-angular';
-import { EditprofilePage } from './../pages/editprofile/editprofile';
-import { ProfilePage } from '../pages/profile/profile';
 import { MyratingsPage } from '../pages/myratings/myratings';
 import { NotificationsPage } from '../pages/notifications/notifications';
-import { AsksomebodyPage } from './../pages/asksomebody/asksomebody';
-=======
->>>>>>> db9d8735787756df8c2675a568ef66b76e8419b7
+import { AsksomebodyPage } from '../pages/asksomebody/asksomebody';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -70,7 +60,6 @@ export class MyApp {
     this.nav.push(MyoperationsPage);
   }
 
-<<<<<<< HEAD
   openRating(){
     this.nav.push(MyratingsPage);
   }
@@ -79,13 +68,12 @@ export class MyApp {
   }
   askForSomeone(){
     this.nav.push(AsksomebodyPage);
-=======
+  }
   //Log Out
   logOut() {
     this.menuCtrl.enable(false, 'myMenu');
     this.shared.logOut();
     this.nav.setRoot(HomePage)
->>>>>>> db9d8735787756df8c2675a568ef66b76e8419b7
   }
 }
 
