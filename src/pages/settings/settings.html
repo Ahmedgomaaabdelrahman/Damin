@@ -1,0 +1,66 @@
+<!--
+  Generated template for the SettingsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <yellowheader name='الاعدادات'></yellowheader>
+</ion-header>
+
+
+<ion-content>
+    <div class="contentdiv">
+      <div class="settingItem" (click)="addBankAccount()">
+        <img src="assets/imgs/vcvcvcv.png">
+        <p>اضافة حساب بنكى</p>
+      </div>
+
+      <div class="settingItem" (click)="goBankDetails()">
+          <img src="assets/imgs/dasdsds.png">
+          <p>تفاصيل بنك ضامن</p>
+      </div>
+
+      <div class="settingItem">
+          <img src="assets/imgs/sdddddad.png">
+          <p>عن ضامن</p>
+      </div>
+
+
+      <div class="settingItem" (click)="contactUs()">
+          <img src="assets/imgs/cvcvcvc.png">
+          <p>تواصل معنا</p>
+      </div>
+
+      <div class="settingItem">
+          <img src="assets/imgs/asdasdas.png">
+          <p>الاحكام والشروط</p>
+      </div>
+
+      <div class="settingItem">
+          <img src="assets/imgs/czxcxzc.png">
+          <p>مشاركة تطبيق ضامن</p>
+      </div>
+
+      <div class="settingItem">
+          <img src="assets/imgs/xczxcxzc.png">
+          <p>تغيير اللغة</p>
+      </div>
+
+      <div class="detailsdiv">
+          <div class="choses">
+              <ion-list radio-group [(ngModel)]="type">
+                  <ion-item>
+                      <ion-label>العربية</ion-label>
+                      <ion-radio value="b" selected></ion-radio>
+                    </ion-item>
+                  <ion-item>
+                    <ion-label>الانجليزية</ion-label>
+                    <ion-radio value="a"></ion-radio>
+                  </ion-item>
+                
+                </ion-list>
+          </div>
+      </div>
+    </div>
+</ion-content>

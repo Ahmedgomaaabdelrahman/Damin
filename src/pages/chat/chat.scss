@@ -1,3 +1,33 @@
 page-chat {
+.messagedate {
+    text-align: center;
+    margin: 0;
+}
+.leftMessage {
+    text-align: center;
+    float: left;
+    margin: auto;
+    width: 85%;
+   .message{
+        margin: 0;
+        border: 1px solid #ffc928;
+        padding: 10px;
+        width: auto;
+        font-size: 20px;
+   }
+   .messageTime {
+        font-size: 10px;
+        color: gray;       
+        margin: 0;
+   }
+}
 
+.rightMessage {
+    .message{
+
+    }
+    .messageTime {
+ 
+    }
+}
 }

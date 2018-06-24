@@ -12,6 +12,10 @@ import {HomePage} from "../pages/home/home";
 import { MyratingsPage } from '../pages/myratings/myratings';
 import { NotificationsPage } from '../pages/notifications/notifications';
 import { AsksomebodyPage } from '../pages/asksomebody/asksomebody';
+import { BalancePage } from '../pages/balance/balance';
+import { SettingsPage } from './../pages/settings/settings';
+import { MessagesPage } from './../pages/messages/messages';
+import { BankaccountsPage } from './../pages/bankaccounts/bankaccounts';
 
 @Component({
   templateUrl: 'app.html'
@@ -69,11 +73,22 @@ export class MyApp {
   askForSomeone(){
     this.nav.push(AsksomebodyPage);
   }
+  openBalance(){ 
+    this.nav.push(BalancePage);
+  }
+  
+  openSettings() {
+    this.nav.push(SettingsPage);
+  } 
+  openMessages() {
+    this.nav.push(MessagesPage);
+  }
+ 
   //Log Out
   logOut() {
     this.menuCtrl.enable(false, 'myMenu');
     this.shared.logOut();
-    this.nav.setRoot(HomePage)
+    this.nav.setRoot(HomePage) 
   }
 }
 

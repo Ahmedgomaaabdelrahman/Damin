@@ -29,14 +29,25 @@ page-operationstatus {
     .orangep {
         text-align: center;
         background: #ffc928;
-        margin: 0 5px;
+        margin: 0 5px; 
         padding: 5px 0;
         border-radius: 15px;
         font-size: 13px;
         color: white
     }
-}
-
+} 
+//  .operationcont::after {
+//     content: '';
+//     position: absolute;
+//     height: 25px;
+//     width: 25px;
+//     border: 1px solid #017C9A;
+//     background-size: cover;
+//     top: 15px;
+//     border-radius: 50%;
+//     z-index: 1;
+//     right: -65px; 
+// }
 .ptitle {
     font-size: 25px;
 }
@@ -57,4 +68,7 @@ page-operationstatus {
 .infostats {
     padding:5px 50px;
 }
+
+
+
 }

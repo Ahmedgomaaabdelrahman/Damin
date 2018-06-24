@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NotifyOperationPage } from './../notify-operation/notify-operation';
 
 /**
  * Generated class for the NotificationsPage page.
@@ -21,4 +22,7 @@ export class NotificationsPage {
     console.log('ionViewDidLoad NotificationsPage');
   }
 
+  openNotify(){
+    this.navCtrl.push(NotifyOperationPage);
+  }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ChatPage } from '../chat/chat';
 
 /**
  * Generated class for the MessagesPage page.
@@ -22,4 +23,7 @@ export class MessagesPage {
     console.log('ionViewDidLoad MessagesPage');
   }
 
+  openChatDetails(){ 
+    this.navCtrl.push(ChatPage); 
+  }
 }
