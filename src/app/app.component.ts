@@ -9,6 +9,13 @@ import {ProfilePage} from '../pages/profile/profile';
 import {SharedDataProvider} from "../providers/shared-data/shared-data";
 import {Storage} from "@ionic/storage";
 import {HomePage} from "../pages/home/home";
+import { MyratingsPage } from '../pages/myratings/myratings';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { AsksomebodyPage } from '../pages/asksomebody/asksomebody';
+import { BalancePage } from '../pages/balance/balance';
+import { SettingsPage } from './../pages/settings/settings';
+import { MessagesPage } from './../pages/messages/messages';
+import { BankaccountsPage } from './../pages/bankaccounts/bankaccounts';
 
 @Component({
   templateUrl: 'app.html'
@@ -57,11 +64,31 @@ export class MyApp {
     this.nav.push(MyoperationsPage);
   }
 
+  openRating(){
+    this.nav.push(MyratingsPage);
+  }
+  openNotification(){
+    this.nav.push(NotificationsPage);
+  }
+  askForSomeone(){
+    this.nav.push(AsksomebodyPage);
+  }
+  openBalance(){ 
+    this.nav.push(BalancePage);
+  }
+  
+  openSettings() {
+    this.nav.push(SettingsPage);
+  } 
+  openMessages() {
+    this.nav.push(MessagesPage);
+  }
+ 
   //Log Out
   logOut() {
     this.menuCtrl.enable(false, 'myMenu');
     this.shared.logOut();
-    this.nav.setRoot(HomePage)
+    this.nav.setRoot(HomePage) 
   }
 }
 

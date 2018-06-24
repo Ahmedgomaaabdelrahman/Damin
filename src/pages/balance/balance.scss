@@ -1,0 +1,31 @@
+page-balance {
+.balanceImg {
+    text-align: center;
+    img {
+        height: 200px;
+    } 
+
+    p{
+        font-size: 25px;
+    }
+    
+}
+
+.textpar {
+    margin: 10px;
+    font-size: 25px;
+    span {
+        color : #ffc928;
+    }
+}
+
+.confirm {
+    background: #ffc928;
+    width: 75%;
+    color: white;
+    border-radius: 35px;
+    margin: 100px auto;
+    height: 50px;
+    font-size: 25px;
+}
+}

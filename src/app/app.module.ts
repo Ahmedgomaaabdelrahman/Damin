@@ -32,6 +32,20 @@ import {Camera} from "@ionic-native/camera";
 import {Transfer} from "@ionic-native/transfer";
 import {FilePath} from "@ionic-native/file-path";
 import {File} from "@ionic-native/file";
+import { MyratingsPage } from '../pages/myratings/myratings';
+import { NotificationsPage } from '../pages/notifications/notifications';
+import { AsksomebodyPage } from '../pages/asksomebody/asksomebody';
+import { BalancePage } from '../pages/balance/balance';
+import { AddBalancePage } from '../pages/add-balance/add-balance';
+import { SettingsPage } from '../pages/settings/settings';
+import { ContactusPage } from '../pages/contactus/contactus';
+import { DamindetailsPage } from '../pages/damindetails/damindetails';
+import { BankaccountsPage } from '../pages/bankaccounts/bankaccounts';
+import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
+import { NotifyOperationPage } from '../pages/notify-operation/notify-operation';
+import { AcceptoperationPage } from '../pages/acceptoperation/acceptoperation';
+import { BanktransferPage } from '../pages/banktransfer/banktransfer';
+
 
 @NgModule({
   declarations: [
@@ -53,12 +67,26 @@ import {File} from "@ionic-native/file";
     OperationstatusPage,
     OperationdetailsPage,
     YellowheaderComponent,
-    ChatPage
+    ChatPage,
+    MyratingsPage,
+    NotificationsPage,
+    AsksomebodyPage,
+    BalancePage,
+    AddBalancePage,
+    SettingsPage,
+    ContactusPage,
+    DamindetailsPage,
+    BankaccountsPage,
+    AddbankaccountPage,
+    NotifyOperationPage,
+    AcceptoperationPage,
+    BanktransferPage
   ],
   imports: [
-    BrowserModule,
+ 
+BrowserModule,
     HttpModule,
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot(), 
     IonicModule.forRoot(MyApp,{
       scrollPadding: false,
       scrollAssist: false
@@ -82,9 +110,22 @@ import {File} from "@ionic-native/file";
     NewchatPage,
     ProfilePage,
     OperationstatusPage,
-    OperationdetailsPage,
+    OperationdetailsPage, 
     YellowheaderComponent,
-    ChatPage
+    ChatPage,
+    MyratingsPage,
+    NotificationsPage,
+    AsksomebodyPage,
+    BalancePage,
+    AddBalancePage,
+    SettingsPage,
+    ContactusPage,
+    DamindetailsPage,
+    BankaccountsPage,
+    AddbankaccountPage,
+    NotifyOperationPage,
+    AcceptoperationPage,
+    BanktransferPage
   ],
   providers: [
     StatusBar,

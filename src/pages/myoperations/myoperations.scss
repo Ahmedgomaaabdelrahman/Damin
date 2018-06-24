@@ -10,7 +10,7 @@ page-myoperations {
         width: 120px;
     }
     ion-icon[name = 'star']{
-        color: orange
+        color: #ffc928
     }
     p{
         font-size: 25px;
@@ -42,7 +42,7 @@ page-myoperations {
         margin:5px 0
     }
     span{
-        color: orange
+        color: #ffc928
     }
     .orangep {
         text-align: center;
@@ -51,27 +51,28 @@ page-myoperations {
         padding: 5px 0;
         border-radius: 15px;
         font-size: 13px;
-        color: white
+        color: white;
+        height: 25px;
     }
 }
 
 .addnew{
-    width: 13%;
+    width: 45px;
     margin: auto;
     text-align: center;
-    height: 50px;
+    height: 45px;
     background-color: #ffc928;
-    font-size: 35px;
+    font-size: 25px;
     color: white;
     border-radius: 50%;
-    line-height: 63px;
+    line-height: 55px;
     position: fixed;
     bottom: 10px;
     right: 44%;
 
     img {
-        height: 35px;
-        width: 35px;
+        height: 30px;
+        width: 30px;
         border-radius: 50%;
         margin-top: 7px;
     }
@@ -79,15 +80,27 @@ page-myoperations {
 
 .choses{
     position: fixed;
-    width: 76%;
-    margin: 0 12%;
+    width: 70%;
+    margin: 0 15%;
     bottom: 50px;
     background: #f1f1f1;
     border-radius: 20px;
     .item {
         background: transparent;
         padding: 0;
-        font-size: 25px;
+        font-size: 18px;
+        height: 50px;
+        .label{
+            display:inline-flex;
+            img{
+                height: 30px;
+                margin:5px;
+            }
+            span{
+                margin-top: 10px;
+
+            }
+        }
     }
 }
 
@@ -98,7 +111,20 @@ page-myoperations {
 .list-ios {
     margin: 0;
 }
-
+.select {
+    display: inline-flex;
+    padding: 10px;
+}
+.select-text {
+    color: #ffc928;
+}
+.item-cover {
+    display: none
+}
+.select-md .select-icon , .select-ios .select-icon {
+    position: relative;
+    width: 20px; 
+}
 .radio-ios .radio-icon , .radio-md .radio-icon {
     position: relative;
     display: block;

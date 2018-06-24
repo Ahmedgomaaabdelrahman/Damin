@@ -1,0 +1,58 @@
+page-contactus {
+    .inputitem {
+        height: 50px;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+        width: 95%;
+        margin: 10px auto;
+        border-radius: 20px;
+        padding-top: 5px;
+        background: #fbfbfb;
+        background-position: 95%;
+        background-repeat: no-repeat;
+        background-size: 6%;
+        ::placeholder {
+          color: black;
+          padding: 0 5px;
+        }
+      }
+    
+      .text-input {
+        color: black;
+        font-size: 18px;
+        margin: 8px 50px;
+        padding: 0 5px;
+        width: calc(100% - 8px - 100px);
+    
+      }
+      .nameinput {
+        background-image: url('../assets/imgs/bggfgb.png');
+      }
+
+      .emailinput {
+        background-image: url('../assets/imgs/As222set 2.png');
+      }
+      .list-ios .item-block .item-inner ,
+      .list-md .item-block .item-inner {
+         border-bottom: 0 !important;
+      }
+
+      .item-input ion-textarea {
+        position: static;
+        height: 200px;
+        width: 90%;
+        margin: 25px auto;
+        border-radius: 10px;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+        background: #fbfbfb;
+        ::placeholder {
+            color: black;
+            padding: 0 5px;
+          }
+        .text-input {
+            height: 90%;
+            margin: 10px;
+            width: 90%;
+            
+        }
+    }
+}

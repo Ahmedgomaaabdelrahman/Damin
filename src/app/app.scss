@@ -21,7 +21,7 @@ yellowheader {
 }
 
 .contentdiv {
-  margin-top: 90px;
+  margin-top: 75px;
 }
 
 @font-face {
@@ -88,7 +88,7 @@ yellowheader {
 }
 
 .button-ios.activated {
-  background-color: white;
+  background-color: #ffc928;
 }
 
 .error {
@@ -152,4 +152,8 @@ yellowheader {
   width: 14px;
   height: 15px;
   background-color: orange;
+}
+.alert-md .alert-radio-icon {
+  left: -5px !important;
+
 }
