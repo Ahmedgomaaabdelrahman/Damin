@@ -45,6 +45,7 @@ import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
 import { NotifyOperationPage } from '../pages/notify-operation/notify-operation';
 import { AcceptoperationPage } from '../pages/acceptoperation/acceptoperation';
 import { BanktransferPage } from '../pages/banktransfer/banktransfer';
+import { EditoperationPage } from '../pages/editoperation/editoperation';
 
 
 @NgModule({
@@ -80,10 +81,12 @@ import { BanktransferPage } from '../pages/banktransfer/banktransfer';
     AddbankaccountPage,
     NotifyOperationPage,
     AcceptoperationPage,
-    BanktransferPage
+    BanktransferPage,
+    EditoperationPage
   ],
   imports: [
  
+
 BrowserModule,
     HttpModule,
     IonicStorageModule.forRoot(), 
@@ -125,7 +128,8 @@ BrowserModule,
     AddbankaccountPage,
     NotifyOperationPage,
     AcceptoperationPage,
-    BanktransferPage
+    BanktransferPage,
+    EditoperationPage
   ],
   providers: [
     StatusBar,

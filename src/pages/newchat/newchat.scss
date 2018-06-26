@@ -1,3 +1,42 @@
 page-newchat {
+.searchdiv {
+    background-color: #ffc928;
 
+   
+
+    .searchbar .searchbar-input {
+        border-radius: 15px;
+    }
+}
+
+.persondiv {
+    display:flex;
+    border-bottom: 1px solid gray;
+    img {
+        height: 50px;
+        margin: 10px;
+    }
+    div{
+        width: 100%;
+    }
+    p {
+        width: 100%;
+        span{
+            float: left;
+            font-size: 12px;
+            color: gray;
+            margin: 0 20px;
+        }
+    }
+    .name{
+        font-size: 20px;
+        margin: 20px 0 5px;
+    }
+    .message{
+        margin: 5px 0;
+        color: gray;
+    }
+
+
+}
 }

@@ -7,4 +7,55 @@ page-acceptoperation {
         width: 150px;
     }
 }
+.textdiv {
+    text-align: center;
+    margin: 30px 30px;
+    font-size: 25px;
+}
+.item-cover {
+    display:none;
+}
+
+.bottomtext{
+    font-size: 18px;
+    width: 90%;
+    margin: 20px auto;
+    text-align:center
+}
+
+.select {
+    display: inline-flex;
+    padding: 10px;
+}
+.select-text {
+    color: #ffc928;
+}
+.item-cover {
+    display: none
+}
+.select-md .select-icon , .select-ios .select-icon {
+    position: relative;
+    width: 20px; 
+} 
+
+.btndiv {
+        display: flex;
+        background-color: #ffc928;
+        margin: auto;
+        width: 180px;
+        padding: 5px;
+        border-radius: 20px;
+        text-align: center; 
+        img {
+            height: 30px;
+            margin: 0 5px;
+        }
+        p{
+            margin: 3px 0 0;
+            font-size: 20px;
+            text-align: center;
+            color: white;
+        }
+    
+}
 }

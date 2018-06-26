@@ -1,3 +1,64 @@
 page-editoperation {
+    yellowheader .contdiv .backbtn {
+        flex: 1;
+    }
 
+    yellowheader .contdiv .imgdiv {
+        flex: 1;
+    }
+    yellowheader .contdiv div {
+        flex: 5
+    }
+
+    .secdiv {
+        margin: 0 20px 0;
+    }
+    
+    .headlinediv{
+        display: flex;
+        img {
+            height: 25px;
+            margin-top: 5px;
+        }
+    
+        p{
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color:#ffc928;
+    
+        }
+    }
+    
+    .detailsdiv {
+        margin: 0 30px 0;
+        font-size: 16px;
+    
+        p{
+            margin: 0;
+            font-size:18px;
+        }
+    }
+    
+    .contractext {
+        padding-bottom: 20px;
+        border-radius: 20px;
+        width: 100%;
+        padding: 10px;
+        box-shadow: 2px 2px 10px 1px lightgrey;
+        background: #f5f2f2;
+    }
+    .item.item-textarea {
+        height: 200px;
+    }
+    
+    .overlay {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .2);
+    }
 }

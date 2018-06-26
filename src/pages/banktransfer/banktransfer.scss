@@ -1,3 +1,113 @@
 page-banktransfer {
 
+    .inputitem {
+        height: 50px;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+        width: 95%;
+        margin: 10px auto;
+        border-radius: 20px;
+        padding-top: 5px;
+        background: #fbfbfb;
+        background-position: 95%;
+        background-repeat: no-repeat;
+        background-size: 6%;
+        ::placeholder {
+          color: black;
+          padding: 0 5px;
+        }
+      }
+    
+      .text-input {
+        color: black;
+        font-size: 18px;
+        margin: 8px 50px;
+        padding: 0 5px;
+        width: calc(100% - 8px - 100px);
+    
+      }
+      .mabl3 {
+        background-image: url('../assets/imgs/66666666.png');
+      }
+      .bank {
+        background-image: url('../assets/imgs/5555555.png');
+        width: 100%;
+      }
+      .account {
+        background-image: url('../assets/imgs/444444.png');
+     
+      }
+      .nameinput {
+      
+        background-image: url('../assets/imgs/123.png');
+      }
+      .hewala {
+        background-image: url('../assets/imgs/file (2).png');
+      }
+
+      .inptlabel{
+        font-size: 20px; 
+        margin: 0 30px;
+      }
+
+      .getDiv {
+          display:flex;
+          width: 90%;
+          margin: 20px auto 0;
+          img {
+            height: 30px;
+            margin: 5px 10px;
+          }
+          
+      }
+      .getDoc {
+        background-color: #ffc928;
+        border-radius: 20px;
+        width: 75%;
+        margin: 0 0 30px;
+        color: white;
+        height: 40px;
+        font-size: 25px;
+      }
+      ion-select {
+          max-width: 100%;
+      }
+      .confirm {
+        background-color: #ffc928;
+        width: 90%;
+        margin: 20px auto ; 
+        color: white;
+        height: 50px;
+        font-size: 25px;
+        border-radius: 15px;
+      }
+
+      .select-text {
+        margin: 10px 40px 0;
+      }
+
+      .select-ios .select-icon , .select-md.select-icon {
+        position: relative;
+        width: 12px;
+        height: 35px; 
+    }
+    .item-md.item-block .item-inner {
+        border-bottom: none;
+    }
+
+    .select-md .select-icon  , .select-ios.select-icon {
+        position: relative;
+        width: 12px;
+        height: 40px;
+    }
+
+    yellowheader .contdiv .backbtn {
+        flex: 1;
+    }
+
+    yellowheader .contdiv .imgdiv {
+        flex: 1;
+    }
+    yellowheader .contdiv div {
+        flex: 5
+    }
 }

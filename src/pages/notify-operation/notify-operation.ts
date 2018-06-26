@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AcceptoperationPage } from './../acceptoperation/acceptoperation';
 import { EditoperationPage } from './../editoperation/editoperation';
-
+import { AlertController } from 'ionic-angular';
 /**
  * Generated class for the NotifyOperationPage page.
  *
@@ -16,7 +16,7 @@ import { EditoperationPage } from './../editoperation/editoperation';
 })
 export class NotifyOperationPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -30,5 +30,36 @@ export class NotifyOperationPage {
 
   edit(){
     this.navCtrl.push(EditoperationPage);
+  }
+
+  presentPrompt() {
+    let alert = this.alertCtrl.create({
+      title: 'Login',
+      inputs: [
+        {
+          name: 'username',
+          placeholder: 'Username'
+        },
+        {
+          name: 'password',
+          placeholder: 'Password',
+          type: 'password'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Login',
+      
+        }
+      ]
+    });
+    alert.present();
   }
 }
