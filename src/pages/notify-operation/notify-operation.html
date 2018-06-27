@@ -12,8 +12,24 @@
 
 
 <ion-content>
- 
+   
     <div class="contentdiv">
+        <div class="overlay" *ngIf="refuse">
+            <div class="alertdiv">
+              <div class="imgDiv">
+                  <div class="orangediv">!</div>
+                  <p>رفض الطلب</p>
+              </div>
+              <ion-item class="refuseText">
+                <ion-textarea placeholder="سبب الرفض .."></ion-textarea>
+              </ion-item>
+              <div class="btndiv">
+                <button ion-button block>تاكيد</button>
+                <button ion-button block (click)="refuseOperation()">الغاء</button>
+              </div>
+            </div>
+          </div>
+    
       <div class="secdiv">
         <div class="headlinediv">
           <img src="assets/imgs/fggdfgdfg.png">
@@ -85,7 +101,7 @@
           <p>اعتماد</p>
         </div>
 
-        <div (click)="presentPrompt() ">
+        <div (click)="refuseOperation() ">
           <img src="assets/imgs/cancel (1).png">
           <p>رفض</p>
         </div>

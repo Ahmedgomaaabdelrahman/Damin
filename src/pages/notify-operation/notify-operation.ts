@@ -15,15 +15,18 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'notify-operation.html',
 })
 export class NotifyOperationPage {
-
+  refuse: any ;
   constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad NotifyOperationPage');
+  } 
+
+
+  refuseOperation(){
+    this.refuse = !this.refuse;
   }
-
-
   accept(){
     this.navCtrl.push(AcceptoperationPage);
   }
