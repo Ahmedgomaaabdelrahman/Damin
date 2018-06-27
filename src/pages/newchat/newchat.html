@@ -9,8 +9,7 @@
   <div class="searchdiv">
     <form #loginForm="ngForm" (ngSubmit)="getSearchData()">
       <ion-searchbar [(ngModel)]="search" name="search" placeholder="بحث برقم الجوال"
-                     [showCancelButton]="shouldShowCancel"
-                     (ionInput)="onChangeKeyword($event)">
+                     [showCancelButton]="shouldShowCancel">
       </ion-searchbar>
     </form>
 
