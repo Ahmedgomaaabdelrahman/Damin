@@ -6,34 +6,29 @@
 -->
 <ion-header>
 
- <div class="searchdiv">
-    <ion-searchbar>
-  </ion-searchbar>
- </div>
+  <div class="searchdiv">
+    <form #loginForm="ngForm" (ngSubmit)="getSearchData()">
+      <ion-searchbar [(ngModel)]="search" name="search" placeholder="بحث برقم الجوال"
+                     [showCancelButton]="shouldShowCancel"
+                     (ionInput)="onChangeKeyword($event)">
+      </ion-searchbar>
+    </form>
+
+  </div>
 
 </ion-header>
 
 
-<ion-content >
-    
-        <div class="persondiv">
-            <img src="assets/imgs/hjghjghj.png">
-            <div>
-              <p class="name">
-                  محمد سمير
-                 
-                </p>
-            </div>
-          </div>
-    
-          <div class="persondiv">
-              <img src="assets/imgs/hjghjghj.png">
-              <div>
-                <p class="name">
-                    محمد سمير
-                  </p>
-              </div>
-            </div>
-    
-   
+<ion-content>
+<div *ngFor="let item of searchResult">
+  <div class="persondiv" (click)="openChatDetails(item.customers_message_id,item.customers_name)">
+    <img src="{{config.url+item.customers_picture}}">
+    <div>
+      <p class="name">
+        {{item.customers_name}}
+      </p>
+    </div>
+  </div>
+</div>
+
 </ion-content>

@@ -14,21 +14,21 @@
   <div class="contentdiv">
 
     <!-- لو فى رصيد -->
-    <div class="balanceImg">
+    <div class="balanceImg" *ngIf="success == 1">
       <img src="assets/imgs/dffsdffffffffff.png">
+      <p class="textpar">رصيدك الحالى فى ضامن : <span>{{money.deposit}} ريال </span></p>
+      <p class="textpar">الرصيد المتاح : <span>{{money.subTotal}} ريال </span></p>
+      <p class="textpar">الرصيد المحجوز : <span>{{money.total}} ريال </span></p>
     </div>
-    <p class="textpar">رصيدك الحالى فى ضامن : <span>400 ريال </span></p>
-    <p class="textpar">الرصيد المتاح : <span>300 ريال </span></p>
-    <p class="textpar">الرصيد المحجوز : <span>100 ريال </span></p>
 
 
     <!-- لو مفيش رصيد -->
-    <div class="balanceImg">
-        <img src="assets/imgs/dasdacac.png">
-        <p>لا يوجد رصيد</p>
+    <div class="balanceImg" *ngIf="success == 0">
+      <img src="assets/imgs/dasdacac.png">
+      <p>لا يوجد رصيد</p>
     </div>
 
     <button ion-button block class="confirm" (click)="addBalace()">إشحن رصيدك</button>
   </div>
-  
+
 </ion-content>

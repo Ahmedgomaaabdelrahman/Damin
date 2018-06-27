@@ -27,30 +27,30 @@
 
     <ion-row >
       <ion-col col-4 text-center style="margin-top: 40px;">
-        <button mode="ios"  round ion-button>
+        <button mode="ios"  round ion-button (click)="opennew('1')">
           <ion-icon class="sales" name="ios-briefcase"></ion-icon>
         </button>
         <span>سلع ومشتريات</span>
       </ion-col>
-      <ion-col col-4 text-center style="margin-top: 0px;">
+      <ion-col col-4 text-center style="margin-top: 0px;" (click)="opennew('2')">
         <button mode="ios"  round ion-button>
           <ion-icon class="delivery" name="ios-briefcase"></ion-icon>
         </button>
         <span>توصيل طلبات</span>
       </ion-col>
-      <ion-col col-4 text-center style="margin-top: 40px;margin-right: -1px;">
+      <ion-col col-4 text-center style="margin-top: 40px;margin-right: -1px;" (click)="opennew('3')">
         <button mode="ios"  round ion-button>
           <ion-icon class="comment" name="ios-briefcase"></ion-icon>
         </button>
         <span>تعقيب وتنازل</span>
       </ion-col>
-      <ion-col col-6 text-center style="margin-top: 5px;margin-left: 15px">
+      <ion-col col-6 text-center style="margin-top: 5px;margin-left: 15px" (click)="opennew('5')">
         <button mode="ios"  round ion-button>
           <ion-icon class="party" name="ios-briefcase"></ion-icon>
         </button>
         <span>طرف اول طرف ثانى</span>
       </ion-col>
-      <ion-col col-4 text-center style="margin-top: 5px">
+      <ion-col col-4 text-center style="margin-top: 5px" (click)="opennew('4')">
         <button mode="ios"  round ion-button>
           <ion-icon class="sponsorship" name="ios-briefcase"></ion-icon>
         </button>

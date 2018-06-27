@@ -11,32 +11,30 @@
 
 <ion-content>
   <div class="contentdiv">
-      <form>
-        <p class="inptlabel">الاسم الثلاثى</p>
-        <ion-item>
-            <ion-input class="inputitem nameinput"  type="text" required></ion-input>
-          </ion-item>
+    <form  #loginForm="ngForm" >
+      <p class="inptlabel">الاسم الثلاثى</p>
+      <ion-item>
+        <ion-input class="inputitem nameinput" type="text" required name="customers_name" [(ngModel)]="formBank.customers_name"></ion-input>
+      </ion-item>
 
-        <p class="inptlabel">اسم البنك</p>
-        <ion-item>
-            <ion-select class="inputitem bank" >
-                <ion-option value="3" selected="true">بنك الرياض</ion-option>
-                <ion-option value="4">بنك القاهرة</ion-option>
-                <ion-option value="5">بنك اسكندرية</ion-option>
-            </ion-select>
-          </ion-item>
-              
-        <p class="inptlabel">رقم الحساب</p>
-        <ion-item>
-            <ion-input class="inputitem account"  type="text" required></ion-input>
-          </ion-item>
-                
-        <p class="inptlabel">رقم الايبان</p>
-        <ion-item>
-            <ion-input class="inputitem mabl3"  type="text" required></ion-input>
-          </ion-item> 
+      <p class="inptlabel">اسم البنك</p>
+      <ion-item>
+        <ion-input class="inputitem bank" type="text" required name="bank_name" [(ngModel)]="formBank.bank_name"></ion-input>
+      </ion-item>
 
-          <button ion-button block class="confirm">تاكيد</button>
-      </form>
+      <p class="inptlabel">رقم الحساب</p>
+      <ion-item>
+        <ion-input class="inputitem account" type="number" required name="account_num" [(ngModel)]="formBank.account_num"></ion-input>
+      </ion-item>
+
+      <p class="inptlabel">رقم الايبان</p>
+      <ion-item>
+        <ion-input class="inputitem mabl3" type="number" required name="IBAN" [(ngModel)]="formBank.IBAN"></ion-input>
+      </ion-item>
+
+      <button ion-button block class="confirm"  *ngIf="type!='update'" (click)="addBank()" [disabled]="!loginForm.form.valid">تاكيد</button>
+      <button ion-button block class="confirm" *ngIf="type=='update'" (click)="updateBank()" [disabled]="!loginForm.form.valid">تحديث بياناتك</button>
+
+    </form>
   </div>
 </ion-content>

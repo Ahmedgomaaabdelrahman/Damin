@@ -5,51 +5,29 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <yellowheader name='الرسائل'></yellowheader>
+  <yellowheader name='الرسائل'></yellowheader>
 </ion-header>
 
 
 <ion-content>
-    <div class="contentdiv">
+  <div class="contentdiv">
 
-
-      <div class="persondiv" (click)="openChatDetails()">
-        <img src="assets/imgs/hjghjghj.png">
+    <div *ngFor="let item of messageData">
+      <div class="persondiv" (click)="openChatDetails(item.customers_message_id,item.customers_name)">
+        <img src="{{config.url+item.customers_picture}}">
         <div>
           <p class="name">
-              محمد سمير
-              <span>منذ دقيقتين</span>
-            </p>
-            <p class="message">اهلا احمد كيف حالك ؟</p> 
+            {{item.customers_name}}
+            <span>{{formatDate(item.sentAt)| date:'yyyy/MMMM/d'}}</span>
+          </p>
+          <p class="message"> {{item.message}}</p>
         </div>
       </div>
-
-      <div class="persondiv" (click)="openChatDetails()">
-          <img src="assets/imgs/hjghjghj.png">
-          <div>
-            <p class="name">
-                محمد سمير
-                <span>منذ دقيقتين</span>
-              </p>
-              <p class="message">اهلا احمد كيف حالك ؟</p> 
-          </div>
-        </div>
-
-        <div class="persondiv">
-            <img src="assets/imgs/hjghjghj.png">
-            <div>
-              <p class="name">
-                  محمد سمير
-                  <span>منذ دقيقتين</span>
-                </p>
-                <p class="message">اهلا احمد كيف حالك ؟</p> 
-            </div>
-          </div>
-
-          <div class="newchat" (click)="openNew()">
-            <img src="assets/imgs/">
-          </div>
-
-         
     </div>
+    <div class="newchat" (click)="openNew()">
+      <img src="assets/imgs/message.png">
+    </div>
+
+
+  </div>
 </ion-content>

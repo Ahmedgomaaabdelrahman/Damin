@@ -1,62 +1,63 @@
 page-myoperations {
-.profileimg {
+  .profileimg {
     border-radius: 20px;
     text-align: center;
     margin-top: 25px;
     border-bottom: 4px solid #e8e8e8;
     padding-bottom: 20px;
     img {
-        height:120px;
-        width: 120px;
+      height: 120px;
+      width: 120px;
     }
-    ion-icon[name = 'star']{
-        color: #ffc928
+    ion-icon[name = 'star'] {
+      color: #ffc928
     }
-    p{
-        font-size: 25px;
-        margin: 10px 0;
+    p {
+      font-size: 25px;
+      margin: 10px 0;
     }
-}
+  }
 
-.operationcont {
+  .operationcont {
     display: flex;
     margin: 10px 0;
     border-bottom: 4px solid #e8e8e8;
     padding-bottom: 20px;
     border-radius: 20px;
-    
+
     .operationimg {
-        flex: 1;
-        text-align:center;
-        img{ 
-            height: 70px;
-            margin-top: 15px;
-        }
+      flex: 1;
+      text-align: center;
+      img {
+        height: 70px;
+        margin-top: 15px;
+      }
     }
 
     .operationInfo {
         flex: 5
     }
-    P{
-        flex:1;
-        margin:5px 0
+    P {
+      flex: 1;
+      margin: 3px 0
     }
-    span{
-        color: #ffc928
+    span {
+      color: #ffc928;
+      font-weight: bold;
     }
     .orangep {
-        text-align: center;
-        background: #ffc928;
-        margin: 0 5px;
-        padding: 5px 0;
-        border-radius: 15px;
-        font-size: 13px;
-        color: white;
-        height: 25px;
+      text-align: center;
+      background: #ffc928;
+      margin: 0 5px;
+      padding: 5px 0;
+      border-radius: 15px;
+      font-size: 13px;
+      color: white;
+      height: 25px;
     }
-}
+  }
 
-.addnew{
+  .addnew {
     width: 45px;
     margin: auto;
     text-align: center;
@@ -71,14 +72,14 @@ page-myoperations {
     right: 44%;
 
     img {
-        height: 30px;
-        width: 30px;
-        border-radius: 50%;
-        margin-top: 7px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      margin-top: 7px;
     }
-}
+  }
 
-.choses{
+  .choses {
     position: fixed;
     width: 70%;
     margin: 0 15%;
@@ -86,46 +87,46 @@ page-myoperations {
     background: #f7f7f7;
     border-radius: 20px;
     .item {
-        background: transparent;
-        padding: 0;
-        font-size: 18px;
-        height: 50px;
-        .label{
-            display:inline-flex;
-            img{
-                height: 30px;
-                margin:5px;
-            }
-            span{
-                margin-top: 10px;
-
-            }
+      background: transparent;
+      padding: 0;
+      font-size: 18px;
+      height: 50px;
+      .label {
+        display: inline-flex;
+        img {
+          height: 30px;
+          margin: 5px;
         }
+        span {
+          margin-top: 10px;
+
+        }
+      }
     }
-}
+  }
 
-.item-radio-checked.item-ios ion-label  ,  .item-radio-checked.item-md ion-label {
-    color:black;
-}
+  .item-radio-checked.item-ios ion-label, .item-radio-checked.item-md ion-label {
+    color: black;
+  }
 
-.list-ios {
+  .list-ios {
     margin: 0;
-}
-.select {
+  }
+  .select {
     display: inline-flex;
     padding: 10px;
-}
-.select-text {
+  }
+  .select-text {
     color: #ffc928;
-}
-.item-cover {
+  }
+  .item-cover {
     display: none
-}
-.select-md .select-icon , .select-ios .select-icon {
+  }
+  .select-md .select-icon, .select-ios .select-icon {
     position: relative;
-    width: 20px; 
-}
-.radio-ios .radio-icon , .radio-md .radio-icon {
+    width: 20px;
+  }
+  .radio-ios .radio-icon, .radio-md .radio-icon {
     position: relative;
     display: block;
     width: 16px;
@@ -133,32 +134,32 @@ page-myoperations {
     border: 1px solid orange;
     padding: 9px;
     border-radius: 50%;
-}
+  }
 
-.radio-icon .radio-checked  , .radio-icon .radio-checked {
+  .radio-icon .radio-checked, .radio-icon .radio-checked {
     position: relative;
     display: block;
     width: 16px;
     height: 21px;
-    border: 1px solid orange; 
+    border: 1px solid orange;
     padding: 9px;
     border-radius: 50%;
-}
-.radio-ios .radio-checked .radio-inner {
+  }
+  .radio-ios .radio-checked .radio-inner {
     border-color: orange;
-}
+  }
 
-.item-ios.item-block .item-inner {
+  .item-ios.item-block .item-inner {
     border: none;
-}
+  }
 
-.item-md .radio-md {
+  .item-md .radio-md {
     position: static;
     display: block;
     margin: 9px 10px 9px 15px;
-}
+  }
 
-.radio-md .radio-inner {
+  .radio-md .radio-inner {
     left: 2px;
     top: 2px;
     border-radius: 50%;
@@ -166,5 +167,5 @@ page-myoperations {
     width: 14px;
     height: 15px;
     background-color: orange;
-}
+  }
 }

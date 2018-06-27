@@ -11,47 +11,62 @@
 
 
 <ion-content>
-  
-    <div class="contentdiv">
-        <form>
-            <ion-input class="inputitem nameinput" placeholder="ابحث هنا" type="text"></ion-input>
-        </form>
-    </div>
+
+  <div class="contentdiv">
+    <!--<form #loginForm="ngForm" (ngSubmit)="getSearchData()">-->
+      <!--<ion-input class="inputitem nameinput" [(ngModel)]="search" placeholder="ابحث هنا" type="text"></ion-input>-->
+    <!--</form>-->
+    <form #loginForm="ngForm" (ngSubmit)="getSearchData()">
+      <ion-searchbar [(ngModel)]="search" name="search" placeholder="ابحث هنا"
+                     [showCancelButton]="shouldShowCancel">
+      </ion-searchbar>
+    </form>
+  </div>
 
 
-    <!-- البداية قبل البحث -->
-    <!-- <div class="notStart">
-      <img src="assets/imgs/Asset 6.png">
-      <p>قم بادخال رقم جوال الشخص الذى تود البحث عنه</p>
-    </div> -->
+  <!-- البداية قبل البحث -->
+  <div class="notStart" *ngIf="search == null || search == ''">
+    <img src="assets/imgs/Asset 6.png">
+    <p>قم بادخال رقم جوال الشخص الذى تود البحث عنه</p>
+  </div>
 
-     
-    <!-- لو ملقاش الشخص ده  -->
-    <!-- <div class="notStart">
-        <img src="assets/imgs/notfound.jpg">
-        <p>الشخص الذى تبحث عنه لم يستخدم التطبيق مسبقا</p>
-    </div> -->
 
-    <!-- لو لقى الشخص ده  -->
-    <div class="containerdiv">
-        <div class="ratediv">
-          <div class="imgdiv">
-            <img src="assets/imgs/asdxzcx.png">
-          </div> 
-          <div class="namediv">
-            <p>احمد محمد</p>
-            <div class="starsdiv">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <p>13/3/2018</p>
-            </div>
-          </div>
+  <!-- لو ملقاش الشخص ده  -->
+  <div class="notStart" *ngIf="found == false">
+    <img src="assets/imgs/notfound.jpg">
+    <p>الشخص الذى تبحث عنه لم يستخدم التطبيق مسبقا</p>
+  </div>
+
+  <!-- لو لقى الشخص ده  -->
+  <div class="containerdiv" *ngIf="found == true && search != ''">
+    <div class="ratediv new"  *ngFor="let item of searchResultData">
+      <div class="imgdiv">
+        <img src="{{config.url+item.customers_picture}}">
+      </div>
+      <div class="namediv">
+        <p>{{item.customers_name}}</p>
+        <div class="starsdiv">
+          التقييم
+          <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 1) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+          <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 2) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+          <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 3) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+          <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 4) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+          <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 5) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
         </div>
-        <div class="ratetext">
-            نص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييم نص التقييم نص التقييم 
-        </div>
+        <p> عدد المقيمين <span>{{searchResult['0'].total}}</span></p>
+      </div>
     </div>
+    <div class="ratediv" >
+      <div class="imgdiv">
+        <img src="">
+      </div>
+      <div class="namediv">
+        <p></p>
+        <div class="starsdiv">
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="ratetext"></div>
+  </div>
 </ion-content>

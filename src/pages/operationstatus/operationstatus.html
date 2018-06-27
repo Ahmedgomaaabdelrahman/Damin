@@ -10,56 +10,45 @@
 
 
 <ion-content>
-    <div class="operationcont " >
-        <div class="operationimg">
-          <img src="assets/imgs/d32dfvc.png">
-        </div>
-    
-        <div class="operationInfo">
-          <div>
-              <p class="ptitle">توصيل طلبات</p>
-              <p>رقم الهاتف : <span>012233234</span></p>
-              <p>رقم العملية : <span>5536736</span></p>
-              <p>تاريخ  : <span>12/3/2017</span></p>
-          </div>
-        </div>
+  <div class="operationcont ">
+    <div class="operationimg">
+      <img src="assets/imgs/d32dfvc.png">
     </div>
 
-    <h2 class="operationStats" >حالات العملية : </h2>
-
-    <div class="operationcont timeline" style=" width: 80%;margin: auto;">
-        <div class="operationInfo">
-          <div >
-            <div class="statusdiv">
-              <img src="assets/imgs/add.png">
-              <p class="ptitle"> عملية جديدة</p>
-            </div> 
-            <div class="infostats">
-                <p>رقم الهاتف : <span>012233234</span></p>
-                <p>رقم العملية : <span>5536736</span></p>
-                <p>تاريخ  : <span>12/3/2017</span></p>
-                <p>حالة العملية  : <span>عملية جديدة</span></p>
-  
-            </div>
-          </div>
-        </div>
+    <div class="operationInfo">
+      <div>
+        <p class="ptitle" *ngIf="childOrder.order_type =='1'">سلع ومشتريات</p>
+        <p class="ptitle" *ngIf="childOrder.order_type =='2'">توصيل طلبات</p>
+        <p class="ptitle" *ngIf="childOrder.order_type =='3'">تعقيب وتنازل</p>
+        <p class="ptitle" *ngIf="childOrder.order_type =='4'">عمليات نقل كفالة</p>
+        <p class="ptitle" *ngIf="childOrder.order_type =='5'">طرف اول طرف تانى</p>
+        <p>رقم الهاتف : <span>{{childOrder.order_telephone}}</span></p>
+        <p>رقم العملية : <span>{{childOrder.order_id}}</span></p>
+        <p>تاريخ : <span>{{formatDate(childOrder.created_at)| date:'yyyy/MMMM/d'}}</span></p>
+      </div>
     </div>
+  </div>
 
-    <div class="operationcont timeline"  style=" width: 80%;margin-top:30px">
-        <div class="operationInfo" >
-          <div >
-            <div class="statusdiv">
-              <img src="assets/imgs/add.png">
-              <p class="ptitle"> عملية جديدة</p>
-            </div> 
-            <div class="infostats">
-                <p>رقم الهاتف : <span>012233234</span></p>
-                <p>رقم العملية : <span>5536736</span></p>
-                <p>تاريخ  : <span>12/3/2017</span></p>
-                <p>حالة العملية  : <span>عملية جديدة</span></p>
-  
-            </div>
+  <h2 class="operationStats">حالات العملية : </h2>
+    <div *ngFor="let item of childOrder.orders_status" class="operationcont " style=" width: 80%;margin:10px auto;">
+      <div class="operationInfo">
+        <div>
+          <div class="statusdiv">
+            <img src="assets/imgs/add.png">
+            <p class="ptitle"> عملية جديدة</p>
+          </div>
+          <div class="infostats">
+            <p>رقم الهاتف : <span>{{childOrder.order_telephone}}</span></p>
+            <p>رقم العملية : <span>{{childOrder.order_id}}</span></p>
+            <p>تاريخ : <span>{{formatDate(item.created_at)| date:'yyyy/MMMM/d'}}</span></p>
+            <p *ngIf="item.status =='1'">حالة العملية : <span>معلقة</span></p>
+            <p *ngIf="item.status =='2'">حالة العملية : <span>موافقة</span></p>
+            <p *ngIf="item.status =='3'">حالة العملية : <span>مرفوضة</span></p>
+            <p *ngIf="item.status =='4'">حالة العملية : <span>قيد التعديل</span></p>
+            <p *ngIf="item.comments !=''" >التعليق : <span>{{item.comments}}</span></p>
+
           </div>
         </div>
+      </div>
     </div>
 </ion-content>

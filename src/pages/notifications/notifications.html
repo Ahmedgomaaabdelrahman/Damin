@@ -10,42 +10,23 @@
 
 
 <ion-content>
-  
+
 
   <!-- لو فى اشعارات -->
-  <div class="contentdiv">  
-    <div class="containerdiv" (click)="openNotify()"> 
-      <img src="assets/imgs/asdxzcx.png">
-      <div>
-          <p class="notifytext">قام <span>احمد سمير</span> بالغاء العملية</p>
-          <p class="timetext"> منذ 3 ساعات</p>
+    <div class="contentdiv"*ngIf="success == 1" >
+
+      <div class="containerdiv" (click)="openNotify()" *ngFor="let item of myNotify">
+        <img src="{{config.url+item.customers_picture}}">
+        <div>
+          <p class="notifytext">قام <span>{{item.customers_name}} </span> {{item.message}}</p>
+          <p class="timetext">{{item.created_at}}</p>
+        </div>
       </div>
-      
     </div>
-
-    <div class="containerdiv">
-      <img src="assets/imgs/asdxzcx.png">
-      <div>
-          <p class="notifytext">قام <span>احمد سمير</span> بالغاء العملية</p>
-          <p class="timetext"> منذ 3 ساعات</p>
-      </div>
-        
-    </div>
-
-
-    <div class="containerdiv">
-      <img src="assets/imgs/asdxzcx.png">
-      <div>
-          <p class="notifytext">قام <span>احمد سمير</span> بالغاء العملية</p>
-          <p class="timetext"> منذ 3 ساعات</p>
-      </div>    
-    </div>
-  </div>
-
 
   <!-- لو مفيش اشعارات  -->
 
-  <div class="noNotify">
+  <div class="noNotify" *ngIf="success == 0">
     <img src="assets/imgs/fgdfgdfgdf.png">
     <p>لا يوجد اشعارات</p>
   </div>

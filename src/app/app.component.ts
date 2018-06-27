@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {MenuController, Platform} from 'ionic-angular';
+import {MenuController, ModalController, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {MyoperationsPage} from './../pages/myoperations/myoperations';
@@ -16,6 +16,8 @@ import { BalancePage } from '../pages/balance/balance';
 import { SettingsPage } from './../pages/settings/settings';
 import { MessagesPage } from './../pages/messages/messages';
 import { BankaccountsPage } from './../pages/bankaccounts/bankaccounts';
+import {Network} from '@ionic-native/network';
+import {NoInternetPage} from "../pages/no-internet/no-internet";
 
 @Component({
   templateUrl: 'app.html'
@@ -30,7 +32,25 @@ export class MyApp {
     splashScreen: SplashScreen,
     public shared: SharedDataProvider,
     private storage: Storage,
+    public network: Network,
+    public modalCtrl: ModalController,
     public menuCtrl: MenuController) {
+    let connectedToInternet = true;
+    network.onDisconnect().subscribe(() => {
+      connectedToInternet = false;
+      let modal = this.modalCtrl.create(NoInternetPage);
+      modal.present();
+
+    });
+
+    network.onConnect().subscribe(() => {
+      if (!connectedToInternet) {
+        window.location.reload();
+        //this.loading.show();
+        this.shared.showAlert('تم الاتصال مرة اخري وجاري  إعادة تحميل البيانات');
+      }
+      //connectSubscription.unsubscribe();
+    });
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -73,22 +93,22 @@ export class MyApp {
   askForSomeone(){
     this.nav.push(AsksomebodyPage);
   }
-  openBalance(){ 
+  openBalance(){
     this.nav.push(BalancePage);
   }
-  
+
   openSettings() {
     this.nav.push(SettingsPage);
-  } 
+  }
   openMessages() {
     this.nav.push(MessagesPage);
   }
- 
+
   //Log Out
   logOut() {
     this.menuCtrl.enable(false, 'myMenu');
     this.shared.logOut();
-    this.nav.setRoot(HomePage) 
+    this.nav.setRoot(HomePage)
   }
 }
 

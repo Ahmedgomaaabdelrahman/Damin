@@ -45,7 +45,10 @@ import { AddbankaccountPage } from '../pages/addbankaccount/addbankaccount';
 import { NotifyOperationPage } from '../pages/notify-operation/notify-operation';
 import { AcceptoperationPage } from '../pages/acceptoperation/acceptoperation';
 import { BanktransferPage } from '../pages/banktransfer/banktransfer';
-import { EditoperationPage } from '../pages/editoperation/editoperation';
+import {FileTransfer} from "@ionic-native/file-transfer";
+import {FileChooser} from "@ionic-native/file-chooser";
+import {Network} from "@ionic-native/network";
+import {NoInternetPage} from "../pages/no-internet/no-internet";
 
 
 @NgModule({
@@ -82,14 +85,13 @@ import { EditoperationPage } from '../pages/editoperation/editoperation';
     NotifyOperationPage,
     AcceptoperationPage,
     BanktransferPage,
-    EditoperationPage
+    NoInternetPage
   ],
   imports: [
- 
 
 BrowserModule,
     HttpModule,
-    IonicStorageModule.forRoot(), 
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp,{
       scrollPadding: false,
       scrollAssist: false
@@ -113,7 +115,7 @@ BrowserModule,
     NewchatPage,
     ProfilePage,
     OperationstatusPage,
-    OperationdetailsPage, 
+    OperationdetailsPage,
     YellowheaderComponent,
     ChatPage,
     MyratingsPage,
@@ -129,7 +131,7 @@ BrowserModule,
     NotifyOperationPage,
     AcceptoperationPage,
     BanktransferPage,
-    EditoperationPage
+    NoInternetPage
   ],
   providers: [
     StatusBar,
@@ -141,6 +143,9 @@ BrowserModule,
     File,
     Transfer,
     FilePath,
+    FileTransfer,
+    FileChooser,
+    Network
   ]
 })
 export class AppModule {}
