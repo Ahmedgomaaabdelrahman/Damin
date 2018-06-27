@@ -11,40 +11,15 @@
 
 <ion-content>
     <div class="contentdiv">
-
-
-      <div class="itemdiv">
+      <div class="itemdiv"  *ngFor="let item of bankData">
         <div class="bankname">
           <img src="assets/imgs/5555555.png">
-          <p>البنك الاهلى</p>
-        </div> 
+          <p>{{item.bank_name}}</p>
+        </div>
         <div class="banknumber">
           <img src="assets/imgs/444444.png">
-          <p>1234566</p>
-        </div> 
-      </div>
-
-      <div class="itemdiv">
-          <div class="bankname">
-            <img src="assets/imgs/5555555.png">
-            <p>البنك العربى</p>
-          </div> 
-          <div class="banknumber">
-            <img src="assets/imgs/444444.png">
-            <p>1234566</p>
-          </div> 
+          <p>{{item.account_num}}</p>
         </div>
-
-        <div class="itemdiv">
-            <div class="bankname">
-              <img src="assets/imgs/5555555.png">
-              <p>بنك ابو ظبى</p>
-            </div> 
-            <div class="banknumber">
-              <img src="assets/imgs/444444.png">
-              <p>1234566</p>
-            </div> 
-          </div>
+      </div>
     </div>
-
 </ion-content>

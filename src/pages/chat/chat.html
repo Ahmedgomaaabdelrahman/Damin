@@ -5,57 +5,47 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <yellowheader name='محمد سمير'></yellowheader>
+  <yellowheader name='{{data.customers_name}}'></yellowheader>
 </ion-header>
 
 
 <ion-content>
-<div class="contentdiv">
-  <p class="messagedate">
-    22/5/2018
-  </p>
-
-  <div class="leftMessage">
-      <p class="message">
-          اهلا محمد 
-      </p>
-      <p class="messageTime">
-          20:10 مساءا
-        </p>
-  </div>
-  <div class="rightMessage">
-    <p class="message">
-      اهلا احمد
-    </p>
-    <p class="messageTime">
-      20:10 مساءا
-    </p>
-  </div>
-  <p class="messagedate">
-      22/5/2018
-    </p>
-  
-    <div class="leftMessage">
+  <div class="contentdiv">
+    <!--<p class="messagedate">-->
+    <!--22/5/2018-->
+    <!--</p>-->
+    <div *ngFor="let chat of chatsData">
+      <div class="leftMessage" *ngIf="chat.from == data.customers_message_id">
         <p class="message">
-            اهلا محمد 
+          {{chat.message}}
         </p>
         <p class="messageTime">
-            20:10 مساءا
-          </p>
+          {{chat.sentAt}}
+        </p>
+      </div>
+      <div class="rightMessage" *ngIf="chat.from == shared.customerData.customers_id">
+        <p class="message">
+          {{chat.message}}
+        </p>
+        <p class="messageTime">
+          {{chat.sentAt}}
+        </p>
+      </div>
     </div>
-    <div class="rightMessage">
-      <p class="message">
-        اهلا احمد
-      </p>
-      <p class="messageTime">
-        20:10 مساءا
-      </p>
-    </div>
-    <ion-item class="textdiv">
-      <img src="assets/imgs/telegram.png">
-      <ion-textarea placeholder="اكتب رسالتك هنا">
-
-      </ion-textarea>
-    </ion-item>
-</div>
+  </div>
+  <div class="txt">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <button clear ion-button (click)="sendMessage()" [disabled]="sendData.message == null || sendData.message == '' ">
+            <ion-icon name="ios-send-outline"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-9>
+          <ion-input type="text" placeholder="اكتب رسالتك هنا"
+                     [(ngModel)]="sendData.message"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
