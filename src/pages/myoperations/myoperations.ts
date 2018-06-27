@@ -29,6 +29,7 @@ export class MyoperationsPage {
   dataOrder: any;
   errorMessage = '';
   selectOperation: any;
+  success: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
               public http: Http,
@@ -41,10 +42,15 @@ export class MyoperationsPage {
       this.shared.hide()
       console.log(data)
       this.dataOrder = data;
-      this.operations = data.data;
-      this.rate = data.rate;
-      console.log('Rate = ',this.rate)
-      console.log(this.operations)
+      this.success = data.success;
+      if (this.success == 1) {
+        this.operations = data.data;
+        this.rate = data.rate;
+        console.log('Rate = ', this.rate)
+        console.log(this.operations)
+      } else if (this.success == 0) {
+        this.rate = 0;
+      }
 
     }, error1 => {
       console.log(error1)
@@ -64,11 +70,11 @@ export class MyoperationsPage {
   }
 
   operationStats(item) {
-    this.navCtrl.push(OperationstatusPage,{order: item});
+    this.navCtrl.push(OperationstatusPage, {order: item});
   }
 
   openDetails(item) {
-    this.navCtrl.push(OperationdetailsPage,{order: item});
+    this.navCtrl.push(OperationdetailsPage, {order: item});
   }
 
   openChos() {

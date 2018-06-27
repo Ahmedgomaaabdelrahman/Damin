@@ -64,6 +64,7 @@ export class CreateoperationPage {
     this.http.post(this.config.url + 'api/account_balance', customersId).map(res => res.json()).subscribe(data => {
       this.shared.hide();
       this.total = data.data.total;
+      console.log(this.total)
       if (data.data.total != '') {
         console.log(data)
       }

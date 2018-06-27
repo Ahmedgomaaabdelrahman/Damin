@@ -5,46 +5,49 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <yellowheader name='اشحن رصيدك'></yellowheader>
+  <yellowheader name='اشحن رصيدك'></yellowheader>
 </ion-header>
 
 
 <ion-content>
-    <div class="contentdiv">
-        <form>
-          <p class="inptlabel">المبلغ المراد شحنه</p>
-          <ion-item>
-              <ion-input class="inputitem mabl3"  type="text" required></ion-input>
-            </ion-item>
+  <div class="contentdiv">
+    <form #loginForm="ngForm">
+      <p class="inptlabel">المبلغ المراد شحنه</p>
+      <ion-item>
+        <ion-input class="inputitem mabl3" type="number" required name="price" [(ngModel)]="formData.price"></ion-input>
+      </ion-item>
 
-          <p class="inptlabel">التحويل من بنك</p>
-          <ion-item>
-              <ion-select class="inputitem bank" >
-                  <ion-option value="3" selected="true">بنك الرياض</ion-option>
-                  <ion-option value="4">بنك القاهرة</ion-option>
-                  <ion-option value="5">بنك اسكندرية</ion-option>
-              </ion-select>
-            </ion-item>
-                
-          <p class="inptlabel">رقم الحساب</p>
-          <ion-item>
-              <ion-input class="inputitem account"  type="text" required></ion-input>
-            </ion-item>
-                  
-          <p class="inptlabel">الاسم الثلاثى</p>
-          <ion-item>
-              <ion-input class="inputitem nameinput"  type="text" required></ion-input>
-            </ion-item>  
+      <p class="inptlabel">التحويل من بنك</p>
+      <ion-item >
+        <ion-select class="inputitem bank" >
+          <ion-option *ngFor="let item of bankInfo" [value]="item.bank_name" (ionSelect)="select(item.bank_name)">{{item.bank_name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <p class="inptlabel">رقم الحساب</p>
+      <ion-item>
+        <ion-input class="inputitem account" type="number" required name="account_num"
+                   [(ngModel)]="formData.account_num"></ion-input>
+      </ion-item>
+
+      <p class="inptlabel">الاسم الثلاثى</p>
+      <ion-item>
+        <ion-input class="inputitem nameinput" type="text" required name="customers_name"
+                   [(ngModel)]="formData.customers_name"></ion-input>
+      </ion-item>
 
 
-            <p class="inptlabel">قم بارفاق صورة الايصال</p>
+      <p class="inptlabel">قم بارفاق صورة الايصال</p>
 
-            <div class="getDiv">
-              <img src="assets/imgs/333333.png">
-              <button ion-button block class="getDoc">ارفع من هنا</button>
-            </div>
-
-            <button ion-button block class="confirm">تاكيد</button>
-        </form>
-    </div>
+      <div class="getDiv" (click)="presentActionSheet()">
+        <img src="assets/imgs/333333.png">
+        <button ion-button block class="getDoc" *ngIf="formData.image == ''">ارفع من هنا</button>
+        <button ion-button block class="getDoc" *ngIf="formData.image != ''">ارفع من هنا</button>
+      </div>
+      <label class="error" *ngIf="errorMessage!=''">
+        <span>{{errorMessage}}</span>
+      </label>
+      <button ion-button block class="confirm" (click)="addMoney()" [disabled]="!loginForm.form.valid">تاكيد</button>
+    </form>
+  </div>
 </ion-content>

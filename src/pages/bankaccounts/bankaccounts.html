@@ -10,45 +10,30 @@
 
 
 <ion-content>
+
   <div class="contentdiv">
- 
-
-    <div class="itemdiv">
-      <div class="bankname">
-        <img src="assets/imgs/5555555.png">
-        <p>رقم الحساب 1</p>
-      </div> 
-      <div class="banknumber">
-        <img src="assets/imgs/444444.png">
-        <p>1234566</p>
-      </div> 
-    </div>
-
-    <div class="itemdiv">
+    <h2 *ngIf="success == 0" style="text-align: center">لا يوجد حساب بنكى</h2>
+    <div *ngIf="success == 1">
+      <div class="itemdiv" *ngFor="let item of bankInfo" >
         <div class="bankname">
-          <img src="assets/imgs/5555555.png"> 
-          <p>رقم الحساب 2</p>
-        </div> 
+          <img src="assets/imgs/5555555.png">
+          <p>رقم الحساب {{item.bank_id}}</p>
+        </div>
         <div class="banknumber">
           <img src="assets/imgs/444444.png">
-          <p>1234566</p>
-        </div> 
+          <p>{{item.account_num}}</p>
+          <button ion-button icon-only clear color="danger" (click)="deleteBank(item.bank_id)" >
+            <ion-icon name="ios-trash"></ion-icon>
+          </button>
+          <button ion-button icon-only clear color="primary" (click)="updateBank(item)" >
+            <ion-icon name="md-create"></ion-icon>
+          </button>
+        </div>
       </div>
-
-      <div class="itemdiv">
-          <div class="bankname">
-            <img src="assets/imgs/5555555.png">
-            <p>رقم الحساب 3</p>
-          </div> 
-          <div class="banknumber">
-            <img src="assets/imgs/444444.png">
-            <p>1234566</p>
-          </div> 
-      </div>
-
-      <div>
-        <button ion-button block class="newacc" (click)="newAccount()">حساب بنكى جديد</button>
-      </div>
+    </div>
+  </div>
+  <div>
+    <button ion-button block class="newacc" (click)="newAccount()">حساب بنكى جديد</button>
   </div>
 
 </ion-content>

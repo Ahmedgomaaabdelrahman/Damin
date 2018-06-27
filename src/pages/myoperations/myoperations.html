@@ -27,7 +27,7 @@
         <ion-icon style="color: orange" name="{{(rate < 5) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
       </div>
     </div>
-
+    <h2 *ngIf="success == 0" style="margin-top: 100px;text-align: center">لا يوجد عمليات</h2>
     <div *ngFor="let item of operations" class="operationcont">
       <div class="operationimg">
         <img src="assets/imgs/d32dfvc.png">
