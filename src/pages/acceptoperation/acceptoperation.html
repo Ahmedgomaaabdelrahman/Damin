@@ -13,6 +13,21 @@
   <div class="contentdiv">
       <div class="dealimg"> 
           <img src="assets/imgs/deal.png">
-        </div>
+      </div>
+      <div class="textdiv">
+        حسب الاتفاقية مع البائع سيتم تحويل البلغ الى موقع ضامن خلال 
+
+     
+            <ion-select [(ngModel)]="gaming">
+            <ion-option value="3" selected="true">3 ايام</ion-option>
+            <ion-option value="4">4 ايام</ion-option>
+            <ion-option value="5">5 ايام</ion-option>
+          </ion-select>
+      </div>
+
+      <div class="btndiv" (click)="transfer()">
+        <img src="assets/imgs/done (1).png">
+        <p> اعتماد عملية الشراء</p>
+      </div>
   </div>
 </ion-content>

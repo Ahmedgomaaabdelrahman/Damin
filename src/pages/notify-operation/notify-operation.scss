@@ -115,4 +115,67 @@ page-notify-operation {
             }
         }
     }
+    .overlay {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        margin-top: 55px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .2);
+    }
+
+    .alertdiv{
+        background: white;
+        width: 80%;
+        margin: 185px auto 0;
+        height: 210px;
+        border-radius: 15px;
+    }
+ 
+    .imgDiv {
+        text-align: center;
+        p{
+            font-size: 20px;
+            color: #ffc928;
+            margin: 0;;
+        }
+    }
+    .orangediv{
+        background: #ffc928;
+        height: 40px;
+        width: 40px;
+        margin: 0px auto 10px;
+        border-radius: 50%;
+        font-size: 40px;
+        color: white;
+    }
+
+    .btndiv{
+        display: inline-flex;
+        width: 100%;
+        margin: 10px 0;
+        .button {
+            background: #ffc928;
+            width: 100px;
+            margin: auto;
+            font-size: 18px;
+            color: white;
+            border-radius: 20px;
+        }
+    }
+  
+    .refuseText {
+        padding: 0;
+        background: #efeaea;
+        margin: 10px 5% 0;
+        width: 90%;
+        height: 100px;
+
+        textarea.text-input {
+            height: 70%;
+        }
+    }
 }
