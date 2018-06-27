@@ -1,5 +1,6 @@
 page-operationstatus {
 .operationcont {
+    position: relative;
     display: flex;
     margin: 100px auto 0;
     padding-bottom: 20px;
@@ -21,7 +22,8 @@ page-operationstatus {
     }
     P{
         flex:1;
-        margin:5px 0
+        margin:5px 0;
+        color:#6b6b6b;
     }
     span{
         color: orange
@@ -35,7 +37,32 @@ page-operationstatus {
         font-size: 13px;
         color: white
     }
+
+   
 } 
+
+.timeline::before {
+    content: "";
+    border: 1px solid #ffc928;
+    height: 198px;
+    position: absolute;
+    right: -20px;
+}
+.timeline::after {
+    content: '';
+    border: 1px solid #ffc928;
+    /* height: 198px; */
+    position: absolute;
+    right: -30px;
+    background: #ffc928;
+    width: 20px;
+    height: 20px;
+    top: 75px;
+    background-image: url(../assets/imgs/timecopy.png);
+    background-position: 100%;
+    background-size: 100%;
+    border-radius: 50%;
+}
 //  .operationcont::after {
 //     content: '';
 //     position: absolute;

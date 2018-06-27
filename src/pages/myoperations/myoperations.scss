@@ -35,7 +35,7 @@ page-myoperations {
     }
 
     .operationInfo {
-        flex: 3
+        flex: 5
     }
     P{
         flex:1;
@@ -67,7 +67,7 @@ page-myoperations {
     border-radius: 50%;
     line-height: 55px;
     position: fixed;
-    bottom: 10px;
+    bottom: 25px;
     right: 44%;
 
     img {
@@ -83,7 +83,7 @@ page-myoperations {
     width: 70%;
     margin: 0 15%;
     bottom: 50px;
-    background: #f1f1f1;
+    background: #f7f7f7;
     border-radius: 20px;
     .item {
         background: transparent;
