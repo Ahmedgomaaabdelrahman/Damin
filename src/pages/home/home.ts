@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import {SignupPage} from "../signup/signup";
 import {LoginPage} from "../login/login";
 import {SharedDataProvider} from "../../providers/shared-data/shared-data";
+import {CreateoperationPage} from "../createoperation/createoperation";
 
 @Component({
   selector: 'page-home',
@@ -22,5 +23,15 @@ export class HomePage {
 
   newAccount() {
     this.navCtrl.push(SignupPage);
+  }
+  opennew(id) {
+    if (this.shared.customerData.customers_id == null || this.shared.customerData.customers_id == undefined) {
+      this.navCtrl.push(LoginPage)
+      console.log('not sign In')
+    }
+    else {
+      console.log('sign In');
+      this.navCtrl.push(CreateoperationPage, {selectOperation: id});
+    }
   }
 }

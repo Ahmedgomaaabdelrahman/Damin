@@ -12,53 +12,28 @@
 
 
 <ion-content>
- 
-  <div class="contentdiv">
 
-    
+  <div class="contentdiv" *ngFor="let item of myRating">
+
     <div class="containerdiv">
       <div class="ratediv">
         <div class="imgdiv">
-          <img src="assets/imgs/asdxzcx.png">
-        </div> 
+          <img src="{{config.url+item.customers_picture}}">
+        </div>
         <div class="namediv">
-          <p>احمد محمد</p>
+          <p>{{item.customers_name}}</p>
           <div class="starsdiv">
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <ion-icon name="star"></ion-icon>
-            <p>13/3/2018</p>
+            <ion-icon style="color: orange" name="{{(item.rate < 1) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(item.rate < 2) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(item.rate < 3) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(item.rate < 4) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(item.rate < 5) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <p>{{formatDate(item.created_at)| date:'yyyy/MMMM/d'}}</p>
           </div>
         </div>
       </div>
-      <div class="ratetext">
-          نص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييم نص التقييم نص التقييم 
-      </div>
+      <div class="ratetext">{{item.comment}}</div>
     </div>
-    <div class="containerdiv">
-        <div class="ratediv">
-          <div class="imgdiv">
-            <img src="assets/imgs/asdxzcx.png">
-          </div> 
-          <div class="namediv">
-            <p>احمد محمد</p>
-            <div class="starsdiv">
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <ion-icon name="star"></ion-icon>
-              <p>13/3/2018</p>
-            </div>
-          </div>
-        </div>
-        <div class="ratetext">
-            نص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييمنص التقييم نص التقييم نص التقييم نص التقييم 
-        </div>
-    </div>
-
 
   </div>
 </ion-content>

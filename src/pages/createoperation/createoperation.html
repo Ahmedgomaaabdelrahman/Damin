@@ -10,101 +10,113 @@
 
 
 <ion-content>
-    
-    <div class="contentdiv">
+
+  <div class="contentdiv">
+    <form  #userForm="ngForm" (ngSubmit)="submitOrder()">
       <div class="secdiv">
         <div class="headlinediv">
           <img src="assets/imgs/addadasda.png">
-          <p>تعقيب وتنازل</p>
+          <p *ngIf="selectOperation =='1'">سلع ومشتريات</p>
+          <p *ngIf="selectOperation =='2'">توصيل طلبات</p>
+          <p *ngIf="selectOperation =='3'">تعقيب وتنازل</p>
+          <p *ngIf="selectOperation =='4'">عمليات نقل كفالة</p>
+          <p *ngIf="selectOperation =='5'">طرف اول طرف تانى</p>
         </div>
         <div class="detailsdiv">
-            <div class="choses">
-                <ion-list radio-group [(ngModel)]="type">
-                    <ion-item>
-                      <ion-label>انا معقب</ion-label>
-                      <ion-radio value="a"></ion-radio>
-                    </ion-item>
-                    <ion-item>
-                      <ion-label>انا معقب له</ion-label>
-                      <ion-radio value="b"></ion-radio>
-                    </ion-item>
-                  </ion-list>
-            </div>
+          <div class="choses">
+            <ion-list radio-group required>
+              <ion-item>
+                <ion-label>انا معقب</ion-label>
+                <ion-radio value="1" (ionSelect)="select('1')"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>انا معقب له</ion-label>
+                <ion-radio value="2" (ionSelect)="select('2')"></ion-radio>
+              </ion-item>
+            </ion-list>
+          </div>
+        </div>
+      </div>
+
+      <div class="secdiv">
+        <div class="headlinediv">
+          <img src="assets/imgs/fggdfgdfg.png">
+          <p> رقم الهاتف</p>
+        </div>
+        <div class="detailsdiv">
+          <ion-input class="inputitem telinput" placeholder="رقم الهاتف" type="number" name="order_telephone"
+                     [(ngModel)]="formData.order_telephone" required></ion-input>
         </div>
       </div>
 
+      <div class="secdiv">
+        <div class="headlinediv">
+          <img src="assets/imgs/bntberbr.png">
+          <p>تفاصيل العملية : </p>
+        </div>
+        <div class="detailsdiv">
+          <div class="contractext">
+            <ion-textarea placeholder="نص الاتفاقية هنا" name="order_description"
+                          [(ngModel)]="formData.order_description" required></ion-textarea>
+          </div>
+
+        </div>
+      </div>
 
       <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/fggdfgdfg.png">
-            <p> رقم الهاتف</p>
-          </div>
-          <div class="detailsdiv">
-              <ion-input class="inputitem telinput" placeholder="رقم الهاتف" type="number"></ion-input>
+        <div class="headlinediv">
+          <img src="assets/imgs/tbrtbrt.png">
+          <p> ارفاق مستند : </p>
+        </div>
+        <div class="detailsdiv" (click)="presentActionSheet()">
+          <div class="malfname">
+            <p *ngIf="formData.order_file == ''">ارفع من هنا </p>
+            <p *ngIf="formData.order_file != ''">تم الرفع بنجاح</p>
+            <div></div>
+            <ion-icon name="ios-arrow-down-outline"></ion-icon>
           </div>
         </div>
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/bntberbr.png">
-            <p>تفاصيل العملية : </p>
-          </div>
-          <div class="detailsdiv">
-            <div class="contractext">
-                <p> تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  </p>
-            </div>
-         
-          </div>
-      </div>
-
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/tbrtbrt.png">
-            <p> ارفاق مستند : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malfname">
-                <p>ارفع من هنا </p>
-                <div></div>
-                <ion-icon name="ios-arrow-down-outline"></ion-icon>
-              </div>
-          </div>
-      </div>  
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/erwer.png">
-            <p> المبلغ المتفق عليه : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malquatity">
-                150 ريال
-              </div>
-          </div>
       </div>
 
       <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/dffsdffffffffff.png">
-            <p> عمولة ضامن 3 % من القيمة الاجمالية : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="choses">
-                  <ion-list radio-group [(ngModel)]="t3qeep">
-                      <ion-item>
-                        <ion-label>ارغب فى اى  تعقيب </ion-label>
-                        <ion-radio value="a"></ion-radio>
-                      </ion-item>
-                  </ion-list>
-                  <p>حسب الاتفاقية مع المعقب له سيتم انهاء الاجراءات معامله كاملة خلال<ion-select [(ngModel)]="gaming">
-                    <ion-option value="3" selected="true">3 ايام</ion-option>
-                    <ion-option value="4">4 ايام</ion-option>
-                    <ion-option value="5">5 ايام</ion-option>
-                  </ion-select> عمل </p>
-                  <button ion-button block class="confirm">تاكيد</button>
-                </div>
-      </div></div>
+        <div class="headlinediv">
+          <img src="assets/imgs/erwer.png">
+          <p> المبلغ المتفق عليه : </p>
+        </div>
+        <div class="detailsdiv">
+          <ion-input class="malquatity" placeholder="١٠٠ ريال" type="text" name="order_price"
+                     [(ngModel)]="formData.order_price" required></ion-input>
+        </div>
+      </div>
 
-    </div>
+      <div class="secdiv">
+        <div class="headlinediv">
+          <img src="assets/imgs/dffsdffffffffff.png">
+          <p> عمولة ضامن 3 % من القيمة الاجمالية : </p>
+        </div>
+        <div class="detailsdiv">
+          <div class="choses">
+            <ion-list radio-group required>
+              <ion-item>
+                <ion-label>ارغب فى اى تعقيب</ion-label>
+                <ion-radio [value]="check" (ionSelect)="checkMoney()"></ion-radio>
+              </ion-item>
+            </ion-list>
+            <p>حسب الاتفاقية مع المعقب له سيتم انهاء الاجراءات معامله كاملة خلال
+              <ion-select [(ngModel)]="formData.order_days" name="order_days" required>
+                <ion-option value="3" selected="true">3 ايام</ion-option>
+                <ion-option value="4">4 ايام</ion-option>
+                <ion-option value="5">5 ايام</ion-option>
+              </ion-select>
+              عمل
+            </p>
+            <label class="error" *ngIf="errorMessage!=''">
+              <span>{{errorMessage}}</span>
+            </label>
+            <button ion-button block class="confirm" [disabled]="!userForm.form.valid">تاكيد</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 </ion-content>

@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-<yellowheader name='عملياتى'></yellowheader>
+  <yellowheader name='عملياتى'></yellowheader>
 
 </ion-header>
 
@@ -14,128 +14,83 @@
 <ion-content>
 
 
-
-<!-- start content div  -->
-<div class="contentdiv">
-  <div class="profileimg">
-    <img src="assets/imgs/hjghjghj.png">
-    <p>احمد محمد </p>
-    <div class="starsdiv">
-      <ion-icon name="star" ></ion-icon>
-      <ion-icon name="star" ></ion-icon>
-      <ion-icon name="star" ></ion-icon>
-      <ion-icon name="star" ></ion-icon>
-      <ion-icon name="star" ></ion-icon>
-    </div>
-  </div>
-
-  <div class="operationcont">
-    <div class="operationimg">
-      <img src="assets/imgs/d32dfvc.png">
+  <!-- start content div  -->
+  <div class="contentdiv">
+    <div class="profileimg">
+      <img class="round" src="{{config.url+shared.customerData.customers_picture}}">
+      <p>{{shared.customerData.customers_name}}</p>
+      <div class="starsdiv">
+        <ion-icon style="color: orange" name="{{(rate < 1) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+        <ion-icon style="color: orange" name="{{(rate < 2) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+        <ion-icon style="color: orange" name="{{(rate < 3) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+        <ion-icon style="color: orange" name="{{(rate < 4) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+        <ion-icon style="color: orange" name="{{(rate < 5) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+      </div>
     </div>
 
-    <div class="operationInfo">
-      <div style="display:flex">
-          <p>توصيل طلبات</p>
-          <p>رقم العملية : <span>5536736</span></p>
+    <div *ngFor="let item of operations" class="operationcont">
+      <div class="operationimg">
+        <img src="assets/imgs/d32dfvc.png">
       </div>
 
-      <p>حالة العملية : <span>مرفوضة</span></p>
-      <p>رقم الهاتف : <span>012233234</span></p>
+      <div class="operationInfo">
+        <div style="display:flex">
+          <p *ngIf="item.order_type =='1'">سلع ومشتريات</p>
+          <p *ngIf="item.order_type =='2'">توصيل طلبات</p>
+          <p *ngIf="item.order_type =='3'">تعقيب وتنازل</p>
+          <p *ngIf="item.order_type =='4'">عمليات نقل كفالة</p>
+          <p *ngIf="item.order_type =='5'">طرف اول طرف تانى</p>
+          <p>رقم العملية : <span>{{item.order_id}}</span></p>
+        </div>
 
-      <div style="display:flex; flex:1">
-          <p>تاريخ العملية : <span>12/3/2017</span></p>
+        <p *ngIf="item.status =='1'">حالة العملية : <span>معلقة</span></p>
+        <p *ngIf="item.status =='2'">حالة العملية : <span>موافقة</span></p>
+        <p *ngIf="item.status =='3'">حالة العملية : <span>مرفوضة</span></p>
+        <p *ngIf="item.status =='4'">حالة العملية : <span>قيد التعديل</span></p>
+
+        <p>رقم الهاتف : <span>{{item.order_telephone}}</span></p>
+
+        <div style="display:flex; flex:1">
+          <p>تاريخ العملية : <span>{{formatDate(item.created_at)| date:'yyyy/MMMM/d'}}</span></p>
           <div style="display:flex; flex:1">
-              <p class="orangep" (click)="operationStats()">حالات العملية</p>
-              <p class="orangep" (click)="openDetails()">التفاصيل</p>
+            <p class="orangep" (click)="operationStats(item)">حالات العملية</p>
+            <p class="orangep" (click)="openDetails(item)">التفاصيل</p>
           </div>
-        
-      </div>
-    </div>
-  </div>
 
-
-  <div class="operationcont">
-      <div class="operationimg">
-        <img src="assets/imgs/d32dfvc.png">
-      </div>
-  
-      <div class="operationInfo">
-        <div style="display:flex">
-            <p>توصيل طلبات</p>
-            <p>رقم العملية : <span>5536736</span></p>
-        </div>
-  
-        <p>حالة العملية : <span>مرفوضة</span></p>
-        <p>رقم الهاتف : <span>012233234</span></p>
-  
-        <div style="display:flex; flex:1">
-            <p>تاريخ العملية : <span>12/3/2017</span></p>
-            <div style="display:flex; flex:1">
-                <p class="orangep">حالات العملية</p>
-                <p class="orangep">التفاصيل</p>
-            </div>
-          
         </div>
       </div>
     </div>
 
-
-
-  <div class="operationcont">
-      <div class="operationimg">
-        <img src="assets/imgs/d32dfvc.png">
-      </div>
-  
-      <div class="operationInfo">
-        <div style="display:flex">
-            <p>توصيل طلبات</p>
-            <p>رقم العملية : <span>5536736</span></p>
-        </div>
-  
-        <p>حالة العملية : <span>مرفوضة</span></p>
-        <p>رقم الهاتف : <span>012233234</span></p>
-  
-        <div style="display:flex; flex:1">
-            <p>تاريخ العملية : <span>12/3/2017</span></p>
-            <div style="display:flex; flex:1">
-                <p class="orangep">حالات العملية</p>
-                <p class="orangep">التفاصيل</p>
-            </div>
-          
-        </div>
-      </div>
-    </div>
 
     <div>
       <div class="choses" *ngIf="chosFlag">
-          <ion-list radio-group [(ngModel)]="type">
-              <ion-item>
-                <ion-label><img src="assets/imgs/d32dfvc.png"> <span>سلع ومشتريات</span></ion-label>
-                <ion-radio value="a"  (ionSelect)="changeImg()"></ion-radio>
-              </ion-item>
-              <ion-item>
-                <ion-label> <img src="assets/imgs/d32dfvc.png"><span>توصيل طلبات</span></ion-label>
-                <ion-radio value="b" (ionSelect)="changeImg()"></ion-radio>
-              </ion-item>
-              <ion-item>
-                <ion-label> <img src="assets/imgs/d32dfvc.png"><span>تعقيب وتنازل</span></ion-label>
-                <ion-radio value="c" (ionSelect)="changeImg()"></ion-radio>
-              </ion-item>
-              <ion-item>
-                <ion-label> <img src="assets/imgs/d32dfvc.png"><span>عمليات نقل كفالة</span></ion-label>
-                <ion-radio value="d" (ionSelect)="changeImg()"></ion-radio>
-              </ion-item>
-              <ion-item>
-                  <ion-label > <img src="assets/imgs/d32dfvc.png"><span>طرف اول طرف تانى</span></ion-label>
-                  <ion-radio value="e" (ionSelect)="changeImg()"></ion-radio>
-                </ion-item>
-            </ion-list>
+        <ion-list radio-group [(ngModel)]="type">
+          <ion-item>
+            <ion-label><img src="assets/imgs/d32dfvc.png"> <span>سلع ومشتريات</span></ion-label>
+            <ion-radio value="1" (ionSelect)="changeImg('1')"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label><img src="assets/imgs/d32dfvc.png"><span>توصيل طلبات</span></ion-label>
+            <ion-radio value="2" (ionSelect)="changeImg('2')"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label><img src="assets/imgs/d32dfvc.png"><span>تعقيب وتنازل</span></ion-label>
+            <ion-radio value="3" (ionSelect)="changeImg('3')"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label><img src="assets/imgs/d32dfvc.png"><span>عمليات نقل كفالة</span></ion-label>
+            <ion-radio value="4" (ionSelect)="changeImg('4')"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label><img src="assets/imgs/d32dfvc.png"><span>طرف اول طرف تانى</span></ion-label>
+            <ion-radio value="5" (ionSelect)="changeImg('5')"></ion-radio>
+          </ion-item>
+        </ion-list>
       </div>
       <div class="addnew">
         <ion-icon *ngIf="!addFlag" name="add" (click)="openChos()"></ion-icon>
         <img *ngIf="addFlag" src="assets/imgs/23123.png" (click)="opennew()">
       </div>
     </div>
-</div>
+  </div>
 </ion-content>

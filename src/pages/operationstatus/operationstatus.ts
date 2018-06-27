@@ -13,12 +13,18 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'operationstatus.html',
 })
 export class OperationstatusPage {
+  childOrder: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.childOrder = this.navParams.get('order');
+    console.log(this.childOrder)
+    console.log(this.childOrder.orders_status)
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OperationstatusPage');
   }
-
+  formatDate(obj) {
+    return obj.toString().replace(/-/g, "/");
+  }
 }

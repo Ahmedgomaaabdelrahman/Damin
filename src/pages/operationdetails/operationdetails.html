@@ -12,84 +12,85 @@
 
 
 <ion-content>
- 
-    <div class="contentdiv">
-      <div class="secdiv">
-        <div class="headlinediv">
-          <img src="assets/imgs/cccccc.png">
-          <p>رقم العملية : <span>5536736</span></p>
-        </div>
-        <div class="detailsdiv">
-            <p>الاسم : <span>محمد سمير</span></p>
-            <p>رقم الجوال : <span>012233234</span></p>
-            <p>التاريخ  : <span>12/3/2017</span></p>
-            <p>حالة العملية  : <span>فى انتظار الدفع</span></p>
-        </div>
+
+  <div class="contentdiv">
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/cccccc.png">
+        <p>رقم العملية : <span>{{childOrder.order_id}}</span></p>
       </div>
-
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/bntberbr.png">
-            <p>تفاصيل العملية : </p>
-          </div>
-          <div class="detailsdiv">
-            <div class="contractext">
-                <p> تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  </p>
-            </div>
-         
-          </div>
-      </div>
-
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/tbrtbrt.png">
-            <p> المستندات المرفقة  : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malfname">
-                <p>اسم الملف</p>
-                <div></div>
-                <img  src="assets/imgs/xczxczcxcaa.png">
-              </div>
-              <div class="malfname">
-                  <p>اسم الملف</p>
-                  <div></div>
-                  <img  src="assets/imgs/image.png">
-                </div>
-          </div>
-      </div>  
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/erwer.png">
-            <p> المبلغ المتفق عليه : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malquatity">
-                150 ريال
-              </div>
-          </div>
-      </div>
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/dffsdffffffffff.png">
-            <p> عمولة ضامن 3 % من القيمة الاجمالية : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malquatity">
-                 43 ريال
-            </div>
-          </div>
+      <div class="detailsdiv">
+        <p>الاسم : <span>{{shared.customerData.customers_name}}</span></p>
+        <p>رقم الجوال : <span>{{childOrder.order_telephone}}</span></p>
+        <p>التاريخ : <span>{{formatDate(childOrder.created_at)| date:'yyyy/MMMM/d'}}</span></p>
+        <p *ngIf="childOrder.status =='1'">حالة العملية : <span>معلقة</span></p>
+        <p *ngIf="childOrder.status =='2'">حالة العملية : <span>موافقة</span></p>
+        <p *ngIf="childOrder.status =='3'">حالة العملية : <span>مرفوضة</span></p>
+        <p *ngIf="childOrder.status =='4'">حالة العملية : <span>قيد التعديل</span></p>
       </div>
     </div>
 
-    <p class="bottomtext">سيتم انهاء اجراءات المعاملة خلال 
-      <ion-select [(ngModel)]="gaming">
-      <ion-option value="3" selected="true">3 ايام</ion-option>
-      <ion-option value="4">4 ايام</ion-option>
-      <ion-option value="5">5 ايام</ion-option>
-    </ion-select> عمل </p>
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/bntberbr.png">
+        <p>تفاصيل العملية : </p>
+      </div>
+      <div class="detailsdiv">
+        <div class="contractext">
+          <p> {{childOrder.order_description}} </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/tbrtbrt.png">
+        <p> المستندات المرفقة : </p>
+      </div>
+      <div class="detailsdiv">
+        <!--<div class="malfname">-->
+          <!--<p>اسم الملف</p>-->
+          <!--<div></div>-->
+          <!--<img src="assets/imgs/xczxczcxcaa.png">-->
+        <!--</div>-->
+        <div class="malfname">
+          <p style="      text-align: left;">{{childOrder.order_file}}</p>
+          <div></div>
+          <img src="assets/imgs/image.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/erwer.png">
+        <p> المبلغ المتفق عليه : </p>
+      </div>
+      <div class="detailsdiv">
+        <div class="malquatity">
+          {{childOrder.order_price}} ريال
+        </div>
+      </div>
+    </div>
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/dffsdffffffffff.png">
+        <p> عمولة ضامن 3 % من القيمة الاجمالية : </p>
+      </div>
+      <div class="detailsdiv">
+        <div class="malquatity">
+          {{childOrder.percentage}} ريال
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="bottomtext">سيتم انهاء اجراءات المعاملة خلال
+    <span style="color: orange"> {{childOrder.order_days}} ايام</span>
+    عمل
+  </p>
 </ion-content>
