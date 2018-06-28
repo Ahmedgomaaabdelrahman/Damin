@@ -49,6 +49,7 @@ import {FileTransfer} from "@ionic-native/file-transfer";
 import {FileChooser} from "@ionic-native/file-chooser";
 import {Network} from "@ionic-native/network";
 import {NoInternetPage} from "../pages/no-internet/no-internet";
+import { EditoperationPage } from '../pages/editoperation/editoperation';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import {NoInternetPage} from "../pages/no-internet/no-internet";
     NotifyOperationPage,
     AcceptoperationPage,
     BanktransferPage,
-    NoInternetPage
+    NoInternetPage,
+    EditoperationPage
   ],
   imports: [
 
@@ -131,7 +133,8 @@ BrowserModule,
     NotifyOperationPage,
     AcceptoperationPage,
     BanktransferPage,
-    NoInternetPage
+    NoInternetPage,
+    EditoperationPage
   ],
   providers: [
     StatusBar,
