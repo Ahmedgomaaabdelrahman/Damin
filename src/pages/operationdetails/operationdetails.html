@@ -56,8 +56,8 @@
           <!--<div></div>-->
           <!--<img src="assets/imgs/xczxczcxcaa.png">-->
         <!--</div>-->
-        <div class="malfname">
-          <p style="      text-align: left;">{{childOrder.order_file}}</p>
+        <div class="malfname" (click)="preview(childOrder.order_file)">
+          <p style="text-align: left;">{{childOrder.order_file}}</p>
           <div></div>
           <img src="assets/imgs/image.png">
         </div>
@@ -83,7 +83,7 @@
       </div>
       <div class="detailsdiv">
         <div class="malquatity">
-          {{childOrder.percentage}} ريال
+          {{childOrder.percentage - childOrder.order_price }} ريال
         </div>
       </div>
     </div>

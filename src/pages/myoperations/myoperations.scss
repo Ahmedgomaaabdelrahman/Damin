@@ -26,11 +26,11 @@ page-myoperations {
     border-radius: 20px;
 
     .operationimg {
-      flex: 1;
+      flex: 1.1;
       text-align: center;
       img {
-        height: 70px;
-        margin-top: 15px;
+
+        margin-top: 25px;
       }
     }
 
@@ -95,7 +95,7 @@ page-myoperations {
         display: inline-flex;
         img {
           height: 30px;
-          margin: 5px;
+          margin: 10px;
         }
         span {
           margin-top: 10px;

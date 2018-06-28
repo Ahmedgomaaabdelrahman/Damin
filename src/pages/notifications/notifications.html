@@ -15,7 +15,7 @@
   <!-- لو فى اشعارات -->
     <div class="contentdiv"*ngIf="success == 1" >
 
-      <div class="containerdiv" (click)="openNotify()" *ngFor="let item of myNotify">
+      <div class="containerdiv" *ngFor="let item of myNotify"  (click)="openNotify(item.last_action,item.order_id)">
         <img src="{{config.url+item.customers_picture}}">
         <div>
           <p class="notifytext">قام <span>{{item.customers_name}} </span> {{item.message}}</p>

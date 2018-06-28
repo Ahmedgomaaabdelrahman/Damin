@@ -1,6 +1,6 @@
 page-asksomebody {
   .inputitem {
-  
+
   }
   .searchbar-md .searchbar-input , .searchbar-ios .searchbar-input {
     height: 50px;
@@ -65,7 +65,7 @@ page-asksomebody {
         img {
           height: 100px;
           margin: -10px 11px;
-          border-radius: 50%;      
+          border-radius: 50%;
         }
       }
       .namediv {
@@ -94,12 +94,12 @@ page-asksomebody {
     }
 
     .ratetextdiv {
-      
+
         .imgdiv {
           img {
             height: 40px;
             margin: -10px 11px;
-            border-radius: 50%;      
+            border-radius: 50%;
           }
         }
         .namediv {
@@ -110,7 +110,7 @@ page-asksomebody {
               color: orange;
             }
           }
-  
+
           .starsdiv {
             display: flex;
             ion-icon[name="star"] {
@@ -126,12 +126,12 @@ page-asksomebody {
               font-size: 14px !important;
             }
           }
-        
-  
+
+
       }
     }
     #nameitem {
-      font-size: 25px;
+      font-size: 20px;
       font-weight: bold;
     }
     .ratetext {

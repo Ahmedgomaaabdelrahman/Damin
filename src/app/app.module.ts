@@ -50,6 +50,7 @@ import {FileChooser} from "@ionic-native/file-chooser";
 import {Network} from "@ionic-native/network";
 import {NoInternetPage} from "../pages/no-internet/no-internet";
 import { EditoperationPage } from '../pages/editoperation/editoperation';
+import {PhotoViewer} from "@ionic-native/photo-viewer";
 
 
 @NgModule({
@@ -148,7 +149,8 @@ BrowserModule,
     FilePath,
     FileTransfer,
     FileChooser,
-    Network
+    Network,
+    PhotoViewer
   ]
 })
 export class AppModule {}

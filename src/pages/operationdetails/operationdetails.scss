@@ -55,16 +55,17 @@ page-operationdetails {
       width: 2%;
     }
     p {
-      margin: 0 5px;
+      margin: 3px 5px;
       display: inline-block;
       width: 78%;
       padding: 8px;
       overflow: hidden;
+      white-space: pre;
     }
   }
 
   .malquatity {
-    width: 110px;
+    width: 180px;
     margin: auto;
     padding: 15px;
     border-radius: 15px;

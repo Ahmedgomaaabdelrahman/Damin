@@ -12,105 +12,109 @@
 
 
 <ion-content>
-   
-    <div class="contentdiv">
-        <div class="overlay" *ngIf="refuse">
-            <div class="alertdiv">
-              <div class="imgDiv">
-                  <div class="orangediv">!</div>
-                  <p>رفض الطلب</p>
-              </div>
-              <ion-item class="refuseText">
-                <ion-textarea placeholder="سبب الرفض .."></ion-textarea>
-              </ion-item>
-              <div class="btndiv">
-                <button ion-button block>تاكيد</button>
-                <button ion-button block (click)="refuseOperation()">الغاء</button>
-              </div>
-            </div>
-          </div>
-    
-      <div class="secdiv">
-        <div class="headlinediv">
-          <img src="assets/imgs/fggdfgdfg.png">
-          <p>جوال البائع : <span>5536736</span></p>
+
+  <div class="contentdiv" *ngFor="let item of orderDetails">
+    <div class="overlay" *ngIf="refuse">
+      <div class="alertdiv">
+        <div class="imgDiv">
+          <div class="orangediv">!</div>
+          <p>رفض الطلب</p>
         </div>
-      </div>
-
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/bntberbr.png">
-            <p>تفاصيل الاتفاقية : </p>
+        <form #loginForm="ngForm" class="formdiv" (ngSubmit)="refuseOperation(item.customers_order_id)">
+          <ion-item class="refuseText">
+            <ion-textarea placeholder="سبب الرفض .."  name="comments" [(ngModel)]="formData.comments" required></ion-textarea>
+          </ion-item>
+          <div class="btndiv">
+            <button ion-button block type="submit" [disabled]="!loginForm.form.valid">تاكيد</button>
           </div>
-          <div class="detailsdiv">
-            <div class="contractext">
-                <p> تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  تفاصيل تفاصيل  </p>
-            </div>
-         
-          </div>
-      </div>
-
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/tbrtbrt.png">
-            <p> المستندات المرفقة  : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malfname">
-                <p>اسم الملف</p>
-                <div></div>
-                <img  src="assets/imgs/xczxczcxcaa.png">
-              </div>
-              <div class="malfname">
-                  <p>اسم الملف</p>
-                  <div></div>
-                  <img  src="assets/imgs/image.png">
-                </div>
-          </div>
-      </div>  
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/erwer.png">
-            <p> المبلغ المتفق عليه : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malquatity">
-                150 ريال
-              </div>
-          </div>
-      </div>
-
-      <div class="secdiv">
-          <div class="headlinediv">
-            <img src="assets/imgs/dffsdffffffffff.png">
-            <p> عمولة ضامن 3 % من القيمة الاجمالية : </p>
-          </div>
-          <div class="detailsdiv">
-              <div class="malquatity">
-                 43 ريال
-            </div>
-          </div>
-      </div>
-
-      <div class="btnsDiv">
-        <div (click)="accept()">
-          <img src="assets/imgs/done (1).png">
-          <p>اعتماد</p>
-        </div>
-
-        <div (click)="refuseOperation() ">
-          <img src="assets/imgs/cancel (1).png">
-          <p>رفض</p>
-        </div>
-
-        <div (click)="edit()">
-          <img src="assets/imgs/loupe.png">
-          <p>تعديل</p>
+        </form>
+        <div class="btndiv">
+          <button ion-button block  (click)="disableOperation()">الغاء</button>
         </div>
       </div>
     </div>
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/fggdfgdfg.png">
+        <p>جوال البائع : <span>{{item.order_telephone}}</span></p>
+      </div>
+    </div>
+
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/bntberbr.png">
+        <p>تفاصيل الاتفاقية : </p>
+      </div>
+      <div class="detailsdiv">
+        <div class="contractext">
+          <p> {{item.order_description}}</p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/tbrtbrt.png">
+        <p> المستندات المرفقة : </p>
+      </div>
+      <div class="detailsdiv">
+        <!--<div class="malfname">-->
+        <!--<p>اسم الملف</p>-->
+        <!--<div></div>-->
+        <!--<img src="assets/imgs/xczxczcxcaa.png">-->
+        <!--</div>-->
+        <div class="malfname" (click)="preview(item.order_file)">
+          <p>{{item.order_file}}</p>
+          <div></div>
+          <img src="assets/imgs/image.png">
+        </div>
+      </div>
+    </div>
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/erwer.png">
+        <p> المبلغ المتفق عليه : </p>
+      </div>
+      <div class="detailsdiv">
+        <div class="malquatity">
+          {{item.order_price}} ريال
+        </div>
+      </div>
+    </div>
+
+    <div class="secdiv">
+      <div class="headlinediv">
+        <img src="assets/imgs/dffsdffffffffff.png">
+        <p> عمولة ضامن 3 % من القيمة الاجمالية : </p>
+      </div>
+      <div class="detailsdiv">
+        <div class="malquatity">
+          {{item.percentage - item.order_price }} ريال
+        </div>
+      </div>
+    </div>
+
+    <div class="btnsDiv">
+      <div (click)="accept()">
+        <img src="assets/imgs/done (1).png">
+        <p>اعتماد</p>
+      </div>
+
+      <div (click)="disableOperation() ">
+        <img src="assets/imgs/cancel (1).png">
+        <p>رفض</p>
+      </div>
+
+      <div (click)="edit(item.customers_order_id,item.order_description)">
+        <img src="assets/imgs/loupe.png">
+        <p>تعديل</p>
+      </div>
+    </div>
+  </div>
 
 </ion-content>

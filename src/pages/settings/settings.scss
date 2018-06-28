@@ -1,70 +1,71 @@
 page-settings {
-.settingItem {
+  .settingItem {
     display: flex;
-    margin: 10px 20px;
+    margin: 0px 20px 10px;
 
     img {
-        height: 37px;
-        width: 40px;
-        flex: 1;
+      height: 40px;
+      width: 40px;
+      flex: 1;
+      margin-top: 10px;
     }
 
-    p{
-        font-size: 25px;
-        margin: 10px 15px;
-        flex: 7;
+    p {
+      font-size: 25px;
+      margin: 10px 15px;
+      flex: 7;
     }
-}
+  }
 
-.detailsdiv {
+  .detailsdiv {
     margin: 0 30px 0;
     font-size: 16px;
 
-    p{
-        margin: 0;
-        font-size:18px;
+    p {
+      margin: 0;
+      font-size: 18px;
     }
-}
+  }
 
-.choses{
+  .choses {
     width: 100%;
     /* margin: 0 12%; */
     bottom: 50px;
     background: white;
     border-radius: 20px;
     .item {
-        background: transparent;
-        padding: 0;
-        font-size: 25px;
+      background: transparent;
+      padding: 0;
+      font-size: 25px;
     }
-} 
+  }
 
-.select {
+  .select {
     display: inline-flex;
     padding: 10px;
-}
-.select-text {
+  }
+  .select-text {
     color: #ffc928;
-}
-.item-cover {
+  }
+  .item-cover {
     display: none
-}
-.select-md .select-icon , .select-ios .select-icon {
+  }
+  .select-md .select-icon, .select-ios .select-icon {
     position: relative;
-    width: 20px; 
-}
+    width: 20px;
+  }
 
-ion-list {
+  ion-list {
     display: flex;
-}
+  }
 
-.item-radio.item-md ion-label ,  .item-radio.item-ios ion-label {
+  .item-radio.item-md ion-label, .item-radio.item-ios ion-label {
     margin-left: 0;
     font-size: 18px;
-}
+  }
 
-.list-md .item-block .item-inner , .list-ios .item-block .item-inner  {
+  .list-md .item-block .item-inner, .list-ios .item-block .item-inner {
     border: none;
     direction: ltr;
-}
+  }
 }

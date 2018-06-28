@@ -103,7 +103,7 @@
               </ion-item>
             </ion-list>
             <p>حسب الاتفاقية مع المعقب له سيتم انهاء الاجراءات معامله كاملة خلال
-              <ion-select [(ngModel)]="formData.order_days" name="order_days" required>
+              <ion-select [selectOptions]="selectOptions" [(ngModel)]="formData.order_days" name="order_days" required>
                 <ion-option value="3" selected="true">3 ايام</ion-option>
                 <ion-option value="4">4 ايام</ion-option>
                 <ion-option value="5">5 ايام</ion-option>

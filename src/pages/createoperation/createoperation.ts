@@ -34,6 +34,7 @@ export class CreateoperationPage {
   isChecked = false;
   errorMessage = '';
   total: any;
+  selectOptions: any;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -47,6 +48,9 @@ export class CreateoperationPage {
     this.selectOperation = this.navParams.get('selectOperation');
     this.formData.customers_id = this.shared.customerData.customers_id;
     this.formData.order_type = this.selectOperation;
+    this.selectOptions = {
+      title: 'اختار عدد الايام',
+    };
   }
 
   select(id) {

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {SharedDataProvider} from "../../providers/shared-data/shared-data";
+import {PhotoViewer} from "@ionic-native/photo-viewer";
+import {ConfigProvider} from "../../providers/config/config";
 
 /**
  * Generated class for the OperationdetailsPage page.
@@ -17,7 +19,7 @@ import {SharedDataProvider} from "../../providers/shared-data/shared-data";
 export class OperationdetailsPage {
   childOrder: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public shared: SharedDataProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public shared: SharedDataProvider,private photoViewer: PhotoViewer,public config: ConfigProvider) {
     this.childOrder = this.navParams.get('order');
     console.log(this.childOrder)
   }
@@ -27,5 +29,8 @@ export class OperationdetailsPage {
   }
   formatDate(obj) {
     return obj.toString().replace(/-/g, "/");
+  }
+  preview(id){
+    this.photoViewer.show(this.config.url + id);
   }
 }

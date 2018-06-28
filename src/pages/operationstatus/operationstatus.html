@@ -12,7 +12,11 @@
 <ion-content>
   <div class="operationcont ">
     <div class="operationimg">
-      <img src="assets/imgs/d32dfvc.png">
+      <img src="assets/imgs/1-m.png" *ngIf="childOrder.order_type =='1'">
+      <img src="assets/imgs/2-m.png" *ngIf="childOrder.order_type =='2'">
+      <img src="assets/imgs/3-m.png" *ngIf="childOrder.order_type =='3'">
+      <img src="assets/imgs/4-m.png" *ngIf="childOrder.order_type =='4'">
+      <img src="assets/imgs/5-m.png" *ngIf="childOrder.order_type =='5'">
     </div>
 
     <div class="operationInfo">
@@ -35,7 +39,10 @@
         <div>
           <div class="statusdiv">
             <img src="assets/imgs/add.png">
-            <p class="ptitle"> عملية جديدة</p>
+            <p class="ptitle" *ngIf="item.status =='1'">معلقة</p>
+            <p class="ptitle" *ngIf="item.status =='2'">موافقة</p>
+            <p class="ptitle" *ngIf="item.status =='3'">مرفوضة</p>
+            <p class="ptitle" *ngIf="item.status =='4'">قيد التعديل</p>
           </div>
           <div class="infostats">
             <p>رقم الهاتف : <span>{{childOrder.order_telephone}}</span></p>

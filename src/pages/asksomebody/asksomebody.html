@@ -32,7 +32,7 @@
 
 
   <!-- لو ملقاش الشخص ده  -->
-  <div class="notStart" *ngIf="found == false">
+  <div class="notStart" *ngIf="found == false && search != ''">
     <img src="assets/imgs/notfound.jpg">
     <p>الشخص الذى تبحث عنه لم يستخدم التطبيق مسبقا</p>
   </div>
@@ -72,28 +72,22 @@
 
 
 
-
-
-
-
-
-
-  <div class="containerdiv" >
-      <div class="ratediv new" >
+  <div class="containerdiv" *ngIf="found == true && search != ''">
+      <div class="ratediv new" *ngFor="let item of searchResultData">
         <div class="imgdiv">
-          <img src="assets/imgs/hjghjghj.png">
+          <img src="{{config.url+item.customers_picture}}">
         </div>
         <div class="namediv">
-          <p id="nameitem">sdfsdff</p>
+          <p id="nameitem">{{item.customers_name}}</p>
           <div class="starsdiv">
             التقييم
-            <ion-icon name="star" style="color: orange"></ion-icon>
-            <ion-icon   name="star"style="color: orange"></ion-icon>
-            <ion-icon  name="star" style="color: orange"></ion-icon>
-            <ion-icon  name="star" style="color: orange"></ion-icon>
-            <ion-icon name="star" style="color: orange"></ion-icon>
+            <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 1) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 2) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 3) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 4) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
+            <ion-icon style="color: orange" name="{{(searchResult['0'].avg < 5) ? 'md-star-outline' : 'md-star'}}"></ion-icon>
           </div>
-          <p> عدد المقيمين <span>30</span></p>
+          <p> عدد المقيمين <span>{{searchResult['0'].total}}</span></p>
         </div>
       </div>
 
@@ -106,7 +100,7 @@
         <div class="namediv">
             <p id="nameitem">sdfsdff</p>
             <div class="starsdiv">
-            
+
               <ion-icon name="star" style="color: orange"></ion-icon>
               <ion-icon   name="star"style="color: orange"></ion-icon>
               <ion-icon  name="star" style="color: orange"></ion-icon>
@@ -118,7 +112,7 @@
           </div>
     </div>
     <div class="ratetext">
-        نص التقييم نص التقييم   نص التقييم نص التقييم   نص التقييم نص التقييم  نص التقييم نص التقييم  نص التقييم نص التقييم  نص التقييم نص التقييم 
+        نص التقييم نص التقييم   نص التقييم نص التقييم   نص التقييم نص التقييم  نص التقييم نص التقييم  نص التقييم نص التقييم  نص التقييم نص التقييم
       </div>
   </div>
     </div>

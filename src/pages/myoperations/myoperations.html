@@ -30,7 +30,12 @@
     <h2 *ngIf="success == 0" style="margin-top: 100px;text-align: center">لا يوجد عمليات</h2>
     <div *ngFor="let item of operations" class="operationcont">
       <div class="operationimg">
-        <img src="assets/imgs/d32dfvc.png">
+
+        <img src="assets/imgs/1-m.png" *ngIf="item.order_type =='1'">
+        <img src="assets/imgs/2-m.png" *ngIf="item.order_type =='2'">
+        <img src="assets/imgs/3-m.png" *ngIf="item.order_type =='3'">
+        <img src="assets/imgs/4-m.png" *ngIf="item.order_type =='4'">
+        <img src="assets/imgs/5-m.png" *ngIf="item.order_type =='5'">
       </div>
 
       <div class="operationInfo">
@@ -66,23 +71,23 @@
       <div class="choses" *ngIf="chosFlag">
         <ion-list radio-group [(ngModel)]="type">
           <ion-item>
-            <ion-label><img src="assets/imgs/d32dfvc.png"> <span>سلع ومشتريات</span></ion-label>
+            <ion-label><img src="assets/imgs/1-s.png"> <span>سلع ومشتريات</span></ion-label>
             <ion-radio value="1" (ionSelect)="changeImg('1')"></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label><img src="assets/imgs/d32dfvc.png"><span>توصيل طلبات</span></ion-label>
+            <ion-label><img src="assets/imgs/2-s.png"><span>توصيل طلبات</span></ion-label>
             <ion-radio value="2" (ionSelect)="changeImg('2')"></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label><img src="assets/imgs/d32dfvc.png"><span>تعقيب وتنازل</span></ion-label>
+            <ion-label><img src="assets/imgs/3-s.png"><span>تعقيب وتنازل</span></ion-label>
             <ion-radio value="3" (ionSelect)="changeImg('3')"></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label><img src="assets/imgs/d32dfvc.png"><span>عمليات نقل كفالة</span></ion-label>
+            <ion-label><img src="assets/imgs/4-s.png"><span>عمليات نقل كفالة</span></ion-label>
             <ion-radio value="4" (ionSelect)="changeImg('4')"></ion-radio>
           </ion-item>
           <ion-item>
-            <ion-label><img src="assets/imgs/d32dfvc.png"><span>طرف اول طرف تانى</span></ion-label>
+            <ion-label><img src="assets/imgs/5-s.png"><span>طرف اول طرف تانى</span></ion-label>
             <ion-radio value="5" (ionSelect)="changeImg('5')"></ion-radio>
           </ion-item>
         </ion-list>

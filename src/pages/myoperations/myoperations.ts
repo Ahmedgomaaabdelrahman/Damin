@@ -35,6 +35,16 @@ export class MyoperationsPage {
               public http: Http,
               public shared: SharedDataProvider,
               public config: ConfigProvider) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad MyoperationsPage');
+    this.chosFlag = false;
+    this.addFlag = false;
+  }
+
+  ionViewWillEnter() {
+    console.log('ionViewDidLoad MyoperationsPage');
     this.formData.customers_id = this.shared.customerData.customers_id;
     console.log(this.formData)
     this.shared.show()
@@ -55,16 +65,6 @@ export class MyoperationsPage {
     }, error1 => {
       console.log(error1)
     });
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MyoperationsPage');
-    this.chosFlag = false;
-    this.addFlag = false;
-  }
-
-  ionViewWillEnter() {
-    console.log('ionViewDidLoad MyoperationsPage');
     this.chosFlag = false;
     this.addFlag = false;
   }

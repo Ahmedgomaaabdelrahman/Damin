@@ -1,61 +1,61 @@
 page-bankaccounts {
-    yellowheader .contdiv .backbtn {
-        flex: 1;
-    }
+  yellowheader .contdiv .backbtn {
+    flex: 1;
+  }
 
-    yellowheader .contdiv .imgdiv {
-        flex: 1;
-    }
-    yellowheader .contdiv div {
-        flex: 5
-    }
-    .itemdiv{
-        width: 90%;
-        margin:10px auto;
+  yellowheader .contdiv .imgdiv {
+    flex: 1;
+  }
+  yellowheader .contdiv div {
+    flex: 5
+  }
+  .itemdiv {
+    width: 90%;
+    margin: 10px auto;
 
-        .bankname{
-            display: flex;
-            img{
-                height: 20px;
-                margin: 10px;
-                display: none;
-            }
-            p{
-                margin: 12px 0 0;
-                font-size: 20px;
-              
-            }
-        }
-
-        .banknumber{
-            display: flex;
-            margin:5px 0;
-            box-shadow: 2px 2px 1px 1px lightgrey;
-            border-radius: 10px;
-             img{
-                 height: 16px;
-                 margin: 15px;
-             }
-             p{
-                margin: 8px 0 0;
-                flex: 1;
-                font-size: 20px;
-            }
-        }
-    }
-
-    .newacc {
-        background: #ffc928;
-        margin: 30px auto;
-        width: 90%;
-        height: 45px;
+    .bankname {
+      display: flex;
+      img {
+        height: 20px;
+        margin: 10px;
+        display: none;
+      }
+      p {
+        margin: 12px 0 0;
         font-size: 20px;
-        color: white;
-        border-radius: 15px;
 
+      }
     }
 
-    .button-md.activated , .button-ios.activated {
-        background: #ffc928 !important;
+    .banknumber {
+      display: flex;
+      margin: 5px 0;
+      box-shadow: 2px 2px 1px 1px lightgrey;
+      border-radius: 10px;
+      img {
+        height: 16px;
+        margin: 15px;
+      }
+      p {
+        margin: 8px 0 0;
+        flex: 1;
+        font-size: 20px;
+      }
     }
+  }
+
+  .newacc {
+    background: #ffc928;
+    margin: 30px auto;
+    width: 90%;
+    height: 45px;
+    font-size: 20px;
+    color: white;
+    border-radius: 15px;
+
+  }
+
+  .button-md.activated, .button-ios.activated {
+    background: #ffc928 !important;
+  }
 }

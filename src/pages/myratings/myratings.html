@@ -13,9 +13,9 @@
 
 <ion-content>
 
-  <div class="contentdiv" *ngFor="let item of myRating">
+  <div class="contentdiv" >
 
-    <div class="containerdiv">
+    <div class="containerdiv" *ngFor="let item of myRating">
       <div class="ratediv">
         <div class="imgdiv">
           <img src="{{config.url+item.customers_picture}}">

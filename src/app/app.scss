@@ -115,7 +115,7 @@ yellowheader {
   display: block;
   width: 16px;
   height: 21px;
-  border:1px solid gray;
+  border: 1px solid gray;
   padding: 9px;
   border-radius: 50%;
 }
@@ -153,16 +153,43 @@ yellowheader {
   height: 15px;
   background-color: orange;
 }
+
 .alert-md .alert-radio-icon {
   left: -15px !important;
 }
-.round{
+
+.round {
   border-radius: 100px;
 }
-.alert-md .alert-button {
-  color: orange;
+
+.alert-md .alert-title {
+  font-size: 22px;
+  color: white;
+  /* background-color: orange; */
 }
 
 .alert-md .alert-head {
-  display: none;
+  text-align: left;
+  text-align: start;
+  padding: 20px 24px 20px;
+  background-color: #FFC664 ;
+  text-align: center;
+}
+.alert-md .alert-sub-title {
+  font-size: 19px;
+  color: white;
+  text-align: center;
+}
+.alert-md .alert-wrapper {
+  border-radius: 2px;
+  max-width: 280px;
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 16px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+}
+
+
+.list-md .item-input:last-child {
+   border-bottom: 0
 }
