@@ -13,7 +13,7 @@
   <div class="contentdiv">
 
     <div *ngFor="let item of messageData">
-      <div class="persondiv" (click)="openChatDetails(item.customers_message_id,item.customers_name)">
+      <div class="persondiv" (click)="openChatDetails(item)">
         <img src="{{config.url+item.customers_picture}}">
         <div>
           <p class="name">

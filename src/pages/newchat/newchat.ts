@@ -40,6 +40,7 @@ export class NewchatPage {
     //rchResult = [];
     //  }
   }
+
   getSearchData = function () {
 
     if (this.search != undefined) {
