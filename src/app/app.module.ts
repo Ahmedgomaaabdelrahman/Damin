@@ -51,6 +51,7 @@ import {Network} from "@ionic-native/network";
 import {NoInternetPage} from "../pages/no-internet/no-internet";
 import { EditoperationPage } from '../pages/editoperation/editoperation';
 import {PhotoViewer} from "@ionic-native/photo-viewer";
+import { TaqeeemPage } from '../pages/taqeeem/taqeeem';
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import {PhotoViewer} from "@ionic-native/photo-viewer";
     AcceptoperationPage,
     BanktransferPage,
     NoInternetPage,
-    EditoperationPage
+    EditoperationPage,
+    TaqeeemPage
   ],
   imports: [
 
@@ -135,7 +137,8 @@ BrowserModule,
     AcceptoperationPage,
     BanktransferPage,
     NoInternetPage,
-    EditoperationPage
+    EditoperationPage,
+    TaqeeemPage
   ],
   providers: [
     StatusBar,

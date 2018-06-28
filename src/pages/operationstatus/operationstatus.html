@@ -10,7 +10,7 @@
 
 
 <ion-content>
-  <div class="operationcont ">
+  <div class="operationcont  ">
     <div class="operationimg">
       <img src="assets/imgs/1-m.png" *ngIf="childOrder.order_type =='1'">
       <img src="assets/imgs/2-m.png" *ngIf="childOrder.order_type =='2'">
@@ -34,7 +34,7 @@
   </div>
 
   <h2 class="operationStats">حالات العملية : </h2>
-    <div *ngFor="let item of childOrder.orders_status" class="operationcont " style=" width: 80%;margin:10px auto;">
+    <div *ngFor="let item of childOrder.orders_status" class="operationcont  timeline" style=" width: 80%;margin:10px auto;">
       <div class="operationInfo">
         <div>
           <div class="statusdiv">
