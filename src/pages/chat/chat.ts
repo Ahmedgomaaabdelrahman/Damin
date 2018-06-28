@@ -29,10 +29,11 @@ export class ChatPage {
               public http: Http,
               public shared: SharedDataProvider,
               public config: ConfigProvider) {
-    this.data.customers_message_id =  this.navParams.get('customers_message_id');
-    this.data.customers_name =  this.navParams.get('customers_name');
+
   }
   ionViewWillEnter() {
+    this.data.customers_message_id =  this.navParams.get('customers_message_id');
+    this.data.customers_name =  this.navParams.get('customers_name');
     this.getChat()
   }
 

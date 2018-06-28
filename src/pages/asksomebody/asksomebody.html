@@ -17,7 +17,7 @@
       <!--<ion-input class="inputitem nameinput" [(ngModel)]="search" placeholder="ابحث هنا" type="text"></ion-input>-->
     <!--</form>-->
     <form #loginForm="ngForm" (ngSubmit)="getSearchData()">
-      <ion-searchbar [(ngModel)]="search" name="search" placeholder="ابحث هنا"
+      <ion-searchbar  class="inputitem nameinput" [(ngModel)]="search" name="search" placeholder="ابحث هنا"
                      [showCancelButton]="shouldShowCancel">
       </ion-searchbar>
     </form>
@@ -38,7 +38,7 @@
   </div>
 
   <!-- لو لقى الشخص ده  -->
-  <div class="containerdiv" *ngIf="found == true && search != ''">
+  <!-- <div class="containerdiv" *ngIf="found == true && search != ''">
     <div class="ratediv new"  *ngFor="let item of searchResultData">
       <div class="imgdiv">
         <img src="{{config.url+item.customers_picture}}">
@@ -68,5 +68,58 @@
       </div>
     </div>
     <div class="ratetext"></div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+  <div class="containerdiv" >
+      <div class="ratediv new" >
+        <div class="imgdiv">
+          <img src="assets/imgs/hjghjghj.png">
+        </div>
+        <div class="namediv">
+          <p id="nameitem">sdfsdff</p>
+          <div class="starsdiv">
+            التقييم
+            <ion-icon name="star" style="color: orange"></ion-icon>
+            <ion-icon   name="star"style="color: orange"></ion-icon>
+            <ion-icon  name="star" style="color: orange"></ion-icon>
+            <ion-icon  name="star" style="color: orange"></ion-icon>
+            <ion-icon name="star" style="color: orange"></ion-icon>
+          </div>
+          <p> عدد المقيمين <span>30</span></p>
+        </div>
+      </div>
+
+
+  <div class="ratetextdiv new">
+    <div style="  display: flex;">
+        <div class="imgdiv">
+            <img src="assets/imgs/hjghjghj.png">
+        </div>
+        <div class="namediv">
+            <p id="nameitem">sdfsdff</p>
+            <div class="starsdiv">
+            
+              <ion-icon name="star" style="color: orange"></ion-icon>
+              <ion-icon   name="star"style="color: orange"></ion-icon>
+              <ion-icon  name="star" style="color: orange"></ion-icon>
+              <ion-icon  name="star" style="color: orange"></ion-icon>
+              <ion-icon name="star" style="color: orange"></ion-icon>
+             <span s>12/4/2019</span>
+            </div>
+            <!-- <p> عدد المقيمين <span>30</span></p> -->
+          </div>
+    </div>
+    <div class="ratetext">
+        نص التقييم نص التقييم   نص التقييم نص التقييم   نص التقييم نص التقييم  نص التقييم نص التقييم  نص التقييم نص التقييم  نص التقييم نص التقييم 
+      </div>
   </div>
+    </div>
 </ion-content>

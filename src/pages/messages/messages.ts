@@ -25,10 +25,6 @@ export class MessagesPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http,
               public shared: SharedDataProvider,
               public config: ConfigProvider) {
-
-  }
-
-  ionViewDidLoad() {
     this.formData.customers_id = this.shared.customerData.customers_id;
     console.log(this.formData)
     this.shared.show()
@@ -39,6 +35,9 @@ export class MessagesPage {
     }, error1 => {
       console.log(error1)
     });
+  }
+
+  ionViewDidLoad() {
     console.log('ionViewDidLoad MessagesPage');
   }
 
@@ -46,12 +45,8 @@ export class MessagesPage {
     return obj.toString().replace(/-/g, "/");
   }
 
-  openChatDetails(item) {
-    var customers_message_id = item.customers_message_id
-    var customers_name = item.customers_name;
-    console.log(item)
-    this.navCtrl.push(ChatPage, {customers_message_id: customers_message_id, customers_name: customers_name});
-
+  openChatDetails(id, name) {
+    this.navCtrl.push(ChatPage, {customers_message_id: id, customers_name: name});
   }
 
   openNew() {
