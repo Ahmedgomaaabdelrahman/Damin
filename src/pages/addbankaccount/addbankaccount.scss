@@ -4,7 +4,7 @@ page-addbankaccount {
         height: 50px;
         box-shadow: 1px 1px 1px 1px lightgrey;
         width: 95%;
-        margin: 10px ;
+        margin: 10px auto;
         border-radius: 20px;
         padding-top: 5px;
         background: #fbfbfb;
@@ -45,10 +45,7 @@ page-addbankaccount {
         font-size: 20px; 
         margin: 0 30px;
       }
-      .item {
-        padding: 0 20px;
-         width: 98%;
-      }
+
       .getDiv {
           display:flex;
           width: 90%;

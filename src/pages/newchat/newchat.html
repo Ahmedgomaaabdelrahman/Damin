@@ -7,9 +7,6 @@
 <ion-header>
 
   <div class="searchdiv">
-    <div class="backbtn" (click)="back()">
-        <ion-icon name="ios-arrow-back"></ion-icon>
-    </div>
     <form #loginForm="ngForm" (ngSubmit)="getSearchData()">
       <ion-searchbar [(ngModel)]="search" name="search" placeholder="بحث برقم الجوال"
                      [showCancelButton]="shouldShowCancel">

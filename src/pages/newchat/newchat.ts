@@ -31,9 +31,7 @@ export class NewchatPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad NewchatPage');
   }
-  back(){
-    this.navCtrl.pop();
-  }
+
   onChangeKeyword = function (e) {
     //console.log(this.search);
     // if (search != undefined) {
