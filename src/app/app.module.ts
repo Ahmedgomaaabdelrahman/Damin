@@ -49,7 +49,11 @@ import {FileTransfer} from "@ionic-native/file-transfer";
 import {FileChooser} from "@ionic-native/file-chooser";
 import {Network} from "@ionic-native/network";
 import {NoInternetPage} from "../pages/no-internet/no-internet";
+<<<<<<< HEAD
 import {EditoperationPage} from "../pages/editoperation/editoperation";
+=======
+import { EditoperationPage } from '../pages/editoperation/editoperation';
+>>>>>>> c6e8e2cdf1542ba5d59c2334dbb62dc62c78f758
 
 
 @NgModule({

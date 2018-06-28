@@ -154,8 +154,15 @@ yellowheader {
   background-color: orange;
 }
 .alert-md .alert-radio-icon {
-  left: -5px !important;
+  left: -15px !important;
 }
 .round{
   border-radius: 100px;
+}
+.alert-md .alert-button {
+  color: orange;
+}
+
+.alert-md .alert-head {
+  display: none;
 }

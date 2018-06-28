@@ -22,12 +22,15 @@
         <div class="banknumber">
           <img src="assets/imgs/444444.png">
           <p>{{item.account_num}}</p>
-          <button ion-button icon-only clear color="danger" (click)="deleteBank(item.bank_id)" >
-            <ion-icon name="ios-trash"></ion-icon>
-          </button>
-          <button ion-button icon-only clear color="primary" (click)="updateBank(item)" >
-            <ion-icon name="md-create"></ion-icon>
-          </button>
+          <div>
+            <button ion-button icon-only clear color="danger" (click)="deleteBank(item.bank_id)" >
+                <ion-icon name="ios-trash"></ion-icon>
+              </button>
+              <button ion-button icon-only clear color="primary" (click)="updateBank(item)" >
+                <ion-icon name="md-create"></ion-icon>
+              </button>
+          </div>
+         
         </div>
       </div>
     </div>

@@ -82,5 +82,14 @@ page-chat {
     background-repeat: no-repeat;
     background-position: center;
   }
+  yellowheader .contdiv .backbtn {
+    flex: 1;
+  }
 
+  yellowheader .contdiv .imgdiv {
+    flex: 1;
+  }
+  yellowheader .contdiv div {
+    flex: 5
+  }
 }
