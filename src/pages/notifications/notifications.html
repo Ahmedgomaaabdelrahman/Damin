@@ -18,7 +18,8 @@
       <div class="containerdiv" *ngFor="let item of myNotify"  (click)="openNotify(item.last_action,item.order_id)">
         <img src="{{config.url+item.customers_picture}}">
         <div>
-          <p class="notifytext">قام <span>{{item.customers_name}} </span> {{item.message}}</p>
+          <p class="notifytext" *ngIf="item.last_action == 1">قام <span>{{item.customers_name}} </span> {{item.message}}</p>
+          <p class="notifytext" *ngIf="item.last_action == 0">قام <span  style="color: #FFC563">{{item.customers_name}} </span> {{item.message}}</p>
           <p class="timetext">{{item.created_at}}</p>
         </div>
       </div>

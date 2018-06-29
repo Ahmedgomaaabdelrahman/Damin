@@ -158,8 +158,10 @@ page-notify-operation {
   }
 
   .btndiv {
-    display: inline-flex;
-    width: 100%;
+    display: inline;
+    width: 50%;
+    margin: 10px 0;
+    float: right;
     margin: 10px 0;
     .button {
       background: #ffc928;

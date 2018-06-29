@@ -52,6 +52,7 @@ import {NoInternetPage} from "../pages/no-internet/no-internet";
 import { EditoperationPage } from '../pages/editoperation/editoperation';
 import {PhotoViewer} from "@ionic-native/photo-viewer";
 import { TaqeeemPage } from '../pages/taqeeem/taqeeem';
+import {PagesContainerPage} from "../pages/pages-container/pages-container";
 
 
 @NgModule({
@@ -90,7 +91,8 @@ import { TaqeeemPage } from '../pages/taqeeem/taqeeem';
     BanktransferPage,
     NoInternetPage,
     EditoperationPage,
-    TaqeeemPage
+    TaqeeemPage,
+    PagesContainerPage
   ],
   imports: [
 
@@ -138,7 +140,8 @@ BrowserModule,
     BanktransferPage,
     NoInternetPage,
     EditoperationPage,
-    TaqeeemPage
+    TaqeeemPage,
+    PagesContainerPage
   ],
   providers: [
     StatusBar,

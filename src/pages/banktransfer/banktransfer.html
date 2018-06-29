@@ -7,37 +7,37 @@
 <ion-header>
     <yellowheader name='التحويل البنكى'></yellowheader>
   </ion-header>
-  
-  
+
+
   <ion-content>
     <div class="contentdiv">
-        <form>
+      <form #loginForm="ngForm">
           <p class="inptlabel">اسم البنك</p>
-          <ion-item>
-              <ion-select class="inputitem bank" >
-                  <ion-option value="3" selected="true">بنك الرياض</ion-option>
-                  <ion-option value="4">بنك القاهرة</ion-option>
-                  <ion-option value="5">بنك اسكندرية</ion-option>
-              </ion-select>
-            </ion-item>
-                
+          <ion-item >
+            <ion-select class="inputitem bank" >
+              <ion-option *ngFor="let item of bankInfo" [value]="item.bank_name" (ionSelect)="select(item.bank_name)">{{item.bank_name}}</ion-option>
+            </ion-select>
+          </ion-item>
+
           <p class="inptlabel">رقم الحساب</p>
           <ion-item>
-              <ion-input class="inputitem account"  type="text" required></ion-input>
+              <ion-input class="inputitem account"  type="number" required name="account_num"
+                         [(ngModel)]="formData.account_num"></ion-input>
             </ion-item>
-                  
+
           <p class="inptlabel">المبلغ</p>
           <ion-item>
-              <ion-input class="inputitem mabl3"  type="text" required></ion-input>
-          </ion-item> 
-  
+              <ion-input class="inputitem mabl3"  type="number" required name="price" [(ngModel)]="formData.price"></ion-input>
+          </ion-item>
+
           <p class="inptlabel">رقم الحوالة</p>
           <ion-item>
-              <ion-input class="inputitem hewala"  type="text" required></ion-input>
-          </ion-item> 
+              <ion-input class="inputitem hewala"  type="number" required name="invoice_number"
+                         [(ngModel)]="formData.invoice_number"></ion-input>
+          </ion-item>
 
-            <button ion-button block class="confirm">تاكيد</button>
-        </form>
+        <button ion-button block class="confirm" (click)="taqeem()" [disabled]="!loginForm.form.valid">تاكيد</button>
+
+      </form>
     </div>
   </ion-content>
-  

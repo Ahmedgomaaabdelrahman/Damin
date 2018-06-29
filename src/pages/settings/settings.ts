@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DamindetailsPage } from './../damindetails/damindetails';
 import { ContactusPage } from './../contactus/contactus';
 import { BankaccountsPage } from '../bankaccounts/bankaccounts';
+import {PagesContainerPage} from "../pages-container/pages-container";
 
 /**
  * Generated class for the SettingsPage page.
@@ -27,6 +28,10 @@ export class SettingsPage {
 
   goBankDetails(){
     this.navCtrl.push(DamindetailsPage);
+  }
+
+  pageContainer(id){
+    this.navCtrl.push(PagesContainerPage,{id: id});
   }
 
   contactUs(){

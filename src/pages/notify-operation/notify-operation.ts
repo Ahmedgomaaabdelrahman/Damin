@@ -58,7 +58,7 @@ export class NotifyOperationPage {
     this.refuse = !this.refuse;
     var option = {
       order_id: this.formData.orders_id,
-      customers_id:  this.formData.customers_id ,
+      customers_id: this.formData.customers_id,
       customers_order_id: customers_order_id,
       comments: this.formData.comments,
       status: '3',
@@ -78,8 +78,11 @@ export class NotifyOperationPage {
     });
   }
 
-  accept() {
-    this.navCtrl.push(AcceptoperationPage);
+  accept(customers_order_id) {
+    this.navCtrl.push(AcceptoperationPage, {
+      order_id: this.formData.orders_id,
+      customers_order_id: customers_order_id,
+    });
   }
 
   edit(customers_order_id, order_description) {

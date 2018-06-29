@@ -7,11 +7,11 @@ page-operationstatus {
     border-radius: 20px;
     width: 90%;
     box-shadow: 2px 2px 10px 1px lightgrey;
-    
+
     .operationimg {
         flex: 1;
         text-align:center;
-        img{ 
+        img{
             height: 70px;
             margin-top: 15px;
         }
@@ -31,20 +31,20 @@ page-operationstatus {
     .orangep {
         text-align: center;
         background: #ffc928;
-        margin: 0 5px; 
+        margin: 0 5px;
         padding: 5px 0;
         border-radius: 15px;
         font-size: 13px;
         color: white
     }
 
-   
-} 
+
+}
 
 .timeline::before {
     content: "";
     border: 1px solid #ffc928;
-    height: 198px;
+    height: 105%;
     position: absolute;
     right: -20px;
 }
@@ -73,7 +73,7 @@ page-operationstatus {
 //     top: 15px;
 //     border-radius: 50%;
 //     z-index: 1;
-//     right: -65px; 
+//     right: -65px;
 // }
 .ptitle {
     font-size: 25px;
@@ -89,7 +89,7 @@ page-operationstatus {
         height: 20px;
         margin: 10px;
     }
- 
+
 }
 
 .infostats {

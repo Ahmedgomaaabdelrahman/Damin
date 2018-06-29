@@ -15,14 +15,14 @@ page-contactus {
           padding: 0 5px;
         }
       }
-    
+
       .text-input {
         color: black;
         font-size: 18px;
         margin: 8px 50px;
         padding: 0 5px;
         width: calc(100% - 8px - 100px);
-    
+
       }
       .nameinput {
         background-image: url('../assets/imgs/bggfgb.png');
@@ -52,7 +52,17 @@ page-contactus {
             height: 90%;
             margin: 10px;
             width: 90%;
-            
+
         }
     }
+  .newacc {
+    background: #ffc928;
+    margin: 30px auto;
+    width: 30%;
+    height: 45px;
+    font-size: 20px;
+    color: white;
+    border-radius: 15px;
+
+  }
 }

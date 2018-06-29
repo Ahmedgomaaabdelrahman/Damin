@@ -15,6 +15,7 @@ import { BanktransferPage } from './../banktransfer/banktransfer';
 export class AcceptoperationPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
@@ -22,6 +23,9 @@ export class AcceptoperationPage {
   }
 
   transfer(){
-    this.navCtrl.push(BanktransferPage);
+    this.navCtrl.push(BanktransferPage,{
+      customers_order_id: this.navParams.get('customers_order_id'),
+      order_id: this.navParams.get('order_id'),
+    });
   }
 }
